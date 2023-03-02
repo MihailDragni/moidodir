@@ -1,0 +1,190 @@
+.catalog {
+  position: fixed;
+  top: 0;
+  // left: -110%;
+  left: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: start;
+  background-color: #fff;
+  transition: left 0.3s ease 0s;
+  z-index: 999;
+  &--active {
+    left: 0;
+  }
+  &__close-btn {
+    position: absolute;
+    top: 5%;
+    right: -50px;
+    width: 30px;
+    height: 30px;
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: rem(20);
+  }
+}
+
+.catalog-column {
+  overflow: auto;
+  display: grid;
+  height: 100%;
+  padding: rem(46) rem(107) rem(41) rem(40);
+  width: rem(497);
+  border-right: 1px solid #bdbdbd;
+}
+
+.main-column-catalog {
+  height: 100%;
+  &__list {
+    row-gap: rem(13);
+  }
+  &__link {
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    column-gap: rem(27);
+    font-weight: 500;
+    line-height: math.div(24, 20);
+    padding: rem(8) rem(25);
+    border-radius: rem(26);
+    transition: background-color 0.3s ease, color 0.3s ease;
+    &::before {
+      font-size: rem(40);
+      width: rem(40);
+      height: rem(40);
+    }
+    &:hover {
+      background-color: $mainBlue;
+      color: #fff;
+    }
+  }
+}
+
+.drop-catalog {
+  //! display: none;
+  display: block;
+  height: 100%;
+  &--active {
+    display: block;
+  }
+  &__item {
+    height: 100%;
+    //! display: none;
+    display: block;
+    padding: rem(46) rem(77) rem(41) rem(21);
+    &--active {
+      display: block;
+    }
+  }
+  &__title {
+    font-weight: 700;
+    font-size: rem(32);
+    line-height: math.div(39, 32);
+    margin-bottom: em(32, 32);
+    padding-left: rem(20);
+  }
+}
+
+.drop-menu-list {
+  height: 100%;
+  display: grid;
+  row-gap: rem(15);
+  &__link {
+    font-weight: 500;
+    font-weight: normal;
+    line-height: math.div(24, 20);
+    color: #575757;
+    display: flex;
+    padding: rem(16) rem(27);
+    border-radius: 26px;
+    background-color: transparent;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    &::before {
+      content: "\e902";
+      @extend %ic;
+      font-weight: 300;
+      font-size: rem(10);
+      transform: rotate(-90deg);
+      color: transparent;
+      transition: color 0.3s ease;
+    }
+    &:hover {
+      background-color: #ececec;
+      color: $mainColor;
+      &::before {
+        color: $mainColor;
+      }
+    }
+  }
+}
+
+.drop-banner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  &__img {
+    width: 100%;
+    height: 325px;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 25px;
+    & img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+
+  &__title {
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 10px;
+  }
+
+  &__text {
+    font-weight: 400;
+    font-size: 14px;
+  }
+}
+
+.burger-stocks {
+  overflow-y: auto;
+  scrollbar-color: #d3d4dd transparent;
+  scrollbar-width: thin;
+  max-width: 907px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  column-gap: 26px;
+  row-gap: 40px;
+  padding: 20px;
+  &__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 15px;
+    justify-self: baseline;
+    align-self: baseline;
+  }
+
+  &__img {
+    width: 195px;
+    height: 155px;
+    border-radius: 12px;
+    overflow: hidden;
+    & img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+}

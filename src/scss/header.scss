@@ -1,56 +1,277 @@
 //====================================================================================================
+.header {
+  // .header__top
+  &__top {
+    background-color: $mainLightBlue;
+    color: #2e2e2e;
+  }
+  // .header__body
+  &__body {
+  }
+}
+.top-header {
+  padding: rem(5) 0;
+  // .top-header__container
+  &__container {
+    display: flex;
+    align-items: center;
+    gap: rem(20);
+    min-height: rem(40);
+  }
+  // .top-header__menu
+  &__menu {
+    flex: 1 1 auto;
+  }
+}
+.menu {
+  // .menu__body
+  &__body {
+  }
+  // .menu__list
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: rem(5);
+    @include adaptiveValue("column-gap", 43, 20);
+  }
+  // .menu__item
+  &__item {
+  }
+  // .menu__link
+  &__link {
+    font-size: rem(16);
+    font-weight: 500;
+    @media (any-hover: hover) {
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+//========================================================================================================================================================
+
+.body-header {
+  padding-bottom: rem(10);
+  @include adaptiveValue("padding-top", 36, 15);
+  background-color: #fff;
+  // .body-header__container
+
+  &__container {
+    display: flex;
+    align-items: center;
+    min-height: rem(60);
+    @include adaptiveValue("column-gap", 66, 20);
+  }
+
+  &__row {
+    flex: 0 0 rem(236);
+    display: flex;
+    align-items: center;
+    column-gap: rem(15);
+    justify-content: space-between;
+  }
+
+  // .body-header__catalog-btn
+
+  &__catalog-btn {
+    flex: 0 0 rem(29);
+    height: rem(38);
+    font-size: rem(36);
+    color: $mainBlue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  // .body-header__logo
+
+  &__logo {
+    display: block;
+    flex: 0 0 rem(165);
+    height: rem(40);
+    & img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+
+  // .body-header__search
+
+  &__search {
+    flex: 1 1 auto;
+  }
+
+  // .body-header__actions
+}
+.search-header {
+  background-color: #eaf1f8;
+  border: 1px solid rgba(65, 116, 164, 0.48);
+  border-radius: rem(50);
+  position: relative;
+  overflow: clip;
+  width: 100%;
+
+  // .search-header__submit
+
+  &__submit,
+  &__btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: rem(10);
+    background-color: transparent;
+    height: rem(50);
+    width: rem(50);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    font-size: rem(23);
+    color: $mainBlue;
+  }
+  // .search-header__btn
+
+  &__btn {
+    right: rem(10);
+    left: auto;
+    font-size: rem(25);
+  }
+
+  // .search-header__input
+
+  &__input {
+    width: 100%;
+    border-radius: rem(50);
+    height: rem(54);
+    background-color: transparent;
+    padding: rem(0) rem(62);
+    color: $mainBlue;
+    &::placeholder {
+      color: $mainBlue;
+    }
+  }
+}
+
+.actions-header {
+  display: flex;
+  align-items: center;
+  @include adaptiveValue("column-gap", 70, 15);
+  @media (max-width: $pc) {
+    padding-right: rem(20);
+  }
+  // .actions-header__favorite
+
+  &__favorite,
+  &__user,
+  &__cart {
+    color: $mainBlue;
+    font-size: rem(34);
+    position: relative;
+    z-index: 3;
+    &::after {
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: rem(60);
+      height: rem(60);
+      background-color: transparent;
+      transition: background-color 0.3s ease;
+      z-index: -1;
+    }
+    @media (any-hover: hover) {
+      &:hover {
+        &::after {
+          background-color: $mainLightBlue;
+        }
+      }
+    }
+    &._actions-header-active {
+      &::after {
+        background-color: $mainLightBlue;
+      }
+    }
+  }
+
+  &__cart {
+    position: relative;
+    & span {
+      display: block;
+      position: absolute;
+      border-radius: 50%;
+      width: rem(24);
+      height: rem(24);
+      top: -25%;
+      right: -20%;
+      color: #fff;
+      font-weight: 500;
+      font-size: rem(14);
+      background-color: $mainRed;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    &::after {
+      transform: translate(-50%, -55%);
+    }
+  }
+}
 
 //====================================================================================================
 
 //Burger
-/*
+
 .icon-menu {
-	display: none;
-	@media (max-width: $mobile) {
-		display: block;
-		position: relative;
-		width: rem(30);
-		height: rem(18);
-		z-index: 5;
-		@media (any-hover: none) {
-			cursor: default;
-		}
-		span,
-		&::before,
-		&::after {
-			content: "";
-			transition: all 0.3s ease 0s;
-			right: 0;
-			position: absolute;
-			width: 100%;
-			height: rem(2);
-			background-color: #000;
-		}
-		&::before {
-			top: 0;
-		}
-		&::after {
-			bottom: 0;
-		}
-		span {
-			top: calc(50% - rem(1));
-		}
-		.menu-open & {
-			span {
-				width: 0;
-			}
-			&::before,
-			&::after {
-			}
-			&::before {
-				top: calc(50% - rem(1));
-				transform: rotate(-45deg);
-			}
-			&::after {
-				bottom: calc(50% - rem(1));
-				transform: rotate(45deg);
-			}
-		}
-	}
+  display: none;
+  @media (max-width: $mobile) {
+    display: block;
+    position: relative;
+    flex: 0 0 rem(30);
+    height: rem(18);
+    z-index: 5;
+    @media (any-hover: none) {
+      cursor: default;
+    }
+    span,
+    &::before,
+    &::after {
+      content: "";
+      transition: all 0.3s ease 0s;
+      right: 0;
+      position: absolute;
+      width: 100%;
+      height: rem(2);
+      background-color: $mainBlue;
+    }
+    &::before {
+      top: 0;
+    }
+    &::after {
+      bottom: 0;
+    }
+    span {
+      top: calc(50% - rem(1));
+    }
+    .menu-open & {
+      span {
+        width: 0;
+      }
+      &::before,
+      &::after {
+      }
+      &::before {
+        top: calc(50% - rem(1));
+        transform: rotate(-45deg);
+      }
+      &::after {
+        bottom: calc(50% - rem(1));
+        transform: rotate(45deg);
+      }
+    }
+  }
 }
-*/
