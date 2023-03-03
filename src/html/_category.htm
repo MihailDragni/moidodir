@@ -1,10 +1,10 @@
 <div class="catalog">
   <div class="catalog__main-column main-column-catalog">
-    <ul class="main-column-catalog__list catalog-column">
+    <ul class="main-column-catalog__list column-style">
       <li class="main-column-catalog__item">
         <a
           class="main-column-catalog__link _icon-women"
-          data-category="#women"
+          data-main-category="#women"
           href="#"
         >
           Women
@@ -13,7 +13,7 @@
       <li class="main-column-catalog__item">
         <a
           class="main-column-catalog__link _icon-men"
-          data-category="#men"
+          data-main-category="#men"
           href="#"
         >
           Men
@@ -22,7 +22,7 @@
       <li class="main-column-catalog__item">
         <a
           class="main-column-catalog__link _icon-kids"
-          data-category="#kids"
+          data-main-category="#kids"
           href="#"
         >
           Kids
@@ -31,7 +31,7 @@
       <li class="main-column-catalog__item">
         <a
           class="main-column-catalog__link _icon-sport"
-          data-category="#sport"
+          data-main-category="#sport"
           href="#"
         >
           Sport
@@ -40,7 +40,7 @@
       <li class="main-column-catalog__item">
         <a
           class="main-column-catalog__link _icon-electronics"
-          data-category="#electronics"
+          data-main-category="#electronics"
           href="#"
         >
           Electronics
@@ -49,7 +49,7 @@
       <li class="main-column-catalog__item">
         <a
           class="main-column-catalog__link _icon-house"
-          data-category="#house"
+          data-main-category="#house"
           href="#"
         >
           House
@@ -58,7 +58,7 @@
       <li class="main-column-catalog__item">
         <a
           class="main-column-catalog__link _icon-furniture"
-          data-category="#furniture"
+          data-main-category="#furniture"
           href="#"
         >
           Furniture
@@ -67,7 +67,7 @@
       <li class="main-column-catalog__item">
         <a
           class="main-column-catalog__link _icon-books"
-          data-category="#books"
+          data-main-category="#books"
           href="#"
         >
           Books
@@ -76,7 +76,7 @@
       <li class="main-column-catalog__item">
         <a
           class="main-column-catalog__link _icon-cars"
-          data-category="#cars"
+          data-main-category="#cars"
           href="#"
         >
           Cars
@@ -85,7 +85,7 @@
       <li class="main-column-catalog__item">
         <a
           class="main-column-catalog__link _icon-stationery"
-          data-category="#stationery"
+          data-main-category="#stationery"
           href="#"
         >
           Stationery
@@ -94,7 +94,7 @@
       <li class="main-column-catalog__item">
         <a
           class="main-column-catalog__link _icon-cosmetics"
-          data-category="#cosmetics"
+          data-main-category="#cosmetics"
           href="#"
         >
           Cosmetics
@@ -103,7 +103,7 @@
       <li class="main-column-catalog__item">
         <a
           class="main-column-catalog__link _icon-games"
-          data-category="#games"
+          data-main-category="#games"
           href="#"
         >
           Games
@@ -112,7 +112,7 @@
       <li class="main-column-catalog__item">
         <a
           class="main-column-catalog__link _icon-animals"
-          data-category="#animals"
+          data-main-category="#animals"
           href="#"
         >
           Animals
@@ -121,15 +121,25 @@
     </ul>
   </div>
 
-  <div class="catalog__drop drop-catalog">
-    <div class="drop-catalog__item catalog-column" id="#men">
-      <h3 class="drop-catalog__title">Women</h3>
-      <ul class="drop-catalog__list drop-menu-list">
+  <div class="catalog__second-column column-catalog">
+    <div class="column-catalog__item column-style" id="#women">
+      <h3 class="column-catalog__title">Women</h3>
+      <ul class="column-catalog__list drop-menu-list">
         <li class="drop-menu-list__item">
-          <a class="drop-menu-list__link" href="#">Skirts</a>
+          <a
+            class="drop-menu-list__link"
+            href="#"
+            data-second-category="#skirts"
+            >Skirts</a
+          >
         </li>
         <li class="drop-menu-list__item">
-          <a class="drop-menu-list__link" href="#">Shirts</a>
+          <a
+            class="drop-menu-list__link"
+            href="#"
+            data-second-category="#shirts"
+            >Shirts</a
+          >
         </li>
         <li class="drop-menu-list__item">
           <a class="drop-menu-list__link" href="#">Shoes</a>
@@ -138,7 +148,12 @@
           <a class="drop-menu-list__link" href="#">Body</a>
         </li>
         <li class="drop-menu-list__item">
-          <a class="drop-menu-list__link" href="#">Jacket</a>
+          <a
+            class="drop-menu-list__link"
+            href="#"
+            data-second-category="#skirts"
+            >Jacket</a
+          >
         </li>
         <li class="drop-menu-list__item">
           <a class="drop-menu-list__link" href="#">For tall</a>
@@ -178,14 +193,24 @@
         </li>
       </ul>
     </div>
-    <div class="drop-catalog__item catalog-column" id="#women">
-      <h3 class="drop-catalog__title">Men</h3>
-      <ul class="drop-catalog__list drop-menu-list">
+    <div class="column-catalog__item column-style" id="#men">
+      <h3 class="column-catalog__title">Men</h3>
+      <ul class="column-catalog__list drop-menu-list">
         <li class="drop-menu-list__item">
-          <a class="drop-menu-list__link" href="#">Skirts</a>
+          <a
+            class="drop-menu-list__link"
+            href="#"
+            data-second-category="#skirts"
+            >Skirts</a
+          >
         </li>
         <li class="drop-menu-list__item">
-          <a class="drop-menu-list__link" href="#">Shirts</a>
+          <a
+            class="drop-menu-list__link"
+            href="#"
+            data-second-category="#shirts"
+            >Shirts</a
+          >
         </li>
         <li class="drop-menu-list__item">
           <a class="drop-menu-list__link" href="#">Shoes</a>
@@ -194,7 +219,12 @@
           <a class="drop-menu-list__link" href="#">Body</a>
         </li>
         <li class="drop-menu-list__item">
-          <a class="drop-menu-list__link" href="#">Jacket</a>
+          <a
+            class="drop-menu-list__link"
+            href="#"
+            data-second-category="#jacket"
+            >Jacket</a
+          >
         </li>
         <li class="drop-menu-list__item">
           <a class="drop-menu-list__link" href="#">For tall</a>
@@ -234,14 +264,24 @@
         </li>
       </ul>
     </div>
-    <div class="drop-catalog__item catalog-column" id="#kids">
-      <h3 class="drop-catalog__title">Kids</h3>
-      <ul class="drop-catalog__list drop-menu-list">
+    <div class="column-catalog__item column-style" id="#kids">
+      <h3 class="column-catalog__title">Kids</h3>
+      <ul class="column-catalog__list drop-menu-list">
         <li class="drop-menu-list__item">
-          <a class="drop-menu-list__link" href="#">Skirts</a>
+          <a
+            class="drop-menu-list__link"
+            href="#"
+            data-second-category="#skirts"
+            >Skirts</a
+          >
         </li>
         <li class="drop-menu-list__item">
-          <a class="drop-menu-list__link" href="#">Shirts</a>
+          <a
+            class="drop-menu-list__link"
+            href="#"
+            data-second-category="#shirts"
+            >Shirts</a
+          >
         </li>
         <li class="drop-menu-list__item">
           <a class="drop-menu-list__link" href="#">Shoes</a>
@@ -250,7 +290,12 @@
           <a class="drop-menu-list__link" href="#">Body</a>
         </li>
         <li class="drop-menu-list__item">
-          <a class="drop-menu-list__link" href="#">Jacket</a>
+          <a
+            class="drop-menu-list__link"
+            href="#"
+            data-second-category="#skirts"
+            >Jacket</a
+          >
         </li>
         <li class="drop-menu-list__item">
           <a class="drop-menu-list__link" href="#">For tall</a>
@@ -290,14 +335,24 @@
         </li>
       </ul>
     </div>
-    <div class="drop-catalog__item catalog-column" id="#sport">
-      <h3 class="drop-catalog__title">Sport</h3>
-      <ul class="drop-catalog__list drop-menu-list">
+    <div class="column-catalog__item column-style" id="#sport">
+      <h3 class="column-catalog__title">Sport</h3>
+      <ul class="column-catalog__list drop-menu-list">
         <li class="drop-menu-list__item">
-          <a class="drop-menu-list__link" href="#">Skirts</a>
+          <a
+            class="drop-menu-list__link"
+            href="#"
+            data-second-category="#skirts"
+            >Skirts</a
+          >
         </li>
         <li class="drop-menu-list__item">
-          <a class="drop-menu-list__link" href="#">Shirts</a>
+          <a
+            class="drop-menu-list__link"
+            href="#"
+            data-second-category="#shirts"
+            >Shirts</a
+          >
         </li>
         <li class="drop-menu-list__item">
           <a class="drop-menu-list__link" href="#">Shoes</a>
@@ -306,7 +361,12 @@
           <a class="drop-menu-list__link" href="#">Body</a>
         </li>
         <li class="drop-menu-list__item">
-          <a class="drop-menu-list__link" href="#">Jacket</a>
+          <a
+            class="drop-menu-list__link"
+            href="#"
+            data-second-category="#skirts"
+            >Jacket</a
+          >
         </li>
         <li class="drop-menu-list__item">
           <a class="drop-menu-list__link" href="#">For tall</a>
@@ -346,14 +406,24 @@
         </li>
       </ul>
     </div>
-    <div class="drop-catalog__item catalog-column" id="#electronics">
-      <h3 class="drop-catalog__title">Electronics</h3>
-      <ul class="drop-catalog__list drop-menu-list">
+    <div class="column-catalog__item column-style" id="#electronics">
+      <h3 class="column-catalog__title">Electronics</h3>
+      <ul class="column-catalog__list drop-menu-list">
         <li class="drop-menu-list__item">
-          <a class="drop-menu-list__link" href="#">Skirts</a>
+          <a
+            class="drop-menu-list__link"
+            href="#"
+            data-second-category="#skirts"
+            >Skirts</a
+          >
         </li>
         <li class="drop-menu-list__item">
-          <a class="drop-menu-list__link" href="#">Shirts</a>
+          <a
+            class="drop-menu-list__link"
+            href="#"
+            data-second-category="#shirts"
+            >Shirts</a
+          >
         </li>
         <li class="drop-menu-list__item">
           <a class="drop-menu-list__link" href="#">Shoes</a>
@@ -362,7 +432,12 @@
           <a class="drop-menu-list__link" href="#">Body</a>
         </li>
         <li class="drop-menu-list__item">
-          <a class="drop-menu-list__link" href="#">Jacket</a>
+          <a
+            class="drop-menu-list__link"
+            href="#"
+            data-second-category="#skirts"
+            >Jacket</a
+          >
         </li>
         <li class="drop-menu-list__item">
           <a class="drop-menu-list__link" href="#">For tall</a>
@@ -402,14 +477,24 @@
         </li>
       </ul>
     </div>
-    <div class="drop-catalog__item catalog-column" id="#house">
-      <h3 class="drop-catalog__title">House</h3>
-      <ul class="drop-catalog__list drop-menu-list">
+    <div class="column-catalog__item column-style" id="#house">
+      <h3 class="column-catalog__title">House</h3>
+      <ul class="column-catalog__list drop-menu-list">
         <li class="drop-menu-list__item">
-          <a class="drop-menu-list__link" href="#">Skirts</a>
+          <a
+            class="drop-menu-list__link"
+            href="#"
+            data-second-category="#skirts"
+            >Skirts</a
+          >
         </li>
         <li class="drop-menu-list__item">
-          <a class="drop-menu-list__link" href="#">Shirts</a>
+          <a
+            class="drop-menu-list__link"
+            href="#"
+            data-second-category="#shirts"
+            >Shirts</a
+          >
         </li>
         <li class="drop-menu-list__item">
           <a class="drop-menu-list__link" href="#">Shoes</a>
@@ -418,7 +503,509 @@
           <a class="drop-menu-list__link" href="#">Body</a>
         </li>
         <li class="drop-menu-list__item">
-          <a class="drop-menu-list__link" href="#">Jacket</a>
+          <a
+            class="drop-menu-list__link"
+            href="#"
+            data-second-category="#skirts"
+            >Jacket</a
+          >
+        </li>
+        <li class="drop-menu-list__item">
+          <a class="drop-menu-list__link" href="#">For tall</a>
+        </li>
+        <li class="drop-menu-list__item">
+          <a class="drop-menu-list__link" href="#">Jeans</a>
+        </li>
+        <li class="drop-menu-list__item">
+          <a class="drop-menu-list__link" href="#">Top</a>
+        </li>
+        <li class="drop-menu-list__item">
+          <a class="drop-menu-list__link" href="#">Pants</a>
+        </li>
+        <li class="drop-menu-list__item">
+          <a class="drop-menu-list__link" href="#">Lingerie</a>
+        </li>
+        <li class="drop-menu-list__item">
+          <a class="drop-menu-list__link" href="#">For mama</a>
+        </li>
+        <li class="drop-menu-list__item">
+          <a class="drop-menu-list__link" href="#">Dress</a>
+        </li>
+        <li class="drop-menu-list__item">
+          <a class="drop-menu-list__link" href="#">Wedding</a>
+        </li>
+        <li class="drop-menu-list__item">
+          <a class="drop-menu-list__link" href="#">Clothes for home</a>
+        </li>
+        <li class="drop-menu-list__item">
+          <a class="drop-menu-list__link" href="#">Hoodie</a>
+        </li>
+        <li class="drop-menu-list__item">
+          <a class="drop-menu-list__link" href="#">Leggings</a>
+        </li>
+        <li class="drop-menu-list__item">
+          <a class="drop-menu-list__link" href="#">Office</a>
+        </li>
+      </ul>
+    </div>
+    <div class="column-catalog__item column-style" id="#furniture">
+      <h3 class="column-catalog__title">Furniture</h3>
+      <ul class="column-catalog__list drop-menu-list">
+        <li class="drop-menu-list__item">
+          <a
+            class="drop-menu-list__link"
+            href="#"
+            data-second-category="#skirts"
+            >Skirts</a
+          >
+        </li>
+        <li class="drop-menu-list__item">
+          <a
+            class="drop-menu-list__link"
+            href="#"
+            data-second-category="#shirts"
+            >Shirts</a
+          >
+        </li>
+        <li class="drop-menu-list__item">
+          <a class="drop-menu-list__link" href="#">Shoes</a>
+        </li>
+        <li class="drop-menu-list__item">
+          <a class="drop-menu-list__link" href="#">Body</a>
+        </li>
+        <li class="drop-menu-list__item">
+          <a
+            class="drop-menu-list__link"
+            href="#"
+            data-second-category="#skirts"
+            >Jacket</a
+          >
+        </li>
+        <li class="drop-menu-list__item">
+          <a class="drop-menu-list__link" href="#">For tall</a>
+        </li>
+        <li class="drop-menu-list__item">
+          <a class="drop-menu-list__link" href="#">Jeans</a>
+        </li>
+        <li class="drop-menu-list__item">
+          <a class="drop-menu-list__link" href="#">Top</a>
+        </li>
+        <li class="drop-menu-list__item">
+          <a class="drop-menu-list__link" href="#">Pants</a>
+        </li>
+        <li class="drop-menu-list__item">
+          <a class="drop-menu-list__link" href="#">Lingerie</a>
+        </li>
+        <li class="drop-menu-list__item">
+          <a class="drop-menu-list__link" href="#">For mama</a>
+        </li>
+        <li class="drop-menu-list__item">
+          <a class="drop-menu-list__link" href="#">Dress</a>
+        </li>
+        <li class="drop-menu-list__item">
+          <a class="drop-menu-list__link" href="#">Wedding</a>
+        </li>
+        <li class="drop-menu-list__item">
+          <a class="drop-menu-list__link" href="#">Clothes for home</a>
+        </li>
+        <li class="drop-menu-list__item">
+          <a class="drop-menu-list__link" href="#">Hoodie</a>
+        </li>
+        <li class="drop-menu-list__item">
+          <a class="drop-menu-list__link" href="#">Leggings</a>
+        </li>
+        <li class="drop-menu-list__item">
+          <a class="drop-menu-list__link" href="#">Office</a>
+        </li>
+      </ul>
+    </div>
+    <div class="column-catalog__item column-style" id="#books">
+      <h3 class="column-catalog__title">Books</h3>
+      <ul class="column-catalog__list drop-menu-list">
+        <li class="drop-menu-list__item">
+          <a
+            class="drop-menu-list__link"
+            href="#"
+            data-second-category="#skirts"
+            >Skirts</a
+          >
+        </li>
+        <li class="drop-menu-list__item">
+          <a
+            class="drop-menu-list__link"
+            href="#"
+            data-second-category="#shirts"
+            >Shirts</a
+          >
+        </li>
+        <li class="drop-menu-list__item">
+          <a class="drop-menu-list__link" href="#">Shoes</a>
+        </li>
+        <li class="drop-menu-list__item">
+          <a class="drop-menu-list__link" href="#">Body</a>
+        </li>
+        <li class="drop-menu-list__item">
+          <a
+            class="drop-menu-list__link"
+            href="#"
+            data-second-category="#skirts"
+            >Jacket</a
+          >
+        </li>
+        <li class="drop-menu-list__item">
+          <a class="drop-menu-list__link" href="#">For tall</a>
+        </li>
+        <li class="drop-menu-list__item">
+          <a class="drop-menu-list__link" href="#">Jeans</a>
+        </li>
+        <li class="drop-menu-list__item">
+          <a class="drop-menu-list__link" href="#">Top</a>
+        </li>
+        <li class="drop-menu-list__item">
+          <a class="drop-menu-list__link" href="#">Pants</a>
+        </li>
+        <li class="drop-menu-list__item">
+          <a class="drop-menu-list__link" href="#">Lingerie</a>
+        </li>
+        <li class="drop-menu-list__item">
+          <a class="drop-menu-list__link" href="#">For mama</a>
+        </li>
+        <li class="drop-menu-list__item">
+          <a class="drop-menu-list__link" href="#">Dress</a>
+        </li>
+        <li class="drop-menu-list__item">
+          <a class="drop-menu-list__link" href="#">Wedding</a>
+        </li>
+        <li class="drop-menu-list__item">
+          <a class="drop-menu-list__link" href="#">Clothes for home</a>
+        </li>
+        <li class="drop-menu-list__item">
+          <a class="drop-menu-list__link" href="#">Hoodie</a>
+        </li>
+        <li class="drop-menu-list__item">
+          <a class="drop-menu-list__link" href="#">Leggings</a>
+        </li>
+        <li class="drop-menu-list__item">
+          <a class="drop-menu-list__link" href="#">Office</a>
+        </li>
+      </ul>
+    </div>
+    <div class="column-catalog__item column-style" id="#cars">
+      <h3 class="column-catalog__title">Cars</h3>
+      <ul class="column-catalog__list drop-menu-list">
+        <li class="drop-menu-list__item">
+          <a
+            class="drop-menu-list__link"
+            href="#"
+            data-second-category="#skirts"
+            >Skirts</a
+          >
+        </li>
+        <li class="drop-menu-list__item">
+          <a
+            class="drop-menu-list__link"
+            href="#"
+            data-second-category="#shirts"
+            >Shirts</a
+          >
+        </li>
+        <li class="drop-menu-list__item">
+          <a class="drop-menu-list__link" href="#">Shoes</a>
+        </li>
+        <li class="drop-menu-list__item">
+          <a class="drop-menu-list__link" href="#">Body</a>
+        </li>
+        <li class="drop-menu-list__item">
+          <a
+            class="drop-menu-list__link"
+            href="#"
+            data-second-category="#skirts"
+            >Jacket</a
+          >
+        </li>
+        <li class="drop-menu-list__item">
+          <a class="drop-menu-list__link" href="#">For tall</a>
+        </li>
+        <li class="drop-menu-list__item">
+          <a class="drop-menu-list__link" href="#">Jeans</a>
+        </li>
+        <li class="drop-menu-list__item">
+          <a class="drop-menu-list__link" href="#">Top</a>
+        </li>
+        <li class="drop-menu-list__item">
+          <a class="drop-menu-list__link" href="#">Pants</a>
+        </li>
+        <li class="drop-menu-list__item">
+          <a class="drop-menu-list__link" href="#">Lingerie</a>
+        </li>
+        <li class="drop-menu-list__item">
+          <a class="drop-menu-list__link" href="#">For mama</a>
+        </li>
+        <li class="drop-menu-list__item">
+          <a class="drop-menu-list__link" href="#">Dress</a>
+        </li>
+        <li class="drop-menu-list__item">
+          <a class="drop-menu-list__link" href="#">Wedding</a>
+        </li>
+        <li class="drop-menu-list__item">
+          <a class="drop-menu-list__link" href="#">Clothes for home</a>
+        </li>
+        <li class="drop-menu-list__item">
+          <a class="drop-menu-list__link" href="#">Hoodie</a>
+        </li>
+        <li class="drop-menu-list__item">
+          <a class="drop-menu-list__link" href="#">Leggings</a>
+        </li>
+        <li class="drop-menu-list__item">
+          <a class="drop-menu-list__link" href="#">Office</a>
+        </li>
+      </ul>
+    </div>
+    <div class="column-catalog__item column-style" id="#stationery">
+      <h3 class="column-catalog__title">Stationery</h3>
+      <ul class="column-catalog__list drop-menu-list">
+        <li class="drop-menu-list__item">
+          <a
+            class="drop-menu-list__link"
+            href="#"
+            data-second-category="#skirts"
+            >Skirts</a
+          >
+        </li>
+        <li class="drop-menu-list__item">
+          <a
+            class="drop-menu-list__link"
+            href="#"
+            data-second-category="#shirts"
+            >Shirts</a
+          >
+        </li>
+        <li class="drop-menu-list__item">
+          <a class="drop-menu-list__link" href="#">Shoes</a>
+        </li>
+        <li class="drop-menu-list__item">
+          <a class="drop-menu-list__link" href="#">Body</a>
+        </li>
+        <li class="drop-menu-list__item">
+          <a
+            class="drop-menu-list__link"
+            href="#"
+            data-second-category="#skirts"
+            >Jacket</a
+          >
+        </li>
+        <li class="drop-menu-list__item">
+          <a class="drop-menu-list__link" href="#">For tall</a>
+        </li>
+        <li class="drop-menu-list__item">
+          <a class="drop-menu-list__link" href="#">Jeans</a>
+        </li>
+        <li class="drop-menu-list__item">
+          <a class="drop-menu-list__link" href="#">Top</a>
+        </li>
+        <li class="drop-menu-list__item">
+          <a class="drop-menu-list__link" href="#">Pants</a>
+        </li>
+        <li class="drop-menu-list__item">
+          <a class="drop-menu-list__link" href="#">Lingerie</a>
+        </li>
+        <li class="drop-menu-list__item">
+          <a class="drop-menu-list__link" href="#">For mama</a>
+        </li>
+        <li class="drop-menu-list__item">
+          <a class="drop-menu-list__link" href="#">Dress</a>
+        </li>
+        <li class="drop-menu-list__item">
+          <a class="drop-menu-list__link" href="#">Wedding</a>
+        </li>
+        <li class="drop-menu-list__item">
+          <a class="drop-menu-list__link" href="#">Clothes for home</a>
+        </li>
+        <li class="drop-menu-list__item">
+          <a class="drop-menu-list__link" href="#">Hoodie</a>
+        </li>
+        <li class="drop-menu-list__item">
+          <a class="drop-menu-list__link" href="#">Leggings</a>
+        </li>
+        <li class="drop-menu-list__item">
+          <a class="drop-menu-list__link" href="#">Office</a>
+        </li>
+      </ul>
+    </div>
+    <div class="column-catalog__item column-style" id="#cosmetics">
+      <h3 class="column-catalog__title">Cosmetics</h3>
+      <ul class="column-catalog__list drop-menu-list">
+        <li class="drop-menu-list__item">
+          <a
+            class="drop-menu-list__link"
+            href="#"
+            data-second-category="#skirts"
+            >Skirts</a
+          >
+        </li>
+        <li class="drop-menu-list__item">
+          <a
+            class="drop-menu-list__link"
+            href="#"
+            data-second-category="#shirts"
+            >Shirts</a
+          >
+        </li>
+        <li class="drop-menu-list__item">
+          <a class="drop-menu-list__link" href="#">Shoes</a>
+        </li>
+        <li class="drop-menu-list__item">
+          <a class="drop-menu-list__link" href="#">Body</a>
+        </li>
+        <li class="drop-menu-list__item">
+          <a
+            class="drop-menu-list__link"
+            href="#"
+            data-second-category="#skirts"
+            >Jacket</a
+          >
+        </li>
+        <li class="drop-menu-list__item">
+          <a class="drop-menu-list__link" href="#">For tall</a>
+        </li>
+        <li class="drop-menu-list__item">
+          <a class="drop-menu-list__link" href="#">Jeans</a>
+        </li>
+        <li class="drop-menu-list__item">
+          <a class="drop-menu-list__link" href="#">Top</a>
+        </li>
+        <li class="drop-menu-list__item">
+          <a class="drop-menu-list__link" href="#">Pants</a>
+        </li>
+        <li class="drop-menu-list__item">
+          <a class="drop-menu-list__link" href="#">Lingerie</a>
+        </li>
+        <li class="drop-menu-list__item">
+          <a class="drop-menu-list__link" href="#">For mama</a>
+        </li>
+        <li class="drop-menu-list__item">
+          <a class="drop-menu-list__link" href="#">Dress</a>
+        </li>
+        <li class="drop-menu-list__item">
+          <a class="drop-menu-list__link" href="#">Wedding</a>
+        </li>
+        <li class="drop-menu-list__item">
+          <a class="drop-menu-list__link" href="#">Clothes for home</a>
+        </li>
+        <li class="drop-menu-list__item">
+          <a class="drop-menu-list__link" href="#">Hoodie</a>
+        </li>
+        <li class="drop-menu-list__item">
+          <a class="drop-menu-list__link" href="#">Leggings</a>
+        </li>
+        <li class="drop-menu-list__item">
+          <a class="drop-menu-list__link" href="#">Office</a>
+        </li>
+      </ul>
+    </div>
+    <div class="column-catalog__item column-style" id="#games">
+      <h3 class="column-catalog__title">Games</h3>
+      <ul class="column-catalog__list drop-menu-list">
+        <li class="drop-menu-list__item">
+          <a
+            class="drop-menu-list__link"
+            href="#"
+            data-second-category="#skirts"
+            >Skirts</a
+          >
+        </li>
+        <li class="drop-menu-list__item">
+          <a
+            class="drop-menu-list__link"
+            href="#"
+            data-second-category="#shirts"
+            >Shirts</a
+          >
+        </li>
+        <li class="drop-menu-list__item">
+          <a class="drop-menu-list__link" href="#">Shoes</a>
+        </li>
+        <li class="drop-menu-list__item">
+          <a class="drop-menu-list__link" href="#">Body</a>
+        </li>
+        <li class="drop-menu-list__item">
+          <a
+            class="drop-menu-list__link"
+            href="#"
+            data-second-category="#skirts"
+            >Jacket</a
+          >
+        </li>
+        <li class="drop-menu-list__item">
+          <a class="drop-menu-list__link" href="#">For tall</a>
+        </li>
+        <li class="drop-menu-list__item">
+          <a class="drop-menu-list__link" href="#">Jeans</a>
+        </li>
+        <li class="drop-menu-list__item">
+          <a class="drop-menu-list__link" href="#">Top</a>
+        </li>
+        <li class="drop-menu-list__item">
+          <a class="drop-menu-list__link" href="#">Pants</a>
+        </li>
+        <li class="drop-menu-list__item">
+          <a class="drop-menu-list__link" href="#">Lingerie</a>
+        </li>
+        <li class="drop-menu-list__item">
+          <a class="drop-menu-list__link" href="#">For mama</a>
+        </li>
+        <li class="drop-menu-list__item">
+          <a class="drop-menu-list__link" href="#">Dress</a>
+        </li>
+        <li class="drop-menu-list__item">
+          <a class="drop-menu-list__link" href="#">Wedding</a>
+        </li>
+        <li class="drop-menu-list__item">
+          <a class="drop-menu-list__link" href="#">Clothes for home</a>
+        </li>
+        <li class="drop-menu-list__item">
+          <a class="drop-menu-list__link" href="#">Hoodie</a>
+        </li>
+        <li class="drop-menu-list__item">
+          <a class="drop-menu-list__link" href="#">Leggings</a>
+        </li>
+        <li class="drop-menu-list__item">
+          <a class="drop-menu-list__link" href="#">Office</a>
+        </li>
+      </ul>
+    </div>
+    <div class="column-catalog__item column-style" id="#animals">
+      <h3 class="column-catalog__title">Animals</h3>
+      <ul class="column-catalog__list drop-menu-list">
+        <li class="drop-menu-list__item">
+          <a
+            class="drop-menu-list__link"
+            href="#"
+            data-second-category="#skirts"
+            >Skirts</a
+          >
+        </li>
+        <li class="drop-menu-list__item">
+          <a
+            class="drop-menu-list__link"
+            href="#"
+            data-second-category="#shirts"
+            >Shirts</a
+          >
+        </li>
+        <li class="drop-menu-list__item">
+          <a class="drop-menu-list__link" href="#">Shoes</a>
+        </li>
+        <li class="drop-menu-list__item">
+          <a class="drop-menu-list__link" href="#">Body</a>
+        </li>
+        <li class="drop-menu-list__item">
+          <a
+            class="drop-menu-list__link"
+            href="#"
+            data-second-category="#skirts"
+            >Jacket</a
+          >
         </li>
         <li class="drop-menu-list__item">
           <a class="drop-menu-list__link" href="#">For tall</a>
@@ -460,5 +1047,113 @@
     </div>
   </div>
 
-  <button class="catalog__close-btn" type="button">x</button>
+  <div class="catalog__third-column column-catalog">
+    <div class="column-catalog__item column-style" id="#skirts">
+      <h3 class="column-catalog__title">Skirts</h3>
+      <ul class="column-catalog__list drop-menu-list">
+        <li class="drop-menu-list__item">
+          <a class="drop-menu-list__link" href="#">Jeans</a>
+        </li>
+        <li class="drop-menu-list__item">
+          <a class="drop-menu-list__link" href="#">Top</a>
+        </li>
+        <li class="drop-menu-list__item">
+          <a class="drop-menu-list__link" href="#">Pants</a>
+        </li>
+        <li class="drop-menu-list__item">
+          <a class="drop-menu-list__link" href="#">Lingerie</a>
+        </li>
+        <li class="drop-menu-list__item">
+          <a class="drop-menu-list__link" href="#">For mama</a>
+        </li>
+        <li class="drop-menu-list__item">
+          <a class="drop-menu-list__link" href="#">Dress</a>
+        </li>
+        <li class="drop-menu-list__item">
+          <a class="drop-menu-list__link" href="#">Wedding</a>
+        </li>
+        <li class="drop-menu-list__item">
+          <a class="drop-menu-list__link" href="#">Clothes for home</a>
+        </li>
+        <li class="drop-menu-list__item">
+          <a class="drop-menu-list__link" href="#">Hoodie</a>
+        </li>
+        <li class="drop-menu-list__item">
+          <a class="drop-menu-list__link" href="#">Leggings</a>
+        </li>
+        <li class="drop-menu-list__item">
+          <a class="drop-menu-list__link" href="#">Office</a>
+        </li>
+      </ul>
+    </div>
+    <div class="column-catalog__item column-style" id="#shirts">
+      <h3 class="column-catalog__title">Shirts</h3>
+      <ul class="column-catalog__list drop-menu-list">
+        <li class="drop-menu-list__item">
+          <a class="drop-menu-list__link" href="#">Top</a>
+        </li>
+        <li class="drop-menu-list__item">
+          <a class="drop-menu-list__link" href="#">Pants</a>
+        </li>
+        <li class="drop-menu-list__item">
+          <a class="drop-menu-list__link" href="#">Lingerie</a>
+        </li>
+        <li class="drop-menu-list__item">
+          <a class="drop-menu-list__link" href="#">For mama</a>
+        </li>
+        <li class="drop-menu-list__item">
+          <a class="drop-menu-list__link" href="#">Dress</a>
+        </li>
+        <li class="drop-menu-list__item">
+          <a class="drop-menu-list__link" href="#">Wedding</a>
+        </li>
+        <li class="drop-menu-list__item">
+          <a class="drop-menu-list__link" href="#">Clothes for home</a>
+        </li>
+        <li class="drop-menu-list__item">
+          <a class="drop-menu-list__link" href="#">Hoodie</a>
+        </li>
+        <li class="drop-menu-list__item">
+          <a class="drop-menu-list__link" href="#">Leggings</a>
+        </li>
+        <li class="drop-menu-list__item">
+          <a class="drop-menu-list__link" href="#">Office</a>
+        </li>
+      </ul>
+    </div>
+    <div class="column-catalog__item column-style" id="#jacket">
+      <h3 class="column-catalog__title">Jacket</h3>
+      <ul class="column-catalog__list drop-menu-list">
+        <li class="drop-menu-list__item">
+          <a class="drop-menu-list__link" href="#">Pants</a>
+        </li>
+        <li class="drop-menu-list__item">
+          <a class="drop-menu-list__link" href="#">Lingerie</a>
+        </li>
+        <li class="drop-menu-list__item">
+          <a class="drop-menu-list__link" href="#">For mama</a>
+        </li>
+        <li class="drop-menu-list__item">
+          <a class="drop-menu-list__link" href="#">Dress</a>
+        </li>
+        <li class="drop-menu-list__item">
+          <a class="drop-menu-list__link" href="#">Wedding</a>
+        </li>
+        <li class="drop-menu-list__item">
+          <a class="drop-menu-list__link" href="#">Clothes for home</a>
+        </li>
+        <li class="drop-menu-list__item">
+          <a class="drop-menu-list__link" href="#">Hoodie</a>
+        </li>
+        <li class="drop-menu-list__item">
+          <a class="drop-menu-list__link" href="#">Leggings</a>
+        </li>
+        <li class="drop-menu-list__item">
+          <a class="drop-menu-list__link" href="#">Office</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <button class="catalog__close-btn _icon-close" type="button"></button>
 </div>

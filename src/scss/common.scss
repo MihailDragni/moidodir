@@ -1,1 +1,12 @@
 // Заголовки, загальні БЕМ блоки та інше...
+.body-lock {
+  overflow: hidden;
+  position: relative;
+  &::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 50;
+  }
+}
