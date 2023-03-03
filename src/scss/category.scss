@@ -13,11 +13,11 @@
   }
   &__close-btn {
     position: absolute;
-    top: 5%;
-    right: rem(-50);
-    width: rem(30);
-    height: rem(30);
-    font-size: rem(30);
+    top: 3%;
+    right: rem(-70);
+    width: rem(50);
+    height: rem(50);
+    font-size: rem(50);
     background-color: transparent;
     color: #fff;
     display: flex;
@@ -68,6 +68,10 @@
       height: rem(40);
     }
     &:hover {
+      background-color: $mainBlue;
+      color: #fff;
+    }
+    &._active {
       background-color: $mainBlue;
       color: #fff;
     }
@@ -126,6 +130,13 @@
       }
     }
     &:hover {
+      background-color: #ececec;
+      color: $mainColor;
+      &::before {
+        color: $mainColor;
+      }
+    }
+    &._active {
       background-color: #ececec;
       color: $mainColor;
       &::before {
