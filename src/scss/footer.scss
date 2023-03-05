@@ -1,3 +1,86 @@
-//====================================================================================================
+.footer {
+  background-color: #e5edf3;
+  &__container {
+    max-width: rem(1360);
+  }
 
-//====================================================================================================
+  &__body {
+    font-size: rem(14);
+    font-weight: 400;
+    line-height: math.div(17, 14);
+    display: grid;
+    grid-template-columns: 1fr rem(285);
+    column-gap: rem(20);
+    @include adaptiveValue("padding-top", 89, 30);
+    @include adaptiveValue("padding-bottom", 162, 30);
+    @media (max-width: $tablet) {
+      grid-template-rows: auto;
+      grid-template-columns: 1fr;
+      @include adaptiveValue("row-gap", 50, 30);
+    }
+  }
+}
+.menu-footer {
+  @media (min-width: $mobile) {
+    display: flex;
+    column-gap: rem(10);
+    justify-content: space-evenly;
+  }
+
+  @media (max-width: $mobile) {
+    display: block;
+  }
+
+  &__column {
+    @media (max-width: $mobile) {
+      padding: rem(9) rem(0);
+    }
+  }
+
+  &__title {
+    cursor: default;
+    margin-bottom: em(10, 16);
+    ._spoller-init & {
+      display: flex;
+      width: 100%;
+      flex-direction: row-reverse;
+      justify-content: space-between;
+      align-items: center;
+      &::before {
+        content: "\e902";
+        @extend %ic;
+        font-size: rem(8);
+        transition: transform 0.3s ease;
+      }
+    }
+    &._spoller-active {
+      &::before {
+        transform: rotate(-180deg);
+      }
+    }
+  }
+
+  &__list {
+    & li {
+      &:not(:last-child) {
+        margin-bottom: rem(7);
+      }
+    }
+  }
+
+  &__link {
+    transition: font-weigth 0.3s ease;
+    &:hover {
+      font-weight: 600;
+    }
+  }
+}
+.copyright-footer {
+  @media (max-width: $tablet) {
+    justify-self: center;
+    text-align: center;
+  }
+  & a {
+    text-decoration: underline;
+  }
+}
