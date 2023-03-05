@@ -1,0 +1,35 @@
+.navbar-menu {
+  display: none;
+  @media (max-width: $tablet) {
+    display: block;
+  }
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  background: #fff;
+  padding: 0 rem(4);
+  z-index: 100;
+  box-shadow: 0 4px 20px rgb(0 0 0 / 10%);
+  &__container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+  }
+
+  &__link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: rem(10) rem(0);
+    min-height: rem(50);
+    font-size: rem(22);
+  }
+  &__icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: rem(28);
+    height: rem(28);
+    color: $mainBlue;
+  }
+}
