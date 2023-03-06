@@ -12,11 +12,11 @@
     grid-template-columns: 1fr rem(285);
     column-gap: rem(20);
     @include adaptiveValue("padding-top", 89, 30);
-    @include adaptiveValue("padding-bottom", 162, 30);
+    @include adaptiveValue("padding-bottom", 162, 70);
     @media (max-width: $tablet) {
       grid-template-rows: auto;
       grid-template-columns: 1fr;
-      @include adaptiveValue("row-gap", 50, 30);
+      @include adaptiveValue("row-gap", 50, 15);
     }
   }
 }
@@ -32,6 +32,10 @@
   }
 
   &__column {
+    flex: 0 1 33.333%;
+    @media (max-width: $tablet) {
+      flex: 0 1 auto;
+    }
     @media (max-width: $mobile) {
       padding: rem(9) rem(0);
     }

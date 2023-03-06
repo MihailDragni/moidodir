@@ -21,7 +21,14 @@ document.addEventListener("DOMContentLoaded", () => {
     //Events
 
     catalogBtn.addEventListener("click", openCatalog);
-    catalog.addEventListener("mouseover", openSecondColumn);
+    if (window.innerWidth >= 992) {
+      catalog.addEventListener("mouseover", openSecondColumn);
+    } else {
+      catalog.addEventListener("click", openSecondColumn);
+    }
+
+    catalog.addEventListener("click", getBack);
+    catalog.addEventListener("click", openSecondColumn);
     catalogCloseBtn.addEventListener("click", closeBtnHeadler);
     secondColumn.addEventListener("click", openThirdColumn);
 
@@ -29,6 +36,28 @@ document.addEventListener("DOMContentLoaded", () => {
 
     let mainCurrentLink = null;
     let secondCurrenLink = null;
+
+    function getBack(event) {
+      event.stopPropagation();
+      if (event.target.classList.contains("column-catalog__back")) {
+        const currentCulmn = event.target.closest(".column-catalog");
+        if (currentCulmn) {
+          currentCulmn.classList.remove("_active");
+          let columnCatalogItem = currentCulmn.querySelector(
+            ".column-catalog__item--active"
+          );
+          if (columnCatalogItem) {
+            columnCatalogItem.classList.remove("column-catalog__item--active");
+          }
+          let activeLink = currentCulmn.querySelector(
+            ".drop-menu-list__link._active"
+          );
+          if (activeLink) {
+            activeLink.classList.remove("_active");
+          }
+        }
+      }
+    }
 
     function openCatalog(event) {
       event.stopPropagation();
@@ -50,13 +79,16 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function openSecondColumn({ target }) {
-      if (target.classList.contains("main-column-catalog__link")) {
+      if (
+        target.classList.contains("main-column-catalog__link") ||
+        target.closest(".main-column-catalog__link")
+      ) {
         mainCurrentLink?.classList.remove("_active");
         secondCurrenLink?.classList.remove("_active");
         thirdColumn.classList.remove("_active");
-
-        target.classList.add("_active");
-        mainCurrentLink = target;
+        let currentElem = target.closest(".main-column-catalog__link");
+        currentElem.classList.add("_active");
+        mainCurrentLink = currentElem;
         secondColumn.classList.add("_active");
         const elemId = target.dataset.mainCategory;
         [...secondColumnList].forEach((elem) => {
@@ -109,7 +141,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function closeMenu() {
       catalog.classList.remove("catalog--active");
-      secondColumn.classList.remove("column-catalog--active");
+      secondColumn.classList.remove("_active");
+      if (mainCurrentLink) {
+        mainCurrentLink.classList.remove("_active");
+      }
+      if (secondCurrenLink) {
+        secondCurrenLink.classList.remove("_active");
+      }
       [...secondColumnList].forEach((elem) => {
         elem.classList.remove("column-catalog__item--active");
       });

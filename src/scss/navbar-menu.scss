@@ -1,8 +1,5 @@
 .navbar-menu {
   display: none;
-  @media (max-width: $tablet) {
-    display: block;
-  }
   position: fixed;
   width: 100%;
   bottom: 0;
@@ -11,7 +8,10 @@
   padding: 0 rem(4);
   z-index: 100;
   box-shadow: 0 4px 20px rgb(0 0 0 / 10%);
-  &__container {
+  @media (max-width: $tablet) {
+    display: block;
+  }
+  &__wrapper {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
   }
@@ -21,15 +21,106 @@
     justify-content: center;
     align-items: center;
     padding: rem(10) rem(0);
-    min-height: rem(50);
-    font-size: rem(22);
+    min-height: $mobileNavBarHeight;
+    font-size: rem(24);
   }
   &__icon {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: rem(28);
-    height: rem(28);
+    width: 1em;
+    height: 1em;
     color: $mainBlue;
+  }
+}
+
+.catalog-navbar {
+  display: none;
+  position: fixed;
+  padding: rem(15);
+  height: calc(100% - $mobileNavBarHeight);
+  inset: 0;
+  background-color: rgba($color: #000000, $alpha: 0.8);
+  background-color: #fff;
+  z-index: 150;
+  &._active {
+    display: grid;
+    grid-template-rows: auto 1fr;
+    grid-template-columns: 1fr;
+    @include adaptiveValue("row-gap", 20, 10, 0, 992, 320);
+  }
+  &__search {
+    min-height: rem(55);
+    width: 100%;
+    background-color: #eaf1f8;
+    border: 1px solid rgba(65, 116, 164, 0.48);
+    border-radius: rem(50);
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    padding: rem(0) rem(20);
+    color: $mainBlue;
+    @media (max-width: $tablet) {
+      @include adaptiveValue("min-height", 55, 45, 0, 992, 320);
+    }
+  }
+  &__catalog {
+    position: relative;
+    height: 100%;
+    // flex: 1 1 auto;
+    // position: relative;
+    // bottom: 0;
+    // left: 0;
+    // // height: calc(100% - rem(86));
+    // width: 100%;
+  }
+}
+
+.search-menu-navbar {
+  position: fixed;
+  inset: 0;
+  background-color: #fff;
+  z-index: 200;
+  display: none;
+  &._active {
+    display: block;
+  }
+  &__wrapper {
+    padding: rem(15);
+    display: grid;
+    grid-template-rows: auto 1fr;
+    height: 100%;
+    align-items: flex-start;
+    row-gap: rem(30);
+  }
+  &__search {
+    display: flex;
+    column-gap: 10px;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row-reverse;
+    color: red;
+  }
+
+  &__close {
+    font-size: rem(14);
+  }
+
+  &__list {
+    display: grid;
+    align-items: flex-start;
+    row-gap: rem(20);
+  }
+
+  &__link {
+    font-size: rem(18);
+    color: #242424;
+    display: flex;
+    align-items: center;
+    column-gap: rem(10);
+    font-weight: 500;
+    &::before {
+      color: #c2c2c2;
+    }
   }
 }
