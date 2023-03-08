@@ -63,6 +63,9 @@
   @include adaptiveValue("padding-top", 36, 15);
   @include adaptiveValue("padding-bottom", 36, 15);
   background-color: #fff;
+  @media (max-width: $tablet) {
+    background-color: $mainLightBlue;
+  }
   // .body-header__container
 
   &__container {
@@ -225,9 +228,11 @@
         }
       }
     }
-    &._actions-header-active {
-      &::after {
-        background-color: $mainLightBlue;
+    @media (min-width: $tablet) {
+      &._actions-header-active {
+        &::after {
+          background-color: $mainLightBlue;
+        }
       }
     }
   }
@@ -253,6 +258,13 @@
 
     &::after {
       transform: translate(-50%, -55%);
+    }
+  }
+
+  &__favorite,
+  &__user {
+    @media (max-width: $tablet) {
+      display: none;
     }
   }
 }

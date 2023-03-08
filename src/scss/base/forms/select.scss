@@ -134,37 +134,37 @@
   }
   &._select-checkbox {
   }
-  &_language {
-    .select__title {
-      background-color: #ffffff;
-      border: 1px solid #99b5cf;
-      padding: em(2, 20) em(15, 20);
-      font-weight: 500;
-      font-size: rem(20);
-    }
-    .select__value {
-      height: rem(30);
-      color: #003b71;
-      gap: rem(4);
-      padding: 0;
-      &::after {
-        content: "\e902";
-        align-self: auto;
-        font-size: rem(9);
-        @extend %ic;
-        width: em(20, 9);
-        height: em(20, 9);
-        flex: 0 0 em(20, 9);
-      }
-    }
-    .select__options {
-      border: 1px solid #99b5cf;
-      background-color: #ffffff;
-    }
-    .select__option {
-      color: #003b71;
-    }
-  }
+  // &_language {
+  //   .select__title {
+  //     background-color: #ffffff;
+  //     border: 1px solid #99b5cf;
+  //     padding: em(2, 20) em(15, 20);
+  //     font-weight: 500;
+  //     font-size: rem(20);
+  //   }
+  //   .select__value {
+  //     height: rem(30);
+  //     color: #003b71;
+  //     gap: rem(4);
+  //     padding: 0;
+  //     &::after {
+  //       content: "\e902";
+  //       align-self: auto;
+  //       font-size: rem(9);
+  //       @extend %ic;
+  //       width: em(20, 9);
+  //       height: em(20, 9);
+  //       flex: 0 0 em(20, 9);
+  //     }
+  //   }
+  //   .select__options {
+  //     border: 1px solid #99b5cf;
+  //     background-color: #ffffff;
+  //   }
+  //   .select__option {
+  //     color: #003b71;
+  //   }
+  // }
 }
 
 // Тег

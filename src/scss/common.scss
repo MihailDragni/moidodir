@@ -16,3 +16,63 @@
   font-size: rem(16);
   line-height: math.div(20, 16);
 }
+
+.slider-arrow {
+  border-radius: 50%;
+  height: rem(65);
+  width: rem(65);
+  background-color: #cdcdcd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: rem(20);
+  cursor: pinter;
+  transition: all 0.3s ease;
+  &_prev {
+  }
+
+  &_next {
+    &::before {
+      transform: rotate(-180deg);
+    }
+  }
+  @media (any-hover: hover) {
+    &:hover {
+      color: #fff;
+      background-color: #bab9b9;
+    }
+  }
+}
+
+.swiper-pagination-bullets {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  column-gap: rem(7);
+}
+.swiper-pagination-bullet {
+  cursor: pointer;
+  padding: rem(5) rem(0);
+  flex: 0 0 rem(61);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: flex-basis 0.3s ease;
+
+  &::before {
+    content: "";
+    height: rem(3);
+    width: 100%;
+    background-color: #d9d9d9;
+    border-radius: 5px;
+    transition: height 0.3s ease, background-color 0.3s ease;
+  }
+}
+.swiper-pagination-bullet-active {
+  flex: 0 0 rem(122);
+  &::before {
+    content: "";
+    background-color: $mainBlue;
+    height: rem(5);
+  }
+}
