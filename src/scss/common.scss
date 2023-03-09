@@ -1,4 +1,11 @@
 // Заголовки, загальні БЕМ блоки та інше...
+.page {
+  @include adaptiveValue("padding-top", 175, 150, 0, $containerWidth, 992);
+  @media (max-width: $tablet) {
+    @include adaptiveValue("padding-top", 95, 70);
+  }
+}
+
 .body-lock {
   overflow: hidden;
   position: relative;
@@ -19,13 +26,13 @@
 
 .slider-arrow {
   border-radius: 50%;
-  height: rem(65);
-  width: rem(65);
+  height: em(65, 20);
+  width: em(65, 20);
   background-color: #cdcdcd;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: rem(20);
+  @include adaptiveValue("font-size", 20, 16);
   cursor: pinter;
   transition: all 0.3s ease;
   &_prev {
@@ -49,7 +56,11 @@
   flex-wrap: wrap;
   align-items: center;
   column-gap: rem(7);
+  @media (max-width: $tablet) {
+    @include adaptiveValue("column-gap", 10, 8);
+  }
 }
+
 .swiper-pagination-bullet {
   cursor: pointer;
   padding: rem(5) rem(0);
@@ -58,7 +69,7 @@
   justify-content: center;
   align-items: center;
   transition: flex-basis 0.3s ease;
-
+  height: rem(5);
   &::before {
     content: "";
     height: rem(3);
@@ -67,12 +78,33 @@
     border-radius: 5px;
     transition: height 0.3s ease, background-color 0.3s ease;
   }
+  @media (max-width: $tablet) {
+    height: rem(13);
+    flex: 0 0 rem(13);
+    border-radius: 50%;
+    &::before {
+      height: rem(10);
+      width: rem(10);
+      border-radius: 50%;
+    }
+  }
 }
+
 .swiper-pagination-bullet-active {
   flex: 0 0 rem(122);
   &::before {
     content: "";
     background-color: $mainBlue;
     height: rem(5);
+  }
+  @media (max-width: $tablet) {
+    height: rem(13);
+    flex: 0 0 rem(13);
+    border-radius: 50%;
+    &::before {
+      height: rem(10);
+      width: rem(10);
+      border-radius: 50%;
+    }
   }
 }
