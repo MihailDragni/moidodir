@@ -80,8 +80,7 @@
 
 .slide-mainslider {
   &__img-ibg {
-    // padding-top: rem(377);
-    @include adaptiveValue("padding-top", 377, 168);
+    @include adaptiveValue("min-height", 377, 168);
     width: 100%;
   }
 }
