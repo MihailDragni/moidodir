@@ -117,8 +117,7 @@
 }
 
 .products-slider {
-  padding-top: rem(20);
-  padding-bottom: rem(25);
+  @include adaptiveValue("padding-bottom", 50, 30);
 
   &__title {
     &:not(:last-child) {
