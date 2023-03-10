@@ -120,7 +120,7 @@
   padding-top: rem(20);
   padding-bottom: rem(25);
 
-  &__header {
+  &__title {
     &:not(:last-child) {
       @include adaptiveValue("margin-bottom", 40, 20);
     }
@@ -130,6 +130,10 @@
     padding: rem(20);
     margin: rem(-20);
     position: relative;
+    @media (max-width: $tablet) {
+      padding: 0;
+      margin: 0;
+    }
   }
 
   &__wrapper {

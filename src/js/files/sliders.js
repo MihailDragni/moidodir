@@ -134,7 +134,7 @@ function initSliders() {
   }
   if (document.querySelector(".products-slider__slider")) {
     new Swiper(".products-slider__slider", {
-      modules: [Navigation],
+      modules: [Navigation, Autoplay],
       observer: true,
       observeParents: true,
       slidesPerView: 6,
@@ -142,12 +142,15 @@ function initSliders() {
       autoHeight: true,
       speed: 800,
       preloadImages: false,
-      autoHeight: true,
       // loop: true,
       // autoplay: {
       //   delay: 3000,
       //   disableOnInteraction: false,
       // },
+      autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+      },
 
       navigation: {
         prevEl: ".products-slider .slider-arrow_prev",
@@ -183,6 +186,66 @@ function initSliders() {
         //   slidesPerView: 5,
         //   spaceBetween: 30,
         // },
+        1910: {
+          slidesPerView: 6,
+          spaceBetween: 30,
+        },
+      },
+
+      // Події
+      // on: {},
+    });
+  }
+  if (document.querySelector(".working-brands__slider")) {
+    new Swiper(".working-brands__slider", {
+      modules: [Navigation, Autoplay],
+      observer: true,
+      observeParents: true,
+      slidesPerView: 6,
+      spaceBetween: 29,
+      autoHeight: true,
+      speed: 800,
+      preloadImages: false,
+      // loop: true,
+      // autoplay: {
+      //   delay: 3000,
+      //   disableOnInteraction: false,
+      // },
+
+      autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+      },
+      navigation: {
+        prevEl: ".working-brands .slider-arrow_prev",
+        nextEl: ".working-brands .slider-arrow_next",
+      },
+      // Брейкпоінти
+      breakpoints: {
+        320: {
+          slidesPerView: 2,
+          spaceBetween: 15,
+        },
+
+        380: {
+          slidesPerView: 2,
+          spaceBetween: 25,
+        },
+
+        578: {
+          slidesPerView: 3,
+          spaceBetween: 25,
+        },
+
+        992: {
+          slidesPerView: 4,
+          spaceBetween: 30,
+        },
+        1230: {
+          slidesPerView: 5,
+          spaceBetween: 30,
+        },
+
         1910: {
           slidesPerView: 6,
           spaceBetween: 30,
