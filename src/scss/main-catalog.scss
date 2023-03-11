@@ -1,0 +1,210 @@
+.main-catalog {
+  &__container {
+  }
+
+  &__title {
+    color: $mainDarkBlue;
+    font-weight: 600;
+    &:not(:last-child) {
+      margin-bottom: em(32, 36);
+    }
+  }
+
+  &__recommendations {
+    &:not(:last-child) {
+      margin-bottom: em(32, 20);
+    }
+  }
+
+  &__filters {
+    &:not(:last-child) {
+      margin-bottom: em(24, 20);
+    }
+  }
+
+  &__product-quantity {
+    display: flex;
+    column-gap: rem(6);
+    color: $mainDarkBlue;
+    &:not(:last-child) {
+      margin-bottom: em(30, 20);
+    }
+    & span {
+      font-weight: 600;
+    }
+  }
+  &__products {
+    display: grid;
+    column-gap: rem(25);
+    row-gap: rem(30);
+    grid-template-columns: repeat(auto-fill, minmax(rem(180), rem(280)));
+    &:not(:last-child) {
+      @include adaptiveValue("margin-bottom", 65, 30);
+    }
+  }
+
+  &__pagging {
+    @include adaptiveValue("margin-bottom", 65, 30);
+  }
+}
+
+.recommendations {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  row-gap: rem(5);
+  column-gap: rem(25);
+  &__item {
+    cursor: pointer;
+    font-weight: 500;
+    background-color: #eaf1f8;
+    border-radius: rem(56);
+    padding: rem(10) rem(48);
+    color: $mainDarkBlue;
+  }
+}
+
+.filters-catalog {
+  &__form {
+    display: flex;
+    align-items: center;
+    column-gap: rem(25);
+  }
+
+  &__dropdown {
+    background-color: #fff;
+    border: 1px solid #99b5cf;
+    border-radius: rem(5);
+  }
+
+  & .select2-container--default .select2-selection--single,
+  .select2-container--default .select2-selection--multiple {
+    background: #ffffff;
+    border: 1px solid #99b5cf;
+    border-radius: rem(5);
+  }
+
+  & .select2-container .select2-selection--single,
+  .select2-container .select2-selection--multiple {
+    height: auto;
+    display: flex;
+    align-items: center;
+    column-gap: rem(10);
+    padding: rem(8) rem(35);
+    white-space: nowrap;
+    border-radius: rem(5);
+    font-size: rem(24);
+  }
+
+  & .select2-container .select2-selection--multiple {
+    height: auto;
+    display: flex;
+    align-items: center;
+    // column-gap: rem(10);
+    padding: rem(8);
+    white-space: nowrap;
+    border-radius: rem(5);
+    font-size: rem(24);
+  }
+
+  &
+    .select2-container--default
+    .select2-selection--single
+    .select2-selection__rendered {
+    color: $mainDarkBlue;
+    font-size: inherit;
+    font-weight: 500;
+    line-height: 1.1;
+  }
+  & .select2-container .select2-selection--single .select2-selection__rendered {
+    padding: 0;
+    overflow: clip;
+    max-width: rem(350);
+  }
+
+  &
+    .select2-container--default
+    .select2-selection--single
+    .select2-selection__arrow {
+    height: 1em;
+    width: 1em;
+    position: static;
+    transform: translateY(1px);
+  }
+
+  &
+    .select2-container--default
+    .select2-selection--single
+    .select2-selection__arrow
+    b {
+    border: none;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    position: static;
+    transition: transform 0.3s ease;
+    &::before {
+      content: "\e902";
+      @extend %ic;
+      font-size: em(12, 24);
+      color: $mainDarkBlue;
+    }
+  }
+
+  &
+    .select2-container--default.select2-container--open
+    .select2-selection--single
+    .select2-selection__arrow
+    b {
+    border: none;
+    transform: rotate(180deg);
+  }
+
+  &
+    .select2-container
+    .select2-selection--multiple
+    .select2-selection__rendered {
+    display: flex;
+    align-items: center;
+    column-gap: rem(3);
+  }
+
+  &
+    .select2-container--default
+    .select2-selection--multiple
+    .select2-selection__choice {
+    vertical-align: middle;
+    margin: 0;
+    border-radius: rem(5);
+    border: 1px solid #99b5cf;
+    background-color: #eaf1f8;
+  }
+
+  &
+    .select2-container--default
+    .select2-selection--multiple
+    .select2-selection__choice__remove {
+    background-color: transparent;
+    border: none;
+    border-right: 1px solid #99b5cf;
+    border-top-left-radius: rem(5);
+    border-bottom-left-radius: rem(5);
+    color: $mainBlue;
+    // font-size: 1em;
+    font-size: 1em;
+    height: 1em;
+    width: 1em;
+    padding: 0;
+    & span {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      width: 100%;
+      transform: translateY(1%);
+    }
+  }
+}

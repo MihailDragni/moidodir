@@ -25,6 +25,7 @@ $fontSize: rem(20); // де 14(px) - розмір шрифту за замовч
 $mainColor: #000; // Колір шрифту за замовчуванням
 $mainLightBlue: #eff3f6;
 $mainBlue: #2b75b9;
+$mainDarkBlue: #003b71;
 $mainRed: #d8241c;
 
 $mobileNavBarHeight: rem(55);
@@ -170,3 +171,4 @@ body {
 
 // Підключення стилів окремих сторінок
 @import "home";
+@import "main-catalog";
