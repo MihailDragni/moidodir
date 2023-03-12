@@ -1,85 +1,27 @@
+@@include('_top-bar.htm', {})
 <header class="header">
-  <div class="header__wrapper">
-    <div class="header__top top-header">
-      <div class="top-header__container">
-        <div class="top-header__menu menu">
-          <nav class="menu__body">
-            <ul class="menu__list">
-              <li class="menu__item">
-                <a href="#" class="menu__link">Contact us</a>
-              </li>
-              <li class="menu__item">
-                <a href="#" class="menu__link">About Us</a>
-              </li>
-              <li class="menu__item">
-                <a href="#" class="menu__link">Blog</a>
-              </li>
-              <li class="menu__item">
-                <a href="#" class="menu__link">Pricing</a>
-              </li>
-            </ul>
-          </nav>
-        </div>
-        <div data-da=".actions-header, 991.98, 1" class="top-header__lang">
-          <select class="js-example-basic-single" name="state">
-            <option value="1" selected>Lei</option>
-            <option value="2">Eur</option>
-            <option value="3">Usd</option>
-          </select>
-          <!-- <select name="form[]" data-class-modif="language">
-            <option value="1" selected>Lei</option>
-            <option value="2">Eur</option>
-            <option value="3">Usd</option>
-          </select> -->
-        </div>
-      </div>
-    </div>
-    <div class="header__body body-header">
-      <div class="body-header__container">
-        <div class="body-header__row">
-          <button
-            class="body-header__catalog-btn catalog-btn _icon-burger"
-            type="button"
-          ></button>
-          <a class="body-header__logo-ibg" href="index.html">
-            <img src="@img/logo.svg" alt="Logo" width="164" height="40" />
-          </a>
-        </div>
-        <div
-          data-da=".search-menu-navbar__search, 991.98"
-          class="body-header__search"
-        >
-          <form class="search-header" action="#">
-            <button
-              type="submit"
-              class="search-header__submit _icon-search"
-            ></button>
-            <input
-              autocomplete="off"
-              type="text"
-              name="form[]"
-              data-error="Ошибка"
-              placeholder="Search..."
-              class="search-header__input"
-            />
-            <button
-              type="button"
-              class="search-header__btn _icon-instagram"
-            ></button>
-          </form>
-        </div>
-        <div class="body-header__actions actions-header">
-          <a class="actions-header__favorite _icon-favorite" href="#"></a>
-          <a class="actions-header__user _icon-user" href="#"></a>
-          <a
-            class="actions-header__cart _icon-cart _actions-header-active"
-            href="#"
-          >
-            <span>7</span>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
+	<div class="header__container">
+		<div class="header__row">
+			<button class="header__catalog-btn catalog-btn _icon-burger" type="button"></button>
+			<a class="header__logo-ibg" href="index.html">
+				<img src="@img/logo.svg" alt="Logo" width="164" height="40" />
+			</a>
+		</div>
+		<div data-da=".search-menu-navbar__search, 991.98" class="header__search">
+			<form class="search-header" action="#">
+				<button type="submit" class="search-header__submit _icon-search"></button>
+				<input autocomplete="off" type="text" name="form[]" data-error="Ошибка" placeholder="Search..."
+					class="search-header__input" />
+				<button type="button" class="search-header__btn _icon-instagram"></button>
+			</form>
+		</div>
+		<div class="header__actions actions-header">
+			<a class="actions-header__favorite _icon-favorite" href="#"></a>
+			<a class="actions-header__user _icon-user" href="#"></a>
+			<a class="actions-header__cart _icon-cart _actions-header-active" href="#">
+				<span>7</span>
+			</a>
+		</div>
+	</div>
 </header>
 @@include('_category.htm',{}) @@include('_navbar-menu.htm', {})

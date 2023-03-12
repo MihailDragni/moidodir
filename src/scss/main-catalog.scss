@@ -15,7 +15,7 @@
 
   &__filters {
     &:not(:last-child) {
-      @include adaptiveValue("margin-bottom", 24, 15);
+      @include adaptiveValue("margin-bottom", 15, 5);
     }
   }
 
@@ -68,6 +68,14 @@
 }
 
 .filters-catalog {
+  @media (min-width: $tablet) {
+    position: sticky;
+    @include adaptiveValue("top", 95, 60);
+  }
+  position: relative;
+  z-index: 150;
+  background-color: #fff;
+  padding-bottom: rem(10);
   &__form {
     display: flex;
     align-items: center;

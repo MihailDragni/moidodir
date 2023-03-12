@@ -1,69 +1,19 @@
 .header {
-  position: absolute;
+  @media (min-width: $tablet) {
+    position: sticky;
+  }
+  position: relative;
   width: 100%;
   top: 0;
   left: 0;
   right: 0;
+  z-index: 150;
   min-height: rem(40);
-  @media (max-width: $mobile) {
-    min-height: rem(5);
-  }
-
-  &__wrapper {
-    @media (min-width: $tablet) {
-      position: fixed;
-    }
-    position: relative;
-    width: 100%;
-    left: 0;
-    top: 0;
-    right: 0;
-    z-index: 50;
-  }
-}
-
-.top-header {
-  padding: rem(5) 0;
-  background-color: $mainLightBlue;
-  color: #2e2e2e;
-  @media (max-width: $tablet) {
-    display: none;
-  }
-  &__container {
-    display: flex;
-    align-items: center;
-    column-gap: rem(20);
-    min-height: rem(40);
-  }
-  // .top-header__menu
-  &__menu {
-    flex: 1 1 auto;
-  }
-}
-
-.menu {
-  &__list {
-    @media (min-width: $tablet) {
-      display: flex;
-      flex-wrap: wrap;
-      row-gap: rem(5);
-      @include adaptiveValue("column-gap", 43, 20);
-    }
-  }
-  &__link {
-    font-size: rem(16);
-    font-weight: 500;
-    @media (any-hover: hover) {
-      &:hover {
-        text-decoration: underline;
-      }
-    }
-  }
-}
-
-.body-header {
-  @include adaptiveValue("padding-top", 36, 10);
-  @include adaptiveValue("padding-bottom", 36, 10);
+  // @media (max-width: $mobile) {
+  //   min-height: rem(5);
+  // }
+  @include adaptiveValue("padding-top", 20, 10);
+  @include adaptiveValue("padding-bottom", 20, 10);
   background-color: #fff;
   @media (max-width: $tablet) {
     background-color: $mainLightBlue;
@@ -149,7 +99,7 @@
   &__input {
     width: 100%;
     border-radius: rem(50);
-    min-height: rem(55);
+    @include adaptiveValue("min-height", 55, 35);
     background-color: transparent;
     padding: rem(0) rem(62);
     color: $mainBlue;

@@ -1,8 +1,54 @@
 // Заголовки, загальні БЕМ блоки та інше...
 .page {
-  @include adaptiveValue("padding-top", 175, 150, 0, $containerWidth, 992);
+  // @include adaptiveValue("padding-top", 175, 150, 0, $containerWidth, 992);
+  // @media (max-width: $tablet) {
+  //   @include adaptiveValue("padding-top", 95, 70);
+  // }
+  padding-top: rem(20);
+  &__header {
+    padding: rem(25) 0;
+  }
+}
+
+.top-bar {
+  padding: rem(5) 0;
+  background-color: $mainLightBlue;
+  color: #2e2e2e;
+  &:not(:last-child) {
+    margin-bottom: rem(15);
+  }
   @media (max-width: $tablet) {
-    @include adaptiveValue("padding-top", 95, 70);
+    display: none;
+  }
+  &__container {
+    display: flex;
+    align-items: center;
+    column-gap: rem(20);
+    min-height: rem(40);
+  }
+  // .top-header__menu
+  &__menu {
+    flex: 1 1 auto;
+  }
+}
+
+.menu {
+  &__list {
+    @media (min-width: $tablet) {
+      display: flex;
+      flex-wrap: wrap;
+      row-gap: rem(5);
+      @include adaptiveValue("column-gap", 43, 20);
+    }
+  }
+  &__link {
+    font-size: rem(16);
+    font-weight: 500;
+    @media (any-hover: hover) {
+      &:hover {
+        text-decoration: underline;
+      }
+    }
   }
 }
 
@@ -14,7 +60,7 @@
     position: fixed;
     inset: 0;
     background-color: rgba(0, 0, 0, 0.5);
-    z-index: 51;
+    z-index: 151;
   }
 }
 
@@ -33,7 +79,7 @@
   align-items: center;
   justify-content: center;
   @include adaptiveValue("font-size", 20, 16);
-  cursor: pinter;
+  cursor: pointer;
   transition: all 0.3s ease;
 
   &_prev {
@@ -301,10 +347,26 @@
   white-space: nowrap;
   overflow: auto;
   &__list {
+    padding-top: rem(5);
+    padding-bottom: rem(5);
     display: flex;
   }
 
   &__item {
+    &:first-child {
+      & a {
+        display: flex;
+        align-items: center;
+        column-gap: em(10, 16);
+        &::before {
+          content: "\e903";
+          height: 100%;
+          @extend %ic;
+          font-size: em(14, 16);
+          color: #000;
+        }
+      }
+    }
   }
 
   &__link {
