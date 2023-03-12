@@ -1,7 +1,4 @@
 .main-catalog {
-  &__container {
-  }
-
   &__title {
     color: $mainDarkBlue;
     font-weight: 600;
@@ -12,13 +9,13 @@
 
   &__recommendations {
     &:not(:last-child) {
-      margin-bottom: em(32, 20);
+      @include adaptiveValue("margin-bottom", 32, 15);
     }
   }
 
   &__filters {
     &:not(:last-child) {
-      margin-bottom: em(24, 20);
+      @include adaptiveValue("margin-bottom", 24, 15);
     }
   }
 
@@ -26,8 +23,9 @@
     display: flex;
     column-gap: rem(6);
     color: $mainDarkBlue;
+    @include adaptiveValue("font-size", 20, 14);
     &:not(:last-child) {
-      margin-bottom: em(30, 20);
+      @include adaptiveValue("margin-bottom", 30, 15);
     }
     & span {
       font-weight: 600;
@@ -35,11 +33,15 @@
   }
   &__products {
     display: grid;
-    column-gap: rem(25);
-    row-gap: rem(30);
-    grid-template-columns: repeat(auto-fill, minmax(rem(180), rem(280)));
+    @include adaptiveValue("column-gap", 25, 20);
+    @include adaptiveValue("row-gap", 30, 25);
+    grid-template-columns: repeat(auto-fit, minmax(rem(120), rem(280)));
+    justify-content: center;
     &:not(:last-child) {
       @include adaptiveValue("margin-bottom", 65, 30);
+    }
+    @media (max-width: $mobile) {
+      grid-template-columns: repeat(2, 1fr);
     }
   }
 
@@ -53,14 +55,15 @@
   align-items: center;
   flex-wrap: wrap;
   row-gap: rem(5);
-  column-gap: rem(25);
+  @include adaptiveValue("column-gap", 25, 15);
   &__item {
     cursor: pointer;
     font-weight: 500;
     background-color: #eaf1f8;
-    border-radius: rem(56);
-    padding: rem(10) rem(48);
+    border-radius: em(56, 20);
+    padding: em(10, 20) em(48, 20);
     color: $mainDarkBlue;
+    @include adaptiveValue("font-size", 20, 14);
   }
 }
 
@@ -68,13 +71,19 @@
   &__form {
     display: flex;
     align-items: center;
-    column-gap: rem(25);
+    @include adaptiveValue("column-gap", 25, 15);
+    flex-wrap: wrap;
+    row-gap: rem(5);
+    @media (max-width: $mobile) {
+      overflow: auto;
+    }
   }
 
   &__dropdown {
     background-color: #fff;
     border: 1px solid #99b5cf;
     border-radius: rem(5);
+    @include adaptiveValue("font-size", 20, 14);
   }
 
   & .select2-container--default .select2-selection--single,
@@ -84,27 +93,25 @@
     border-radius: rem(5);
   }
 
-  & .select2-container .select2-selection--single,
-  .select2-container .select2-selection--multiple {
+  & .select2-container .select2-selection--single {
     height: auto;
     display: flex;
     align-items: center;
-    column-gap: rem(10);
-    padding: rem(8) rem(35);
+    column-gap: em(10, 24);
+    padding: em(8, 24) em(35, 24);
     white-space: nowrap;
     border-radius: rem(5);
-    font-size: rem(24);
+    @include adaptiveValue("font-size", 24, 14);
   }
 
   & .select2-container .select2-selection--multiple {
     height: auto;
     display: flex;
     align-items: center;
-    // column-gap: rem(10);
-    padding: rem(8);
+    padding: em(8, 24);
     white-space: nowrap;
     border-radius: rem(5);
-    font-size: rem(24);
+    @include adaptiveValue("font-size", 24, 14);
   }
 
   &
@@ -149,7 +156,7 @@
     &::before {
       content: "\e902";
       @extend %ic;
-      font-size: em(12, 24);
+      font-size: em(10, 24);
       color: $mainDarkBlue;
     }
   }
@@ -193,7 +200,6 @@
     border-top-left-radius: rem(5);
     border-bottom-left-radius: rem(5);
     color: $mainBlue;
-    // font-size: 1em;
     font-size: 1em;
     height: 1em;
     width: 1em;

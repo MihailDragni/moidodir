@@ -112,7 +112,7 @@
 
 ._title {
   font-weight: 700;
-  @include adaptiveValue("font-size", 36, 16);
+  @include adaptiveValue("font-size", 36, 18);
   line-height: math.div(44, 36);
 }
 
@@ -331,37 +331,48 @@
 .pagging {
   display: flex;
   justify-content: center;
+
   &__inner {
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    column-gap: rem(24);
     background: #ffffff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    row-gap: rem(5);
+    @include adaptiveValue("column-gap", 24, 5);
     border: 1px solid #d1d5db;
-    border-radius: rem(6);
-    padding: rem(7);
-    font-size: rem(16);
+    border-radius: em(6, 16);
+    padding: em(7, 16);
+    @include adaptiveValue("font-size", 16, 12);
+    @media (max-width: $mobileSmall) {
+      flex-wrap: wrap;
+    }
   }
 
   &__arrow {
     display: flex;
     align-items: center;
     color: #1d4ed8;
-    column-gap: rem(9);
+    column-gap: em(9, 16);
     &::before {
-      font-size: rem(8);
+      font-size: rem(7);
     }
     &_prev {
-      padding-left: rem(18);
+      padding-left: em(18, 16);
       &::before {
         transform: rotate(90deg);
       }
+      @media (max-width: $mobileSmall) {
+        order: 1;
+      }
     }
     &_next {
-      padding-right: rem(18);
+      padding-right: em(18, 16);
       flex-direction: row-reverse;
       &::before {
         transform: rotate(-90deg);
+      }
+      @media (max-width: $mobileSmall) {
+        order: 2;
       }
     }
     &:disabled {
@@ -372,19 +383,33 @@
   &__list {
     display: flex;
     align-items: center;
-    column-gap: rem(25);
+    @include adaptiveValue("column-gap", 25, 5);
+    @media (max-width: $mobileSmall) {
+      order: 3;
+    }
   }
 
   &__item {
+    & a {
+      @media (any-hover: hover) {
+        &:hover {
+          border: 1px solid #1d4ed8;
+          color: #1d4ed8;
+        }
+      }
+    }
+    & span {
+      pointer-events: none;
+    }
   }
 
   &__link {
     background: #ffffff;
     border: 1px solid transparent;
     color: #4b5563;
-    border-radius: 6px;
-    width: rem(39);
-    height: rem(39);
+    border-radius: em(6, 16);
+    width: em(39, 16);
+    height: em(39, 16);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -392,12 +417,6 @@
     &._active {
       border: 1px solid #1d4ed8;
       color: #1d4ed8;
-    }
-    @media (any-hover: hover) {
-      &:hover {
-        border: 1px solid #1d4ed8;
-        color: #1d4ed8;
-      }
     }
   }
 }
