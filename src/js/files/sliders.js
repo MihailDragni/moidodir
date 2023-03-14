@@ -7,7 +7,14 @@
 // Підключаємо слайдер Swiper з node_modules
 // При необхідності підключаємо додаткові модулі слайдера, вказуючи їх у {} через кому
 // Приклад: { Navigation, Autoplay }
-import Swiper, { Navigation, Autoplay, Pagination, Thumbs } from "swiper";
+import Swiper, {
+  Navigation,
+  Autoplay,
+  Pagination,
+  Thumbs,
+  Scrollbar,
+  Mousewheel,
+} from "swiper";
 /*
 Основні модулі слайдера:
 Navigation, Pagination, Autoplay, 
@@ -359,6 +366,39 @@ function initSliders() {
         1280: {
           slidesPerView: 2,
           spaceBetween: 40,
+        },
+      },
+    });
+  }
+  if (document.querySelector(".slider-main-cart__slider")) {
+    new Swiper(".slider-main-cart__slider", {
+      modules: [Scrollbar, Mousewheel, Navigation],
+      observer: true,
+      observeParents: true,
+      slidesPerView: 3,
+      spaceBetween: 30,
+      direction: "vertical",
+      grabCursor: true,
+      scrollbar: {
+        el: ".swiper-scrollbar",
+        draggable: true,
+        dragSize: 170,
+      },
+      mousewheel: true,
+      breakpoints: {
+        320: {
+          slidesPerView: 1,
+          spaceBetween: 30,
+          mousewheel: false,
+          direction: "horizontal",
+          navigation: {
+            prevEl: ".slider-main-cart .slider-arrow_prev",
+            nextEl: ".slider-main-cart .slider-arrow_next",
+          },
+        },
+        992: {
+          slidesPerView: 3,
+          spaceBetween: 30,
         },
       },
     });

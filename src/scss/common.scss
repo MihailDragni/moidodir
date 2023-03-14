@@ -634,3 +634,110 @@
     }
   }
 }
+
+.quantity {
+  @include adaptiveValue("font-size", 28, 16);
+  width: em(170, 28);
+  height: em(55, 28);
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+  // .quantity__button
+  &__button {
+    flex: 0 0 percent(52, 170);
+    padding-bottom: percent(52, 170);
+    border-radius: 50%;
+    background-color: $mainBlue;
+    position: relative;
+    cursor: pointer;
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: #fff;
+      width: em(22, 28);
+      height: em(3, 28);
+      transition: all 0.3s ease 0s;
+    }
+    @media (any-hover: hover) {
+      &:hover {
+        &::before,
+        &::after {
+          background-color: rgba(0, 0, 0, 0.5);
+        }
+      }
+    }
+    // .quantity__button_plus
+    &_plus {
+      &::before {
+        transform: translate(-50%, -50%) rotate(-90deg);
+      }
+    }
+    // .quantity__button_minus
+    &_minus {
+    }
+  }
+  // .quantity__input
+  &__input {
+    flex: 1 1 auto;
+    input {
+      height: 100%;
+      width: 100%;
+      text-align: center;
+    }
+  }
+}
+
+.btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: rem(0) rem(15);
+  text-align: center;
+  border-radius: rem(30);
+  min-height: rem(48);
+  font-weight: 600;
+  font-size: rem(16);
+  background-color: $mainBlue;
+  color: #fff;
+  transition: all 0.3s ease;
+  @media (any-hover: hover) {
+    &:hover {
+      background-color: #255a8c;
+    }
+  }
+  &._fw {
+    width: 100%;
+  }
+}
+
+.scrollbar-style {
+  .swiper-vertical > &.swiper-scrollbar {
+    position: absolute;
+    right: 0;
+    top: 1%;
+    z-index: 50;
+    height: 98%;
+    @include adaptiveValue("width", 8, 4);
+  }
+
+  .swiper-scrollbar {
+    border-radius: 10px;
+    position: relative;
+    -ms-touch-action: none;
+    background: transparent;
+  }
+
+  .swiper-scrollbar-drag {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    background: #6d6d6d;
+    border-radius: rem(20);
+    left: 0;
+    top: 0;
+  }
+}
