@@ -1,12 +1,12 @@
 $(document).ready(function () {
-  $(".js-example-basic-single").select2({
+  $(".lang-topbar__select").select2({
     width: "auto",
     minimumResultsForSearch: 10,
+    dropdownCssClass: "select-dropdown",
   });
   $(".filters-catalog__select").select2({
     // multiple: true,
     width: "auto",
-    selectionCssClass: "filters-catalog__title",
-    dropdownCssClass: "filters-catalog__dropdown",
+    dropdownCssClass: "select-dropdown",
   });
 });

@@ -21,7 +21,7 @@ import "../../scss/base/swiper.scss";
 // Повний набір стилів з scss/libs/swiper.scss
 // import "../../scss/libs/swiper.scss";
 // Повний набір стилів з node_modules
-// import 'swiper/css';
+// import "swiper/css";
 
 // Ініціалізація слайдерів
 function initSliders() {
@@ -114,6 +114,7 @@ function initSliders() {
       autoHeight: true,
       speed: 800,
       preloadImages: false,
+      grabCursor: true,
       autoplay: {
         delay: 3000,
         disableOnInteraction: false,
@@ -163,11 +164,6 @@ function initSliders() {
           spaceBetween: 15,
         },
 
-        380: {
-          slidesPerView: 2,
-          spaceBetween: 25,
-        },
-
         578: {
           slidesPerView: 3,
           spaceBetween: 25,
@@ -206,6 +202,7 @@ function initSliders() {
       autoHeight: true,
       speed: 800,
       preloadImages: false,
+      grabCursor: true,
       // loop: true,
       // autoplay: {
       //   delay: 3000,
@@ -289,7 +286,7 @@ function initSliders() {
   }
   if (document.querySelector(".images-product")) {
     const thumbsSlider = new Swiper(".thumbs-images", {
-      modules: [Navigation, Autoplay, Thumbs],
+      modules: [Autoplay, Thumbs],
       observer: true,
       watchOverflow: true,
       observeParents: true,
@@ -297,24 +294,72 @@ function initSliders() {
       watchSlidesProgress: true,
       watchSlidesVisibility: true,
       spaceBetween: 15,
+      breakpoints: {
+        320: {
+          slidesPerView: 3,
+          spaceBetween: 5,
+        },
+        490: {
+          slidesPerView: 3,
+          spaceBetween: 10,
+        },
+        690: {
+          slidesPerView: 3,
+          spaceBetween: 15,
+        },
+      },
     });
     new Swiper(".images-product__slider", {
-      modules: [Navigation, Autoplay, Thumbs],
+      modules: [Autoplay, Thumbs],
       observer: true,
       watchOverflow: true,
       observeParents: true,
       slidesPerView: 1,
       spaceBetween: 30,
+      grabCursor: true,
       autoplay: {
         delay: 3000,
         disableOnInteraction: false,
       },
-      navigation: {
-        prevEl: ".images-product .slider-arrow_prev",
-        nextEl: ".images-product .slider-arrow_next",
-      },
       thumbs: {
         swiper: thumbsSlider,
+      },
+    });
+  }
+  if (document.querySelector(".recommendations-slider__slider")) {
+    new Swiper(".recommendations-slider__slider", {
+      modules: [Navigation, Autoplay],
+      observer: true,
+      observeParents: true,
+      slidesPerView: 2,
+      spaceBetween: 40,
+      navigation: {
+        prevEl: ".recommendations-slider__arrow-prev",
+        nextEl: ".recommendations-slider__arrow-next",
+      },
+      autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+      },
+      breakpoints: {
+        320: {
+          slidesPerView: 1,
+          spaceBetween: 25,
+        },
+        690: {
+          slidesPerView: 2,
+          spaceBetween: 15,
+        },
+
+        992: {
+          slidesPerView: 1,
+          spaceBetween: 20,
+        },
+
+        1280: {
+          slidesPerView: 2,
+          spaceBetween: 40,
+        },
       },
     });
   }

@@ -9,9 +9,6 @@
   right: 0;
   z-index: 150;
   min-height: rem(40);
-  // @media (max-width: $mobile) {
-  //   min-height: rem(5);
-  // }
   @include adaptiveValue("padding-top", 20, 10);
   @include adaptiveValue("padding-bottom", 20, 10);
   background-color: #fff;
@@ -109,7 +106,7 @@
     @media (max-width: $tablet) {
       padding-left: rem(52);
       padding-right: rem(30);
-      @include adaptiveValue("min-height", 55, 45, 0, 992, 320);
+      @include adaptiveValue("min-height", 53, 43, 0, 992, 320);
     }
   }
 }
