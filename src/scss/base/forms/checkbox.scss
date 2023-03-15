@@ -30,11 +30,12 @@
   }
 
   &__check {
+    @include adaptiveValue("font-size", 16, 13);
     display: inline-block;
     align-self: flex-start;
-    flex: 0 0 rem(32);
-    width: rem(32);
-    height: rem(32);
+    flex: 0 0 em(32, 16);
+    width: em(32, 16);
+    height: em(32, 16);
     border: 1px solid #99b5cf;
     border-radius: rem(6);
     position: relative;
@@ -45,7 +46,7 @@
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      font-size: rem(14);
+      @include adaptiveValue("font-size", 14, 10);
       color: #000;
       display: none;
     }

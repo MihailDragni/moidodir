@@ -750,7 +750,7 @@
   color: $mainBlue;
   transition: color 0.3s ease;
   &::before {
-    font-size: rem(18);
+    @include adaptiveValue("font-size", 18, 14);
   }
   @media (any-hover: hover) {
     &:hover {
