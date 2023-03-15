@@ -741,3 +741,20 @@
     top: 0;
   }
 }
+
+.viewpass {
+  position: absolute;
+  top: 50%;
+  right: 3%;
+  transform: translateY(-50%);
+  color: $mainBlue;
+  transition: color 0.3s ease;
+  &::before {
+    font-size: rem(18);
+  }
+  @media (any-hover: hover) {
+    &:hover {
+      color: #000;
+    }
+  }
+}

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include('html/_head.htm',{ "title": "Log in" })
+
+<body>
+	<div class="wrapper">
+		@@include('html/_header.htm',{})
+		<main class="page page_log-in">
+			<div class="page__log-in log-in">
+				<div class="log-in__container">
+					<form action="#" class="log-in__form form-log-in">
+						<a class="form-log-in__logo-ibg form-log-in__logo-ibg_contain">
+							<img src="@img/brands/serenette.svg" alt="Logo">
+						</a>
+						<div class="form-log-in__item">
+							<label class="form-log-in__label" for="log-in-email">Your E-mail</label>
+							<input class="form-log-in__input input" autocomplete="off" type="text" name="form[email]"
+								id="log-in-email" placeholder="example2006@gmail.com">
+						</div>
+						<div class="form-log-in__item">
+							<label class="form-log-in__label" for="log-in-password">Your password</label>
+							<div class="form-log-in__line">
+								<input class="form-log-in__input input" autocomplete="off" type="password" name="form[password]"
+									id="log-in-password" value="" placeholder="ispitanie1231&9">
+								<button class="form-log-in__viewpass viewpass form__viewpass _icon-eye" type="button"></button>
+							</div>
+
+						</div>
+						<a class="form-log-in__forgot" href="#">
+							Forgot password?
+						</a>
+						<div class="form-log-in__checkbox log-in-checkbox checkbox">
+							<input id="c_1" class="checkbox__input" type="checkbox" value="1" name="form[]">
+							<label for="c_1" class="log-in-checkbox__label  checkbox__label">
+								<span class="checkbox__check"></span>
+								<span class="log-in-checkbox__text checkbox__text">Remain signed in. <a href="#">What does that
+										mean?</a></span>
+							</label>
+						</div>
+						<button class="form-log-in__submit-btn btn btn_fw" type="submit">
+							Log in
+						</button>
+						<p class="form-log-in__text">New to site?</p>
+						<a class="form-log-in__gotoregister btn btn_fw" href="#">Register</a>
+						<p class="form-log-in__privacy">© Все права защищены согласно <a href="#">Политике конфиденциальности</a>
+						</p>
+					</form>
+				</div>
+			</div>
+		</main>
+		@@include('html/_footer.htm',{})
+	</div>
+	@@include('html/_js.htm',{})
+</body>
+
+</html>
