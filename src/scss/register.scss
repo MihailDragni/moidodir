@@ -74,8 +74,6 @@
     display: inline-flex;
     flex-direction: column;
     & input {
-      max-width: rem(150);
-      @include adaptiveValue("max-width", 150, 120);
       text-align: center;
     }
     &:not(:last-child) {

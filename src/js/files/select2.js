@@ -9,4 +9,12 @@ $(document).ready(function () {
     width: "auto",
     dropdownCssClass: "select-dropdown",
   });
+  $(".form-acc-settings__select_tel").select2({
+    width: "auto",
+    dropdownCssClass: "select-dropdown_form",
+  });
+  $(".form-acc-settings__select_adress").select2({
+    width: "100%",
+    dropdownCssClass: "select-dropdown_form",
+  });
 });

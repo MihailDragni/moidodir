@@ -501,6 +501,12 @@
   & .select2-results__option {
     padding: em(6, 20);
   }
+  &_form {
+    @include adaptiveValue("font-size", 16, 14);
+    & .select2-results__option {
+      padding: em(6, 16);
+    }
+  }
 }
 
 .select-style {
@@ -541,6 +547,7 @@
     font-weight: 500;
     line-height: 1.1;
   }
+
   & .select2-container .select2-selection--single .select2-selection__rendered {
     padding: 0;
     overflow: clip;
@@ -631,6 +638,39 @@
       height: 100%;
       width: 100%;
       transform: translateY(1%);
+    }
+  }
+  &_form {
+    & .select2-container--default .select2-selection--single {
+      border: 1px solid #d1d5db;
+      border-radius: rem(4);
+    }
+
+    & .select2-container .select2-selection--single {
+      height: 100%;
+      column-gap: em(8, 16);
+      justify-content: space-between;
+      padding: em(15, 16);
+      border-radius: rem(4);
+      @include adaptiveValue("font-size", 16, 13);
+    }
+
+    &
+      .select2-container--default
+      .select2-selection--single
+      .select2-selection__rendered {
+      color: #000;
+    }
+
+    &
+      .select2-container--default
+      .select2-selection--single
+      .select2-selection__arrow
+      b {
+      &::before {
+        font-size: em(8, 16);
+        color: #828282;
+      }
     }
   }
 }
@@ -756,5 +796,35 @@
     &:hover {
       color: #000;
     }
+  }
+}
+
+.input-style {
+  display: flex;
+  flex-direction: column;
+  &__label {
+    position: relative;
+    z-index: 5;
+    display: inline-block;
+    background-color: #fff;
+    padding: rem(0) em(7, 14);
+    @include adaptiveValue("font-size", 14, 12);
+    line-height: math.div(17, 14);
+    color: #828282;
+    transform: translate(em(18, 14), 40%);
+    align-self: flex-start;
+    @media (max-width: $mobileSmall) {
+      transform: translate(0, 40%);
+      align-self: center;
+    }
+  }
+  &__input {
+    @include adaptiveValue("font-size", 16, 13);
+    width: 100%;
+    border: 1px solid #d1d5db;
+    border-radius: rem(4);
+    padding: em(15, 16);
+    font-weight: 500;
+    line-height: 1;
   }
 }
