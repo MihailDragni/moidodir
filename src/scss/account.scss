@@ -103,7 +103,7 @@
 
   &__list {
     display: grid;
-    align-content: flex-start;
+    align-items: flex-start;
     row-gap: em(15, 20);
   }
 }
@@ -161,7 +161,7 @@
 
 .acc-settings {
   display: grid;
-  align-content: flex-start;
+  align-items: flex-start;
   @include adaptiveValue("row-gap", 22, 18);
 
   &__title {
@@ -212,7 +212,7 @@
   }
   width: 100%;
   display: grid;
-  align-content: flex-start;
+  align-items: flex-start;
   @include adaptiveValue("font-size", 16, 13);
   &__items {
     display: grid;

@@ -17,9 +17,8 @@
   @include adaptiveValue("padding-bottom", 150, 35);
   @include adaptiveValue("padding-left", 64, 10);
   @include adaptiveValue("padding-right", 64, 10);
-
   display: grid;
-  align-content: flex-start;
+  align-items: flex-start;
 
   &__title {
     color: #003b71;
