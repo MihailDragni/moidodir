@@ -88,7 +88,10 @@
   &__btns {
     display: flex;
     align-items: center;
-    @include adaptiveValue("column-gap", 48, 15, 0, $containerWidth, 768);
+    column-gap: rem(15);
+    @media (min-width: $mobile) {
+      @include adaptiveValue("column-gap", 48, 15, 0, $containerWidth, 768);
+    }
   }
 
   &__button {

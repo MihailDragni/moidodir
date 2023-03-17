@@ -47,7 +47,9 @@
     display: grid;
     grid-template-rows: auto 1fr;
     grid-template-columns: 1fr;
-    @include adaptiveValue("row-gap", 20, 10, 0, 992, 320);
+    @media (max-width: $tablet) {
+      @include adaptiveValue("row-gap", 20, 10, 0, 992, 320);
+    }
   }
   &__search {
     min-height: rem(54);

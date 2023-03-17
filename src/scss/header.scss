@@ -28,14 +28,18 @@
   &__row {
     display: flex;
     align-items: center;
-    @include adaptiveValue("column-gap", 33, 15, 0, $containerWidth, 991);
+    @media (min-width: $tablet) {
+      @include adaptiveValue("column-gap", 33, 15, 0, $containerWidth, 991);
+    }
   }
 
   &__catalog-btn {
     flex: 0 0 em(29, 36);
     height: em(38, 36);
     font-size: rem(36);
-    @include adaptiveValue("font-size", 36, 26, 0, $containerWidth, 991);
+    @media (min-width: $tablet) {
+      @include adaptiveValue("font-size", 36, 26, 0, $containerWidth, 991);
+    }
     color: $mainBlue;
     display: flex;
     justify-content: center;
