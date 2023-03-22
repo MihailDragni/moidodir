@@ -14,7 +14,7 @@ import Swiper, {
   Thumbs,
   Scrollbar,
   Mousewheel,
-} from "swiper";
+} from 'swiper'
 /*
 Основні модулі слайдера:
 Navigation, Pagination, Autoplay, 
@@ -24,7 +24,7 @@ EffectFade, Lazy, Manipulation
 
 // Стилі Swiper
 // Базові стилі
-import "../../scss/base/swiper.scss";
+import '../../scss/base/swiper.scss'
 // Повний набір стилів з scss/libs/swiper.scss
 // import "../../scss/libs/swiper.scss";
 // Повний набір стилів з node_modules
@@ -111,8 +111,8 @@ function initSliders() {
   //   });
   // }
 
-  if (document.querySelector(".mainslider__slider")) {
-    new Swiper(".mainslider__slider", {
+  if (document.querySelector('.mainslider__slider')) {
+    new Swiper('.mainslider__slider', {
       modules: [Navigation, Autoplay, Pagination],
       observer: true,
       observeParents: true,
@@ -128,20 +128,114 @@ function initSliders() {
       },
 
       pagination: {
-        el: ".mainslider__pagination",
+        el: '.mainslider__pagination',
         clickable: true,
       },
 
       navigation: {
-        prevEl: ".mainslider .slider-arrow_prev",
-        nextEl: ".mainslider .slider-arrow_next",
+        prevEl: '.mainslider .slider-arrow_prev',
+        nextEl: '.mainslider .slider-arrow_next',
       },
       // Події
       // on: {},
-    });
+    })
   }
-  if (document.querySelector(".products-slider__slider")) {
-    new Swiper(".products-slider__slider", {
+  if (document.querySelector('.catalog-cards__slider_1')) {
+    new Swiper('.catalog-cards__slider_1', {
+      modules: [Navigation, Autoplay],
+      observer: true,
+      observeParents: true,
+      slidesPerView: 6,
+      spaceBetween: 29,
+      autoHeight: true,
+      speed: 800,
+      preloadImages: false,
+      grabCursor: true,
+
+      autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+      },
+      navigation: {
+        prevEl: '.catalog-cards__slider_1 .slider-arrow_prev',
+        nextEl: '.catalog-cards__slider_1 .slider-arrow_next',
+      },
+      breakpoints: {
+        320: {
+          slidesPerView: 2,
+          spaceBetween: 15,
+        },
+
+        380: {
+          slidesPerView: 2,
+          spaceBetween: 25,
+        },
+
+        578: {
+          slidesPerView: 3,
+          spaceBetween: 25,
+        },
+
+        992: {
+          slidesPerView: 4,
+          spaceBetween: 30,
+        },
+        1400: {
+          slidesPerView: 5,
+          spaceBetween: 30,
+        },
+      },
+    })
+  }
+	if (document.querySelector('.catalog-cards__slider_2')) {
+    new Swiper('.catalog-cards__slider_2', {
+      modules: [Navigation, Autoplay],
+      observer: true,
+      observeParents: true,
+      slidesPerView: 6,
+      spaceBetween: 29,
+      autoHeight: true,
+      speed: 800,
+      preloadImages: false,
+      grabCursor: true,
+
+      autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+      },
+      navigation: {
+        prevEl: '.catalog-cards__slider_2 .slider-arrow_prev',
+        nextEl: '.catalog-cards__slider_2 .slider-arrow_next',
+      },
+      breakpoints: {
+        320: {
+          slidesPerView: 2,
+          spaceBetween: 15,
+        },
+
+        380: {
+          slidesPerView: 2,
+          spaceBetween: 25,
+        },
+
+        578: {
+          slidesPerView: 3,
+          spaceBetween: 25,
+        },
+
+        992: {
+          slidesPerView: 4,
+          spaceBetween: 30,
+        },
+        1400: {
+          slidesPerView: 5,
+          spaceBetween: 30,
+        },
+      },
+    })
+  }
+  if (document.querySelector('.products-slider__slider')) {
+    new Swiper('.products-slider__slider', {
       modules: [Navigation, Autoplay],
       observer: true,
       observeParents: true,
@@ -161,14 +255,14 @@ function initSliders() {
       },
 
       navigation: {
-        prevEl: ".products-slider .slider-arrow_prev",
-        nextEl: ".products-slider .slider-arrow_next",
+        prevEl: '.products-slider .slider-arrow_prev',
+        nextEl: '.products-slider .slider-arrow_next',
       },
       // Брейкпоінти
       breakpoints: {
         320: {
           slidesPerView: 2,
-          spaceBetween: 15,
+          spaceBetween: 20,
         },
 
         578: {
@@ -197,10 +291,10 @@ function initSliders() {
 
       // Події
       // on: {},
-    });
+    })
   }
-  if (document.querySelector(".working-brands__slider")) {
-    new Swiper(".working-brands__slider", {
+  if (document.querySelector('.working-brands__slider')) {
+    new Swiper('.working-brands__slider', {
       modules: [Navigation, Autoplay],
       observer: true,
       observeParents: true,
@@ -221,8 +315,8 @@ function initSliders() {
         disableOnInteraction: false,
       },
       navigation: {
-        prevEl: ".working-brands .slider-arrow_prev",
-        nextEl: ".working-brands .slider-arrow_next",
+        prevEl: '.working-brands .slider-arrow_prev',
+        nextEl: '.working-brands .slider-arrow_next',
       },
       // Брейкпоінти
       breakpoints: {
@@ -258,10 +352,10 @@ function initSliders() {
 
       // Події
       // on: {},
-    });
+    })
   }
-  if (document.querySelector(".our-partners__slider")) {
-    new Swiper(".our-partners__slider", {
+  if (document.querySelector('.our-partners__slider')) {
+    new Swiper('.our-partners__slider', {
       modules: [Navigation, Autoplay],
       observer: true,
       observeParents: true,
@@ -289,10 +383,10 @@ function initSliders() {
           spaceBetween: 25,
         },
       },
-    });
+    })
   }
-  if (document.querySelector(".images-product")) {
-    const thumbsSlider = new Swiper(".thumbs-images", {
+  if (document.querySelector('.images-product')) {
+    const thumbsSlider = new Swiper('.thumbs-images', {
       modules: [Autoplay, Thumbs],
       observer: true,
       watchOverflow: true,
@@ -315,8 +409,8 @@ function initSliders() {
           spaceBetween: 15,
         },
       },
-    });
-    new Swiper(".images-product__slider", {
+    })
+    new Swiper('.images-product__slider', {
       modules: [Autoplay, Thumbs],
       observer: true,
       watchOverflow: true,
@@ -331,18 +425,18 @@ function initSliders() {
       thumbs: {
         swiper: thumbsSlider,
       },
-    });
+    })
   }
-  if (document.querySelector(".recommendations-slider__slider")) {
-    new Swiper(".recommendations-slider__slider", {
+  if (document.querySelector('.recommendations-slider__slider')) {
+    new Swiper('.recommendations-slider__slider', {
       modules: [Navigation, Autoplay],
       observer: true,
       observeParents: true,
       slidesPerView: 2,
       spaceBetween: 40,
       navigation: {
-        prevEl: ".recommendations-slider__arrow-prev",
-        nextEl: ".recommendations-slider__arrow-next",
+        prevEl: '.recommendations-slider__arrow-prev',
+        nextEl: '.recommendations-slider__arrow-next',
       },
       autoplay: {
         delay: 3000,
@@ -368,19 +462,19 @@ function initSliders() {
           spaceBetween: 40,
         },
       },
-    });
+    })
   }
-  if (document.querySelector(".slider-main-cart__slider")) {
-    new Swiper(".slider-main-cart__slider", {
+  if (document.querySelector('.slider-main-cart__slider')) {
+    new Swiper('.slider-main-cart__slider', {
       modules: [Scrollbar, Mousewheel, Navigation],
       observer: true,
       observeParents: true,
       slidesPerView: 3,
       spaceBetween: 30,
-      direction: "vertical",
+      direction: 'vertical',
       grabCursor: true,
       scrollbar: {
-        el: ".swiper-scrollbar",
+        el: '.swiper-scrollbar',
         draggable: true,
         dragSize: 170,
       },
@@ -390,10 +484,10 @@ function initSliders() {
           slidesPerView: 1,
           spaceBetween: 30,
           mousewheel: false,
-          direction: "horizontal",
+          direction: 'horizontal',
           navigation: {
-            prevEl: ".slider-main-cart .slider-arrow_prev",
-            nextEl: ".slider-main-cart .slider-arrow_next",
+            prevEl: '.slider-main-cart .slider-arrow_prev',
+            nextEl: '.slider-main-cart .slider-arrow_next',
           },
         },
         992: {
@@ -401,22 +495,22 @@ function initSliders() {
           spaceBetween: 30,
         },
       },
-    });
+    })
   }
 }
 // Скролл на базі слайдера (за класом swiper scroll для оболонки слайдера)
 function initSlidersScroll() {
-  let sliderScrollItems = document.querySelectorAll(".swiper_scroll");
+  let sliderScrollItems = document.querySelectorAll('.swiper_scroll')
   if (sliderScrollItems.length > 0) {
     for (let index = 0; index < sliderScrollItems.length; index++) {
-      const sliderScrollItem = sliderScrollItems[index];
+      const sliderScrollItem = sliderScrollItems[index]
       const sliderScrollBar =
-        sliderScrollItem.querySelector(".swiper-scrollbar");
+        sliderScrollItem.querySelector('.swiper-scrollbar')
       const sliderScroll = new Swiper(sliderScrollItem, {
         observer: true,
         observeParents: true,
-        direction: "vertical",
-        slidesPerView: "auto",
+        direction: 'vertical',
+        slidesPerView: 'auto',
         freeMode: {
           enabled: true,
         },
@@ -428,15 +522,15 @@ function initSlidersScroll() {
         mousewheel: {
           releaseOnEdges: true,
         },
-      });
-      sliderScroll.scrollbar.updateSize();
+      })
+      sliderScroll.scrollbar.updateSize()
     }
   }
 }
 
-window.addEventListener("load", function (e) {
+window.addEventListener('load', function (e) {
   // Запуск ініціалізації слайдерів
-  initSliders();
+  initSliders()
   // Запуск ініціалізації скролла на базі слайдера (за класом swiper_scroll)
   //initSlidersScroll();
-});
+})

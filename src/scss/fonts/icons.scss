@@ -1,5 +1,5 @@
 %ic {
-  font-family: "icons";
+  font-family: 'icons';
   font-style: normal;
   font-weight: normal;
   font-variant: normal;
@@ -8,7 +8,7 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-[class*="_icon-"] {
+[class*='_icon-'] {
   &:before {
     @extend %ic;
     display: block;
@@ -103,41 +103,47 @@
   content: "\e91c";
 }
 ._icon-points:before {
-  content: "\e91d";
-}
-._icon-present:before {
   content: "\e91e";
 }
-._icon-search:before {
+._icon-present:before {
   content: "\e91f";
 }
-._icon-signout:before {
+._icon-search:before {
   content: "\e920";
 }
-._icon-sport:before {
+._icon-signout:before {
   content: "\e921";
 }
-._icon-star:before {
+._icon-sport:before {
   content: "\e922";
 }
-._icon-stationery:before {
+._icon-star:before {
   content: "\e923";
 }
-._icon-subscription:before {
+._icon-stationery:before {
   content: "\e924";
 }
-._icon-user:before {
+._icon-subscription:before {
   content: "\e925";
 }
-._icon-whitecart:before {
+._icon-user:before {
   content: "\e926";
 }
-._icon-women:before {
+._icon-whitecart:before {
   content: "\e927";
 }
-._icon-settings:before {
+._icon-women:before {
   content: "\e928";
 }
-._icon-radio:before {
+._icon-settings:before {
   content: "\e929";
+}
+._icon-phone:before {
+  content: "\e91d";
+}
+._icon-radio:before {
+  content: "\e92a";
+}
+._icon-favorite-full:before {
+  content: "\e92b";
 }

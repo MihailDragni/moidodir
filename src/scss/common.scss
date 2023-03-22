@@ -1,9 +1,9 @@
 // Заголовки, загальні БЕМ блоки та інше...
 .page {
-  @include adaptiveValue("padding-top", 20, 10);
+  @include adaptiveValue('padding-top', 20, 10);
   &__header {
-    @include adaptiveValue("padding-top", 20, 10);
-    @include adaptiveValue("padding-bottom", 25, 15);
+    @include adaptiveValue('padding-top', 20, 10);
+    @include adaptiveValue('padding-bottom', 25, 15);
   }
 }
 
@@ -41,7 +41,7 @@
       display: flex;
       flex-wrap: wrap;
       row-gap: rem(5);
-      @include adaptiveValue("column-gap", 43, 20);
+      @include adaptiveValue('column-gap', 43, 20);
     }
   }
   &__link {
@@ -59,7 +59,7 @@
   overflow: hidden;
   position: relative;
   &::after {
-    content: "";
+    content: '';
     position: fixed;
     inset: 0;
     background-color: rgba(0, 0, 0, 0.5);
@@ -81,7 +81,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  @include adaptiveValue("font-size", 20, 16);
+  @include adaptiveValue('font-size', 20, 16);
   cursor: pointer;
   transition: all 0.3s ease;
 
@@ -107,7 +107,7 @@
   align-items: center;
   column-gap: rem(7);
   @media (max-width: $tablet) {
-    @include adaptiveValue("column-gap", 10, 8);
+    @include adaptiveValue('column-gap', 10, 8);
   }
 }
 
@@ -121,7 +121,7 @@
   transition: flex-basis 0.3s ease;
   height: rem(5);
   &::before {
-    content: "";
+    content: '';
     height: rem(3);
     width: 100%;
     background-color: #d9d9d9;
@@ -143,7 +143,7 @@
 .swiper-pagination-bullet-active {
   flex: 0 0 rem(122);
   &::before {
-    content: "";
+    content: '';
     background-color: $mainBlue;
     height: rem(5);
   }
@@ -161,16 +161,15 @@
 
 ._title {
   font-weight: 700;
-  @include adaptiveValue("font-size", 36, 18);
+  @include adaptiveValue('font-size', 36, 18);
   line-height: math.div(44, 36);
 }
 
 .products-slider {
-  @include adaptiveValue("padding-bottom", 50, 30);
-
+  @include adaptiveValue('padding-bottom', 50, 30);
   &__title {
     &:not(:last-child) {
-      @include adaptiveValue("margin-bottom", 40, 20);
+      @include adaptiveValue('margin-bottom', 40, 20);
     }
   }
 
@@ -178,10 +177,12 @@
     padding: rem(20);
     margin: rem(-20);
     position: relative;
-    @media (max-width: $tablet) {
-      padding: 0;
-      margin: 0;
-    }
+    @include adaptiveValue('padding', 20, 10);
+    @include adaptiveValue('margin', -20, -10);
+    // @media (max-width: $tablet) {
+    //   padding: 0;
+    //   margin: 0;
+    // }
   }
 
   &__wrapper {
@@ -214,7 +215,7 @@
     position: relative;
     box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.18);
     background-color: #f5f5f5;
-    border-radius: rem(30);
+    @include adaptiveValue('border-radius', 30, 15);
     transition: box-shadow 0.3s ease;
     @media (any-hover: hover) {
       &:hover {
@@ -222,14 +223,17 @@
       }
     }
     &:not(:last-child) {
-      @include adaptiveValue("margin-bottom", 28, 12);
+      @include adaptiveValue('margin-bottom', 28, 12);
     }
   }
 
   &__image-ibg {
     padding-bottom: percent(378, 277);
-    border-radius: rem(30);
+    @include adaptiveValue('border-radius', 30, 15);
     display: block;
+    & img {
+      max-width: 100%;
+    }
   }
 
   &__btn {
@@ -237,16 +241,28 @@
     bottom: percent(-19, 379);
     right: percent(12, 278);
     z-index: 3;
-    @include adaptiveValue("width", 62, 35);
-    @include adaptiveValue("height", 62, 35);
+    @include adaptiveValue('width', 61, 34);
+    @include adaptiveValue('height', 61, 34);
     border-radius: 50%;
     background-color: $mainBlue;
     display: flex;
     align-items: center;
     justify-content: center;
+    border: 1px solid transparent;
+    transition: background-color 0.3s ease, border 0.3s ease;
     &::before {
-      @include adaptiveValue("font-size", 23, 16);
+      @include adaptiveValue('font-size', 23, 16);
       color: #fff;
+      transition: color 0.3s ease;
+    }
+    @media (any-hover: hover) {
+      &:hover {
+        background-color: #fff;
+        border: 1px solid $mainBlue;
+        &::before {
+          color: $mainBlue;
+        }
+      }
     }
   }
 
@@ -255,8 +271,45 @@
     top: percent(20, 379);
     right: percent(20, 278);
     z-index: 3;
+    @include adaptiveValue('font-size', 25, 21);
+    width: em(30, 22);
+    height: em(30, 22);
     color: $mainBlue;
-    @include adaptiveValue("font-size", 22, 15);
+    &::before,
+    &::after {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      transition: opacity 0.3s ease;
+    }
+    &::before {
+      z-index: 5;
+    }
+    &::after {
+      content: '\e92b';
+      @extend %ic;
+      opacity: 0;
+      @include adaptiveValue('font-size', 26, 22);
+    }
+    @media (any-hover: hover) {
+      &:hover {
+        &::before {
+          opacity: 0;
+        }
+        &::after {
+          opacity: 1;
+        }
+      }
+    }
+    &._active {
+      &::before {
+        opacity: 0;
+      }
+      &::after {
+        opacity: 1;
+      }
+    }
   }
 
   &__discount {
@@ -266,7 +319,7 @@
     border-radius: em(8, 20);
     color: #fff;
     padding: em(3, 20) em(12, 20);
-    @include adaptiveValue("font-size", 20, 10);
+    @include adaptiveValue('font-size', 20, 14);
     line-height: math.div(24, 20);
     display: inline-flex;
     justify-content: center;
@@ -284,7 +337,7 @@
 
   &__price {
     font-weight: 700;
-    @include adaptiveValue("font-size", 32, 12);
+    @include adaptiveValue('font-size', 32, 12);
     line-height: percent(32, 39);
     color: #2f2f2f;
     display: flex;
@@ -295,7 +348,7 @@
     }
     & span {
       font-weight: 500;
-      @include adaptiveValue("font-size", 26, 10);
+      @include adaptiveValue('font-size', 26, 10);
       line-height: percent(26, 32);
       color: #616161;
       text-decoration: line-through;
@@ -311,7 +364,7 @@
 
   &__title-link {
     font-weight: 700;
-    @include adaptiveValue("font-size", 24, 12);
+    @include adaptiveValue('font-size', 24, 12);
     line-height: percent(29, 24);
     color: $mainBlue;
     @media (any-hover: hover) {
@@ -324,7 +377,7 @@
   &__description {
     flex: 1 1 auto;
     color: #616161;
-    @include adaptiveValue("font-size", 20, 12);
+    @include adaptiveValue('font-size', 20, 12);
     &:not(:last-child) {
       margin-bottom: rem(8);
     }
@@ -332,7 +385,7 @@
 
   &__stock {
     padding: em(2, 14) em(10, 14);
-    @include adaptiveValue("font-size", 14, 10);
+    @include adaptiveValue('font-size', 14, 10);
     color: #fff;
     background-color: #2caa00;
     border-radius: em(45, 14);
@@ -361,14 +414,14 @@
 
   &__item {
     padding-bottom: rem(10);
-    @include adaptiveValue("font-size", 16, 12);
+    @include adaptiveValue('font-size', 16, 12);
     &:first-child {
       & a {
         display: flex;
         align-items: center;
         column-gap: em(10, 16);
         &::before {
-          content: "\e903";
+          content: '\e903';
           height: 100%;
           @extend %ic;
           font-size: em(14, 16);
@@ -384,13 +437,13 @@
     display: flex;
     align-items: center;
     &::after {
-      content: "\e902";
+      content: '\e902';
       @extend %ic;
       transform: rotate(-90deg);
       font-size: rem(6);
       margin: 0 em(10, 6);
-      @include adaptiveValue("margin-right", 10, 5);
-      @include adaptiveValue("margin-left", 10, 5);
+      @include adaptiveValue('margin-right', 10, 5);
+      @include adaptiveValue('margin-left', 10, 5);
     }
     &_current {
       &::after {
@@ -410,11 +463,11 @@
     align-items: center;
     justify-content: center;
     row-gap: rem(5);
-    @include adaptiveValue("column-gap", 24, 5);
+    @include adaptiveValue('column-gap', 24, 5);
     border: 1px solid #d1d5db;
     border-radius: em(6, 16);
     padding: em(7, 16);
-    @include adaptiveValue("font-size", 16, 12);
+    @include adaptiveValue('font-size', 16, 12);
     @media (max-width: $mobileSmall) {
       flex-wrap: wrap;
     }
@@ -455,7 +508,7 @@
   &__list {
     display: flex;
     align-items: center;
-    @include adaptiveValue("column-gap", 25, 5);
+    @include adaptiveValue('column-gap', 25, 5);
     @media (max-width: $mobileSmall) {
       order: 3;
     }
@@ -497,12 +550,12 @@
   background-color: #fff;
   border: 1px solid #99b5cf;
   border-radius: rem(5);
-  @include adaptiveValue("font-size", 20, 14);
+  @include adaptiveValue('font-size', 20, 14);
   & .select2-results__option {
     padding: em(6, 20);
   }
   &_form {
-    @include adaptiveValue("font-size", 16, 14);
+    @include adaptiveValue('font-size', 16, 14);
     & .select2-results__option {
       padding: em(6, 16);
     }
@@ -525,7 +578,7 @@
     padding: em(8, 24) em(35, 24);
     white-space: nowrap;
     border-radius: rem(5);
-    @include adaptiveValue("font-size", 24, 14);
+    @include adaptiveValue('font-size', 24, 14);
   }
 
   & .select2-container .select2-selection--multiple {
@@ -535,7 +588,7 @@
     padding: em(8, 24);
     white-space: nowrap;
     border-radius: rem(5);
-    @include adaptiveValue("font-size", 24, 14);
+    @include adaptiveValue('font-size', 24, 14);
   }
 
   &
@@ -581,7 +634,7 @@
     position: static;
     transition: transform 0.3s ease;
     &::before {
-      content: "\e902";
+      content: '\e902';
       @extend %ic;
       font-size: em(10, 24);
       color: $mainDarkBlue;
@@ -652,7 +705,7 @@
       justify-content: space-between;
       padding: em(15, 16);
       border-radius: rem(4);
-      @include adaptiveValue("font-size", 16, 13);
+      @include adaptiveValue('font-size', 16, 13);
     }
 
     &
@@ -676,7 +729,7 @@
 }
 
 .quantity {
-  @include adaptiveValue("font-size", 28, 16);
+  @include adaptiveValue('font-size', 28, 16);
   width: em(170, 28);
   height: em(55, 28);
   display: flex;
@@ -692,7 +745,7 @@
     cursor: pointer;
     &::before,
     &::after {
-      content: "";
+      content: '';
       position: absolute;
       top: 50%;
       left: 50%;
@@ -761,7 +814,7 @@
     top: 1%;
     z-index: 50;
     height: 98%;
-    @include adaptiveValue("width", 8, 4);
+    @include adaptiveValue('width', 8, 4);
   }
 
   .swiper-scrollbar {
@@ -790,7 +843,7 @@
   color: $mainBlue;
   transition: color 0.3s ease;
   &::before {
-    @include adaptiveValue("font-size", 18, 14);
+    @include adaptiveValue('font-size', 18, 14);
   }
   @media (any-hover: hover) {
     &:hover {
@@ -808,7 +861,7 @@
     display: inline-block;
     background-color: #fff;
     padding: rem(0) em(7, 14);
-    @include adaptiveValue("font-size", 14, 12);
+    @include adaptiveValue('font-size', 14, 12);
     line-height: math.div(17, 14);
     color: #828282;
     transform: translate(em(18, 14), 40%);
@@ -819,7 +872,7 @@
     }
   }
   &__input {
-    @include adaptiveValue("font-size", 16, 13);
+    @include adaptiveValue('font-size', 16, 13);
     width: 100%;
     border: 1px solid #d1d5db;
     border-radius: rem(4);

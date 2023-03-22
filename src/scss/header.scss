@@ -9,8 +9,8 @@
   right: 0;
   z-index: 150;
   min-height: rem(40);
-  @include adaptiveValue("padding-top", 20, 10);
-  @include adaptiveValue("padding-bottom", 20, 10);
+  @include adaptiveValue('padding-top', 20, 10);
+  @include adaptiveValue('padding-bottom', 20, 10);
   background-color: #fff;
   @media (max-width: $tablet) {
     background-color: $mainLightBlue;
@@ -19,7 +19,7 @@
   &__container {
     display: flex;
     align-items: center;
-    @include adaptiveValue("column-gap", 66, 15);
+    @include adaptiveValue('column-gap', 66, 15);
     @media (max-width: $tablet) {
       justify-content: space-between;
     }
@@ -29,7 +29,7 @@
     display: flex;
     align-items: center;
     @media (min-width: $tablet) {
-      @include adaptiveValue("column-gap", 33, 15, 0, $containerWidth, 991);
+      @include adaptiveValue('column-gap', 33, 15, 0, $containerWidth, 991);
     }
   }
 
@@ -38,7 +38,7 @@
     height: em(38, 36);
     font-size: rem(36);
     @media (min-width: $tablet) {
-      @include adaptiveValue("font-size", 36, 26, 0, $containerWidth, 991);
+      @include adaptiveValue('font-size', 36, 26, 0, $containerWidth, 991);
     }
     color: $mainBlue;
     display: flex;
@@ -51,8 +51,8 @@
 
   &__logo-ibg {
     display: block;
-    @include adaptiveValue("width", 165, 106);
-    @include adaptiveValue("height", 40, 26);
+    @include adaptiveValue('width', 165, 106);
+    @include adaptiveValue('height', 40, 26);
   }
 
   &__search {
@@ -81,7 +81,7 @@
     justify-content: center;
     align-items: center;
     border-radius: 50%;
-    @include adaptiveValue("font-size", 23, 18);
+    @include adaptiveValue('font-size', 23, 18);
     color: $mainBlue;
   }
   // .search-header__btn
@@ -89,7 +89,7 @@
   &__btn {
     right: rem(10);
     left: auto;
-    @include adaptiveValue("font-size", 25, 18);
+    @include adaptiveValue('font-size', 25, 18);
     @media (max-width: $tablet) {
       display: none;
     }
@@ -100,7 +100,7 @@
   &__input {
     width: 100%;
     border-radius: rem(50);
-    @include adaptiveValue("min-height", 55, 35);
+    @include adaptiveValue('min-height', 55, 35);
     background-color: transparent;
     padding: rem(0) rem(62);
     color: $mainBlue;
@@ -110,7 +110,7 @@
     @media (max-width: $tablet) {
       padding-left: rem(52);
       padding-right: rem(30);
-      @include adaptiveValue("min-height", 53, 43, 0, 992, 320);
+      @include adaptiveValue('min-height', 53, 43, 0, 992, 320);
     }
   }
 }
@@ -118,17 +118,14 @@
 .actions-header {
   display: flex;
   align-items: center;
-  @include adaptiveValue("column-gap", 70, 20);
-
-  &__favorite,
-  &__user,
-  &__cart {
+  @include adaptiveValue('column-gap', 70, 20);
+  &__link {
     color: $mainBlue;
-    @include adaptiveValue("font-size", 34, 20);
+    @include adaptiveValue('font-size', 34, 20);
     position: relative;
     z-index: 3;
     &::after {
-      content: "";
+      content: '';
       position: absolute;
       border-radius: 50%;
       top: 50%;
@@ -148,94 +145,46 @@
       }
     }
     @media (min-width: $tablet) {
-      &._actions-header-active {
+      &._active {
         &::after {
           background-color: $mainLightBlue;
         }
       }
     }
-  }
+    &_cart {
+      position: relative;
+      & span {
+        display: block;
+        position: absolute;
+        border-radius: 50%;
+        width: em(22, 13);
+        height: em(22, 13);
+        top: -25%;
+        right: -20%;
+        color: #fff;
+        font-weight: 500;
+        @include adaptiveValue('font-size', 13, 9);
+        background-color: $mainRed;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
 
-  &__cart {
-    position: relative;
-    & span {
-      display: block;
-      position: absolute;
-      border-radius: 50%;
-      width: em(22, 13);
-      height: em(22, 13);
-      top: -25%;
-      right: -20%;
-      color: #fff;
-      font-weight: 500;
-      @include adaptiveValue("font-size", 13, 9);
-      background-color: $mainRed;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      &::after {
+        transform: translate(-50%, -55%);
+      }
     }
-
-    &::after {
-      transform: translate(-50%, -55%);
+    &_favorite,
+    &_user {
+      @media (max-width: $tablet) {
+        display: none;
+      }
     }
-  }
-
-  &__favorite,
-  &__user {
-    @media (max-width: $tablet) {
+    &_phone {
       display: none;
+      @media (max-width: $tablet) {
+        display: block;
+      }
     }
   }
 }
-
-//Burger
-
-// .icon-menu {
-//   display: none;
-//   @media (max-width: $mobile) {
-//     display: block;
-//     position: relative;
-//     flex: 0 0 rem(30);
-//     height: rem(18);
-//     z-index: 5;
-//     @media (any-hover: none) {
-//       cursor: default;
-//     }
-//     span,
-//     &::before,
-//     &::after {
-//       content: "";
-//       transition: all 0.3s ease 0s;
-//       right: 0;
-//       position: absolute;
-//       width: 100%;
-//       height: rem(2);
-//       background-color: $mainBlue;
-//     }
-//     &::before {
-//       top: 0;
-//     }
-//     &::after {
-//       bottom: 0;
-//     }
-//     span {
-//       top: calc(50% - rem(1));
-//     }
-//     .menu-open & {
-//       span {
-//         width: 0;
-//       }
-//       &::before,
-//       &::after {
-//       }
-//       &::before {
-//         top: calc(50% - rem(1));
-//         transform: rotate(-45deg);
-//       }
-//       &::after {
-//         bottom: calc(50% - rem(1));
-//         transform: rotate(45deg);
-//       }
-//     }
-//   }
-// }
