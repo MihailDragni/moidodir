@@ -116,7 +116,7 @@
     top: 50%;
     left: 0;
     transform: translateY(-50%);
-    @media (max-width: $mobile) {
+    @media (max-width: em(590)) {
       display: none;
     }
   }

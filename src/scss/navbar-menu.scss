@@ -23,6 +23,7 @@
     padding: rem(10) rem(0);
     min-height: $mobileNavBarHeight;
     font-size: rem(24);
+		cursor: pointer;
   }
   &__icon {
     display: flex;

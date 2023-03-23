@@ -1,17 +1,17 @@
 .cart {
   &__title {
     &:not(:last-child) {
-      @include adaptiveValue("margin-bottom", 30, 20);
+      @include adaptiveValue('margin-bottom', 30, 20);
     }
   }
 }
 
 .main-cart {
-  @include adaptiveValue("padding-bottom", 108, 30);
+  @include adaptiveValue('padding-bottom', 108, 30);
   min-width: 0;
   height: 100%;
   @media (min-width: $tablet) {
-    @include adaptiveValue("column-gap", 93, 15, 0, $containerWidth, 992);
+    @include adaptiveValue('column-gap', 93, 15, 0, $containerWidth, 992);
     grid-template-columns: 54.3% 1fr;
   }
   display: grid;
@@ -24,7 +24,7 @@
   min-height: 0;
   max-height: rem(1265);
   @media (min-width: $tablet) {
-    @include adaptiveValue("max-height", 1265, 900, 0, $containerWidth, 992);
+    @include adaptiveValue('max-height', 1265, 900, 0, $containerWidth, 992);
   }
   height: 100%;
   min-width: 0;
@@ -74,13 +74,13 @@
   }
 
   &__model {
-    @include adaptiveValue("font-size", 16, 12);
+    @include adaptiveValue('font-size', 16, 12);
     color: #6b7280;
   }
 
   &__name {
     font-weight: 600;
-    @include adaptiveValue("font-size", 24, 16);
+    @include adaptiveValue('font-size', 24, 16);
     line-height: 1;
     color: #1f2937;
   }
@@ -90,13 +90,13 @@
     align-items: center;
     column-gap: rem(15);
     @media (min-width: $mobile) {
-      @include adaptiveValue("column-gap", 48, 15, 0, $containerWidth, 768);
+      @include adaptiveValue('column-gap', 48, 15, 0, $containerWidth, 768);
     }
   }
 
   &__button {
     text-decoration: underline;
-    @include adaptiveValue("font-size", 20, 14);
+    @include adaptiveValue('font-size', 20, 14);
     transition: color 0.3s ease;
     @media (any-hover: hover) {
       &:hover {
@@ -119,13 +119,13 @@
 }
 
 .details-slide-cart {
-  @include adaptiveValue("font-size", 20, 12);
+  @include adaptiveValue('font-size', 20, 12);
   color: #6b7280;
   &__item {
     display: flex;
     column-gap: rem(5);
     &:not(:last-child) {
-      @include adaptiveValue("margin-bottom", 25, 5);
+      @include adaptiveValue('margin-bottom', 25, 5);
     }
   }
 }
@@ -133,7 +133,7 @@
 .payback-cart {
   display: grid;
   align-content: flex-start;
-  @include adaptiveValue("row-gap", 25, 15);
+  @include adaptiveValue('row-gap', 25, 15);
 
   &__info {
     border: 1px solid #c9c9c9;
@@ -142,7 +142,7 @@
     display: flex;
     align-items: center;
     column-gap: em(10, 16);
-    @include adaptiveValue("font-size", 16, 12);
+    @include adaptiveValue('font-size', 16, 12);
     &::before {
       font-size: em(24, 16);
       color: $mainBlue;
@@ -151,7 +151,7 @@
 }
 
 .form-payback-cart {
-  @include adaptiveValue("font-size", 20, 16);
+  @include adaptiveValue('font-size', 20, 16);
   padding: em(16, 20);
   border: 1px solid #c9c9c9;
   border-radius: rem(6);
@@ -171,12 +171,12 @@
   }
 
   &__text {
-    @include adaptiveValue("font-size", 16, 12);
+    @include adaptiveValue('font-size', 16, 12);
   }
 }
 
 .form-payback {
-  @include adaptiveValue("font-size", 20, 14);
+  @include adaptiveValue('font-size', 20, 14);
   display: flex;
   align-items: center;
   column-gap: em(16, 20);
@@ -199,10 +199,16 @@
     align-items: center;
     border-radius: 50%;
     background-color: $mainBlue;
+    transition: background-color 0.3s ease;
     color: #fff;
     &::before {
       font-size: em(18, 20);
       transform: rotate(-180deg);
+    }
+    @media (any-hover: hover) {
+      &:hover {
+        background-color: #255a8c;
+      }
     }
   }
 }
@@ -214,7 +220,7 @@
   padding: em(24, 16);
   display: grid;
   align-content: start;
-  @include adaptiveValue("font-size", 16, 12);
+  @include adaptiveValue('font-size', 16, 12);
   line-height: math.div(24, 16);
 
   &__list {
@@ -239,7 +245,7 @@
     min-height: em(40, 16);
     min-width: em(275, 16);
     @media (max-width: $mobileSmall) {
-      justify-self: center;
+			min-width: 100%
     }
   }
 }
@@ -260,12 +266,12 @@
       display: flex;
       flex-direction: column;
       & span {
-        @include adaptiveValue("font-size", 12, 10);
+        @include adaptiveValue('font-size', 12, 10);
         color: rgba(86, 86, 86, 0.52);
       }
     }
     & .payback-list-item__value {
-      @include adaptiveValue("font-size", 24, 16);
+      @include adaptiveValue('font-size', 24, 16);
     }
   }
 }

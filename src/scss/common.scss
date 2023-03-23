@@ -337,7 +337,7 @@
 
   &__price {
     font-weight: 700;
-    @include adaptiveValue('font-size', 32, 12);
+    @include adaptiveValue('font-size', 32, 14);
     line-height: percent(32, 39);
     color: #2f2f2f;
     display: flex;
@@ -348,7 +348,7 @@
     }
     & span {
       font-weight: 500;
-      @include adaptiveValue('font-size', 26, 10);
+      @include adaptiveValue('font-size', 26, 12);
       line-height: percent(26, 32);
       color: #616161;
       text-decoration: line-through;
@@ -364,7 +364,7 @@
 
   &__title-link {
     font-weight: 700;
-    @include adaptiveValue('font-size', 24, 12);
+    @include adaptiveValue('font-size', 24, 16);
     line-height: percent(29, 24);
     color: $mainBlue;
     @media (any-hover: hover) {
@@ -377,24 +377,24 @@
   &__description {
     flex: 1 1 auto;
     color: #616161;
-    @include adaptiveValue('font-size', 20, 12);
+    @include adaptiveValue('font-size', 20, 14);
     &:not(:last-child) {
       margin-bottom: rem(8);
     }
   }
 
   &__stock {
-    padding: em(2, 14) em(10, 14);
-    @include adaptiveValue('font-size', 14, 10);
+    padding: em(3, 15) em(10, 15);
+    @include adaptiveValue('font-size', 15, 12);
     color: #fff;
     background-color: #2caa00;
-    border-radius: em(45, 14);
+    border-radius: em(45, 15);
     display: inline-flex;
     align-items: center;
     column-gap: rem(5);
     align-self: flex-start;
     &::before {
-      font-size: rem(6);
+      font-size: em(8, 15);
     }
   }
 }
@@ -454,8 +454,10 @@
 }
 
 .pagging {
-  display: flex;
-  justify-content: center;
+  &__container {
+    display: flex;
+    justify-content: center;
+  }
 
   &__inner {
     background: #ffffff;
@@ -743,6 +745,7 @@
     background-color: $mainBlue;
     position: relative;
     cursor: pointer;
+		transition: background-color 0.3s ease 0s;
     &::before,
     &::after {
       content: '';
@@ -753,14 +756,10 @@
       background-color: #fff;
       width: em(22, 28);
       height: em(3, 28);
-      transition: all 0.3s ease 0s;
     }
     @media (any-hover: hover) {
       &:hover {
-        &::before,
-        &::after {
-          background-color: rgba(0, 0, 0, 0.5);
-        }
+        background-color: #255a8c;
       }
     }
     // .quantity__button_plus
