@@ -73,7 +73,7 @@
 }
 .filters-catalog {
   position: sticky;
-  z-index: 150;
+  z-index: 100;
   @media (min-width: $tablet) {
     @include adaptiveValue('top', 95, 60);
   }

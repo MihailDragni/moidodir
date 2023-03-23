@@ -233,20 +233,22 @@
     justify-content: flex-end;
     align-items: center;
     gap: rem(16);
-    @include adaptiveValue("gap", 16, 10);
+    @include adaptiveValue("gap", 16, 12);
     @media (max-width: em(578)) {
       justify-content: center;
       flex-wrap: wrap;
+			width: 100%;
     }
   }
 
   &__button {
     justify-self: flex-end;
-    @include adaptiveValue("font-size", 20, 14);
+    @include adaptiveValue("font-size", 20, 15);
     min-height: em(35, 20);
     min-width: em(285, 20);
     @media (max-width: em(578)) {
       justify-self: center;
+			min-width: 100%;
     }
     &:first-child {
       background-color: transparent;
