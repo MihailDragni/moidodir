@@ -1,0 +1,882 @@
+// Заголовки, загальні БЕМ блоки та інше...
+.page {
+  @include adaptiveValue('padding-top', 20, 10);
+  &__header {
+    @include adaptiveValue('padding-top', 20, 10);
+    @include adaptiveValue('padding-bottom', 25, 15);
+  }
+}
+
+.top-bar {
+  padding: rem(5) 0;
+  background-color: $mainLightBlue;
+  color: #2e2e2e;
+  &:not(:last-child) {
+    margin-bottom: rem(15);
+  }
+  @media (max-width: $tablet) {
+    display: none;
+  }
+  &__container {
+    display: flex;
+    align-items: center;
+    column-gap: rem(20);
+    min-height: rem(40);
+  }
+  // .top-header__menu
+  &__menu {
+    flex: 1 1 auto;
+  }
+
+  &__lang {
+    &.select-style .select2-container .select2-selection--single {
+      padding: em(5, 24) em(15, 24);
+    }
+  }
+}
+
+.menu {
+  &__list {
+    @media (min-width: $tablet) {
+      display: flex;
+      flex-wrap: wrap;
+      row-gap: rem(5);
+      @include adaptiveValue('column-gap', 43, 20);
+    }
+  }
+  &__link {
+    font-size: rem(16);
+    font-weight: 500;
+    @media (any-hover: hover) {
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+.body-lock {
+  overflow: hidden;
+  position: relative;
+  &::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 151;
+  }
+}
+
+._footer-title {
+  font-weight: 500;
+  font-size: rem(16);
+  line-height: math.div(20, 16);
+}
+
+.slider-arrow {
+  border-radius: 50%;
+  height: em(65, 20);
+  width: em(65, 20);
+  background-color: #cdcdcd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  @include adaptiveValue('font-size', 20, 16);
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &_prev {
+  }
+
+  &_next {
+    &::before {
+      transform: rotate(-180deg);
+    }
+  }
+  @media (any-hover: hover) {
+    &:hover {
+      color: #fff;
+      background-color: #bab9b9;
+    }
+  }
+}
+
+.swiper-pagination-bullets {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  column-gap: rem(7);
+  @media (max-width: $tablet) {
+    @include adaptiveValue('column-gap', 10, 8);
+  }
+}
+
+.swiper-pagination-bullet {
+  cursor: pointer;
+  padding: rem(5) rem(0);
+  flex: 0 0 rem(61);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: flex-basis 0.3s ease;
+  height: rem(5);
+  &::before {
+    content: '';
+    height: rem(3);
+    width: 100%;
+    background-color: #d9d9d9;
+    border-radius: 5px;
+    transition: height 0.3s ease, background-color 0.3s ease;
+  }
+  @media (max-width: $tablet) {
+    height: rem(13);
+    flex: 0 0 rem(13);
+    border-radius: 50%;
+    &::before {
+      height: rem(10);
+      width: rem(10);
+      border-radius: 50%;
+    }
+  }
+}
+
+.swiper-pagination-bullet-active {
+  flex: 0 0 rem(122);
+  &::before {
+    content: '';
+    background-color: $mainBlue;
+    height: rem(5);
+  }
+  @media (max-width: $tablet) {
+    height: rem(13);
+    flex: 0 0 rem(13);
+    border-radius: 50%;
+    &::before {
+      height: rem(10);
+      width: rem(10);
+      border-radius: 50%;
+    }
+  }
+}
+
+._title {
+  font-weight: 700;
+  @include adaptiveValue('font-size', 36, 18);
+  line-height: math.div(44, 36);
+}
+
+.products-slider {
+  @include adaptiveValue('padding-bottom', 50, 30);
+  &__title {
+    &:not(:last-child) {
+      @include adaptiveValue('margin-bottom', 40, 20);
+    }
+  }
+
+  &__slider {
+    padding: rem(20);
+    margin: rem(-20);
+    position: relative;
+    @include adaptiveValue('padding', 20, 10);
+    @include adaptiveValue('margin', -20, -10);
+    // @media (max-width: $tablet) {
+    //   padding: 0;
+    //   margin: 0;
+    // }
+  }
+
+  &__wrapper {
+  }
+
+  &__slide {
+    height: 100%;
+  }
+  &__arrow-prev,
+  &__arrow-next {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    @media (max-width: $mobile) {
+      display: none;
+    }
+  }
+  &__arrow-next {
+    left: auto;
+    right: 0;
+  }
+}
+
+.product-card {
+  height: 100%;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  &__header {
+    position: relative;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.18);
+    background-color: #f5f5f5;
+    @include adaptiveValue('border-radius', 30, 15);
+    transition: box-shadow 0.3s ease;
+    @media (any-hover: hover) {
+      &:hover {
+        box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.28);
+      }
+    }
+    &:not(:last-child) {
+      @include adaptiveValue('margin-bottom', 28, 12);
+    }
+  }
+
+  &__image-ibg {
+    padding-bottom: percent(378, 277);
+    @include adaptiveValue('border-radius', 30, 15);
+    display: block;
+    & img {
+      max-width: 100%;
+    }
+  }
+
+  &__btn {
+    position: absolute;
+    bottom: percent(-19, 379);
+    right: percent(12, 278);
+    z-index: 3;
+    @include adaptiveValue('width', 61, 34);
+    @include adaptiveValue('height', 61, 34);
+    border-radius: 50%;
+    background-color: $mainBlue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid transparent;
+    transition: background-color 0.3s ease, border 0.3s ease;
+    &::before {
+      @include adaptiveValue('font-size', 23, 16);
+      color: #fff;
+      transition: color 0.3s ease;
+    }
+    @media (any-hover: hover) {
+      &:hover {
+        background-color: #fff;
+        border: 1px solid $mainBlue;
+        &::before {
+          color: $mainBlue;
+        }
+      }
+    }
+  }
+
+  &__favorite {
+    position: absolute;
+    top: percent(20, 379);
+    right: percent(20, 278);
+    z-index: 3;
+    @include adaptiveValue('font-size', 25, 21);
+    width: em(30, 22);
+    height: em(30, 22);
+    color: $mainBlue;
+    &::before,
+    &::after {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      transition: opacity 0.3s ease;
+    }
+    &::before {
+      z-index: 5;
+    }
+    &::after {
+      content: '\e92b';
+      @extend %ic;
+      opacity: 0;
+      @include adaptiveValue('font-size', 26, 22);
+    }
+    @media (any-hover: hover) {
+      &:hover {
+        &::before {
+          opacity: 0;
+        }
+        &::after {
+          opacity: 1;
+        }
+      }
+    }
+    &._active {
+      &::before {
+        opacity: 0;
+      }
+      &::after {
+        opacity: 1;
+      }
+    }
+  }
+
+  &__discount {
+    position: absolute;
+    z-index: 3;
+    background: #ff0000;
+    border-radius: em(8, 20);
+    color: #fff;
+    padding: em(3, 20) em(12, 20);
+    @include adaptiveValue('font-size', 20, 14);
+    line-height: math.div(24, 20);
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-weight: 700;
+    bottom: percent(20, 379);
+    left: percent(20, 278);
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__price {
+    font-weight: 700;
+    @include adaptiveValue('font-size', 32, 14);
+    line-height: percent(32, 39);
+    color: #2f2f2f;
+    display: flex;
+    align-items: center;
+    column-gap: em(15, 32);
+    &:not(:last-child) {
+      margin-bottom: rem(4);
+    }
+    & span {
+      font-weight: 500;
+      @include adaptiveValue('font-size', 26, 12);
+      line-height: percent(26, 32);
+      color: #616161;
+      text-decoration: line-through;
+    }
+  }
+
+  &__title {
+    flex: 1 1 auto;
+    &:not(:last-child) {
+      margin-bottom: rem(4);
+    }
+  }
+
+  &__title-link {
+    font-weight: 700;
+    @include adaptiveValue('font-size', 24, 16);
+    line-height: percent(29, 24);
+    color: $mainBlue;
+    @media (any-hover: hover) {
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &__description {
+    flex: 1 1 auto;
+    color: #616161;
+    @include adaptiveValue('font-size', 20, 14);
+    &:not(:last-child) {
+      margin-bottom: rem(8);
+    }
+  }
+
+  &__stock {
+    padding: em(3, 15) em(10, 15);
+    @include adaptiveValue('font-size', 15, 12);
+    color: #fff;
+    background-color: #2caa00;
+    border-radius: em(45, 15);
+    display: inline-flex;
+    align-items: center;
+    column-gap: rem(5);
+    align-self: flex-start;
+    &::before {
+      font-size: em(8, 15);
+    }
+  }
+}
+
+.breadcrumbs {
+  white-space: nowrap;
+  overflow: auto;
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+    background: transparent;
+  }
+
+  &__list {
+    display: flex;
+  }
+
+  &__item {
+    padding-bottom: rem(10);
+    @include adaptiveValue('font-size', 16, 12);
+    &:first-child {
+      & a {
+        display: flex;
+        align-items: center;
+        column-gap: em(10, 16);
+        &::before {
+          content: '\e903';
+          height: 100%;
+          @extend %ic;
+          font-size: em(14, 16);
+          color: #000;
+        }
+      }
+    }
+  }
+
+  &__link {
+    line-height: math.div(20, 16);
+    color: #4d4d4d;
+    display: flex;
+    align-items: center;
+    &::after {
+      content: '\e902';
+      @extend %ic;
+      transform: rotate(-90deg);
+      font-size: rem(6);
+      margin: 0 em(10, 6);
+      @include adaptiveValue('margin-right', 10, 5);
+      @include adaptiveValue('margin-left', 10, 5);
+    }
+    &_current {
+      &::after {
+        display: none;
+      }
+    }
+  }
+}
+
+.pagging {
+  &__container {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__inner {
+    background: #ffffff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    row-gap: rem(5);
+    @include adaptiveValue('column-gap', 24, 5);
+    border: 1px solid #d1d5db;
+    border-radius: em(6, 16);
+    padding: em(7, 16);
+    @include adaptiveValue('font-size', 16, 12);
+    @media (max-width: $mobileSmall) {
+      flex-wrap: wrap;
+    }
+  }
+
+  &__arrow {
+    display: flex;
+    align-items: center;
+    color: #1d4ed8;
+    column-gap: em(9, 16);
+    &::before {
+      font-size: rem(7);
+    }
+    &_prev {
+      padding-left: em(18, 16);
+      &::before {
+        transform: rotate(90deg);
+      }
+      @media (max-width: $mobileSmall) {
+        order: 1;
+      }
+    }
+    &_next {
+      padding-right: em(18, 16);
+      flex-direction: row-reverse;
+      &::before {
+        transform: rotate(-90deg);
+      }
+      @media (max-width: $mobileSmall) {
+        order: 2;
+      }
+    }
+    &:disabled {
+      color: #6b7280;
+    }
+  }
+
+  &__list {
+    display: flex;
+    align-items: center;
+    @include adaptiveValue('column-gap', 25, 5);
+    @media (max-width: $mobileSmall) {
+      order: 3;
+    }
+  }
+
+  &__item {
+    & a {
+      @media (any-hover: hover) {
+        &:hover {
+          border: 1px solid #1d4ed8;
+          color: #1d4ed8;
+        }
+      }
+    }
+    & span {
+      pointer-events: none;
+    }
+  }
+
+  &__link {
+    background: #ffffff;
+    border: 1px solid transparent;
+    color: #4b5563;
+    border-radius: em(6, 16);
+    width: em(39, 16);
+    height: em(39, 16);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: color 0.3s ease, background-color 0.3s ease;
+    &._active {
+      border: 1px solid #1d4ed8;
+      color: #1d4ed8;
+    }
+  }
+}
+
+.select-dropdown {
+  background-color: #fff;
+  border: 1px solid #99b5cf;
+  border-radius: rem(5);
+  @include adaptiveValue('font-size', 20, 14);
+  & .select2-results__option {
+    padding: em(6, 20);
+  }
+  &_form {
+    @include adaptiveValue('font-size', 16, 14);
+    & .select2-results__option {
+      padding: em(6, 16);
+    }
+  }
+}
+
+.select-style {
+  & .select2-container--default .select2-selection--single,
+  .select2-container--default .select2-selection--multiple {
+    background: #ffffff;
+    border: 1px solid #99b5cf;
+    border-radius: rem(5);
+  }
+
+  & .select2-container .select2-selection--single {
+    height: auto;
+    display: flex;
+    align-items: center;
+    column-gap: em(10, 24);
+    padding: em(8, 24) em(35, 24);
+    white-space: nowrap;
+    border-radius: rem(5);
+    @include adaptiveValue('font-size', 24, 14);
+  }
+
+  & .select2-container .select2-selection--multiple {
+    height: auto;
+    display: flex;
+    align-items: center;
+    padding: em(8, 24);
+    white-space: nowrap;
+    border-radius: rem(5);
+    @include adaptiveValue('font-size', 24, 14);
+  }
+
+  &
+    .select2-container--default
+    .select2-selection--single
+    .select2-selection__rendered {
+    color: $mainDarkBlue;
+    font-size: inherit;
+    font-weight: 500;
+    line-height: 1.1;
+  }
+
+  & .select2-container .select2-selection--single .select2-selection__rendered {
+    padding: 0;
+    overflow: clip;
+    max-width: rem(350);
+  }
+
+  &
+    .select2-container--default
+    .select2-selection--single
+    .select2-selection__arrow {
+    height: 1em;
+    width: 1em;
+    position: static;
+    @media (min-width: $tablet) {
+      transform: translateY(1px);
+    }
+  }
+
+  &
+    .select2-container--default
+    .select2-selection--single
+    .select2-selection__arrow
+    b {
+    border: none;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    position: static;
+    transition: transform 0.3s ease;
+    &::before {
+      content: '\e902';
+      @extend %ic;
+      font-size: em(10, 24);
+      color: $mainDarkBlue;
+    }
+  }
+
+  &
+    .select2-container--default.select2-container--open
+    .select2-selection--single
+    .select2-selection__arrow
+    b {
+    border: none;
+    transform: rotate(180deg);
+  }
+
+  &
+    .select2-container
+    .select2-selection--multiple
+    .select2-selection__rendered {
+    display: flex;
+    align-items: center;
+    column-gap: rem(3);
+  }
+
+  &
+    .select2-container--default
+    .select2-selection--multiple
+    .select2-selection__choice {
+    vertical-align: middle;
+    margin: 0;
+    border-radius: rem(5);
+    border: 1px solid #99b5cf;
+    background-color: #eaf1f8;
+  }
+
+  &
+    .select2-container--default
+    .select2-selection--multiple
+    .select2-selection__choice__remove {
+    background-color: transparent;
+    border: none;
+    border-right: 1px solid #99b5cf;
+    border-top-left-radius: rem(5);
+    border-bottom-left-radius: rem(5);
+    color: $mainBlue;
+    font-size: 1em;
+    height: 1em;
+    width: 1em;
+    padding: 0;
+    & span {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      width: 100%;
+      transform: translateY(1%);
+    }
+  }
+  &_form {
+    & .select2-container--default .select2-selection--single {
+      border: 1px solid #d1d5db;
+      border-radius: rem(4);
+    }
+
+    & .select2-container .select2-selection--single {
+      height: 100%;
+      column-gap: em(8, 16);
+      justify-content: space-between;
+      padding: em(15, 16);
+      border-radius: rem(4);
+      @include adaptiveValue('font-size', 16, 13);
+    }
+
+    &
+      .select2-container--default
+      .select2-selection--single
+      .select2-selection__rendered {
+      color: #000;
+    }
+
+    &
+      .select2-container--default
+      .select2-selection--single
+      .select2-selection__arrow
+      b {
+      &::before {
+        font-size: em(8, 16);
+        color: #828282;
+      }
+    }
+  }
+}
+
+.quantity {
+  @include adaptiveValue('font-size', 28, 16);
+  width: em(170, 28);
+  height: em(55, 28);
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+  // .quantity__button
+  &__button {
+    flex: 0 0 percent(52, 170);
+    padding-bottom: percent(52, 170);
+    border-radius: 50%;
+    background-color: $mainBlue;
+    position: relative;
+    cursor: pointer;
+		transition: background-color 0.3s ease 0s;
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: #fff;
+      width: em(22, 28);
+      height: em(3, 28);
+    }
+    @media (any-hover: hover) {
+      &:hover {
+        background-color: #255a8c;
+      }
+    }
+    // .quantity__button_plus
+    &_plus {
+      &::before {
+        transform: translate(-50%, -50%) rotate(-90deg);
+      }
+    }
+    // .quantity__button_minus
+    &_minus {
+    }
+  }
+  // .quantity__input
+  &__input {
+    flex: 1 1 auto;
+    input {
+      height: 100%;
+      width: 100%;
+      text-align: center;
+    }
+  }
+}
+
+.btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: rem(0) rem(15);
+  text-align: center;
+  border-radius: rem(30);
+  min-height: rem(48);
+  font-weight: 600;
+  font-size: rem(16);
+  background-color: $mainBlue;
+  color: #fff;
+  transition: all 0.3s ease;
+  @media (any-hover: hover) {
+    &:hover {
+      background-color: #255a8c;
+    }
+  }
+  &_fw {
+    width: 100%;
+  }
+}
+
+.scrollbar-style {
+  .swiper-vertical > &.swiper-scrollbar {
+    position: absolute;
+    right: 0;
+    top: 1%;
+    z-index: 50;
+    height: 98%;
+    @include adaptiveValue('width', 8, 4);
+  }
+
+  .swiper-scrollbar {
+    border-radius: 10px;
+    position: relative;
+    -ms-touch-action: none;
+    background: transparent;
+  }
+
+  .swiper-scrollbar-drag {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    background: #6d6d6d;
+    border-radius: rem(20);
+    left: 0;
+    top: 0;
+  }
+}
+
+.viewpass {
+  position: absolute;
+  top: 50%;
+  right: 3%;
+  transform: translateY(-50%);
+  color: $mainBlue;
+  transition: color 0.3s ease;
+  &::before {
+    @include adaptiveValue('font-size', 18, 14);
+  }
+  @media (any-hover: hover) {
+    &:hover {
+      color: #000;
+    }
+  }
+}
+
+.input-style {
+  display: flex;
+  flex-direction: column;
+  &__label {
+    position: relative;
+    z-index: 5;
+    display: inline-block;
+    background-color: #fff;
+    padding: rem(0) em(7, 14);
+    @include adaptiveValue('font-size', 14, 12);
+    line-height: math.div(17, 14);
+    color: #828282;
+    transform: translate(em(18, 14), 40%);
+    align-self: flex-start;
+    @media (max-width: $mobileSmall) {
+      transform: translate(0, 40%);
+      align-self: center;
+    }
+  }
+  &__input {
+    @include adaptiveValue('font-size', 16, 13);
+    width: 100%;
+    border: 1px solid #d1d5db;
+    border-radius: rem(4);
+    padding: em(15, 16);
+    font-weight: 500;
+    line-height: 1;
+  }
+}

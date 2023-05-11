@@ -1,0 +1,132 @@
+.footer {
+  background-color: #e5edf3;
+  &__container {
+    max-width: rem(1360);
+    width: 100%;
+  }
+
+  &__body {
+    font-size: rem(14);
+    font-weight: 400;
+    line-height: math.div(17, 14);
+    display: grid;
+    grid-template-columns: 1fr rem(285);
+    column-gap: rem(20);
+    @include adaptiveValue("padding-top", 89, 30);
+    @include adaptiveValue("padding-bottom", 162, 70);
+    @media (max-width: $tablet) {
+      grid-template-rows: auto;
+      grid-template-columns: 1fr;
+      @include adaptiveValue("row-gap", 50, 15);
+    }
+  }
+}
+
+.menu-footer {
+  @media (min-width: $mobile) {
+    display: flex;
+    column-gap: rem(10);
+    justify-content: space-evenly;
+  }
+
+  @media (max-width: $mobile) {
+    display: block;
+  }
+
+  &__column {
+    flex: 0 1 33.333%;
+    @media (max-width: $tablet) {
+      flex: 0 1 auto;
+    }
+    @media (max-width: $mobile) {
+      padding: rem(9) rem(0);
+    }
+  }
+
+  &__title {
+    cursor: default;
+    margin-bottom: em(10, 16);
+    ._spoller-init & {
+      display: flex;
+      width: 100%;
+      flex-direction: row-reverse;
+      justify-content: space-between;
+      align-items: center;
+      &::before {
+        content: "\e902";
+        @extend %ic;
+        font-size: rem(8);
+        transition: transform 0.3s ease;
+      }
+    }
+    &._spoller-active {
+      &::before {
+        transform: rotate(-180deg);
+      }
+    }
+  }
+
+  &__list {
+    & li {
+      &:not(:last-child) {
+        margin-bottom: rem(7);
+      }
+    }
+  }
+
+  &__link {
+    transition: font-weigth 0.3s ease;
+    &:hover {
+      font-weight: 600;
+    }
+  }
+}
+
+.copyright-footer {
+  @media (max-width: $tablet) {
+    justify-self: center;
+    text-align: center;
+  }
+  & a {
+    text-decoration: underline;
+    display: block;
+  }
+}
+
+.our-partners {
+  background: #eff3f6;
+  @include adaptiveValue("padding-top", 46, 10);
+  @include adaptiveValue("padding-bottom", 46, 10);
+  &__container {
+    max-width: rem(1250);
+    width: 100%;
+  }
+  &__slider {
+    min-width: 0;
+  }
+
+  &__slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+  }
+
+  &__img {
+    width: 100%;
+    @include adaptiveValue("height", 81, 46);
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    & img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      max-height: 100%;
+      max-width: 100%;
+      object-fit: contain;
+    }
+  }
+}

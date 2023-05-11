@@ -1,0 +1,30 @@
+@@include('_top-bar.htm', {})
+<header class="header">
+	<div class="header__container">
+		<div class="header__row">
+			<button class="header__catalog-btn catalog-btn _icon-burger" type="button"></button>
+			<a class="header__logo-ibg" href="home.html">
+				<img src="@img/logo.svg" alt="Logo" width="164" height="40" />
+			</a>
+		</div>
+		<div data-da=".search-menu-navbar__search, 991.98" class="header__search">
+			<form class="search-header" action="#">
+				<button type="submit" class="search-header__submit _icon-search"></button>
+				<input autocomplete="off" type="text" name="form[]" data-error="Ошибка" placeholder="Search..."
+					class="search-header__input" />
+				<button type="button" class="search-header__btn _icon-instagram"></button>
+			</form>
+		</div>
+		<div class="header__actions actions-header">
+			<a class="actions-header__link actions-header__link_favorite _icon-favorite" href="#"></a>
+			<a class="actions-header__link actions-header__link_user _active _icon-user" href="#">
+			</a>
+			<a class="actions-header__link actions-header__link_phone _icon-phone" href="tel:+77772368899">
+			</a>
+			<a class="actions-header__link actions-header__link_cart _icon-cart" href="#">
+				<span>7</span>
+			</a>
+		</div>
+	</div>
+</header>
+@@include('_category.htm',{}) @@include('_navbar-menu.htm', {})

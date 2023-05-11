@@ -1,0 +1,64 @@
+.options {
+  display: flex;
+  align-items: flex-start;
+  column-gap: em(25, 16);
+  // .options__item
+  &__item {
+    position: relative;
+    cursor: pointer;
+    &:not(:last-child) {
+      margin-bottom: em(5);
+    }
+  }
+  // .options__input
+  &__input {
+    position: absolute;
+    width: 0;
+    height: 0;
+    opacity: 0;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    &:focus + .options__label {
+      // box-shadow: 0 0 5px #000;
+    }
+    &:checked + .options__label {
+      & .options__check {
+        &::before {
+          transform: translate(-50%, -50%) scale(1);
+        }
+      }
+    }
+  }
+  // .options__label
+  &__label {
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+    gap: 10px;
+    & .options__check {
+      position: relative;
+      display: inline-block;
+      align-self: flex-start;
+      width: em(44, 16);
+      height: em(44, 16);
+      flex: 0 0 em(44, 16);
+      border-radius: 50%;
+      border: 1px solid #939393;
+      &::before {
+        content: "";
+        transition: all 0.3s ease 0s;
+        width: em(22, 16);
+        height: em(22, 16);
+        border-radius: 50%;
+        background-color: #003b71;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%) scale(0);
+      }
+    }
+  }
+  // .options__text
+  &__text {
+  }
+}

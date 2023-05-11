@@ -1,0 +1,270 @@
+.account {
+  @media (min-width: $tablet) {
+    min-height: 90vh;
+  }
+  padding-bottom: rem(30);
+  &__container {
+    display: grid;
+    @include adaptiveValue("gap", 50, 20);
+    @media (min-width: $tablet) {
+      grid-template-columns: rem(340) 1fr;
+    }
+  }
+}
+
+.navigation-account {
+  &__user {
+    &:not(:last-child) {
+      @include adaptiveValue("margin-bottom", 35, 25);
+    }
+  }
+}
+
+.user-account {
+  @include adaptiveValue("font-size", 20, 14);
+  padding: 0 em(35, 20);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  @media (max-width: $mobileSmall) {
+    align-items: center;
+  }
+  &__image-ibg {
+    border-radius: 50%;
+    overflow: clip;
+    @include adaptiveValue("width", 191, 151);
+    @include adaptiveValue("height", 191, 151);
+    &:not(:last-child) {
+      @include adaptiveValue("margin-bottom", 35, 20);
+    }
+    & img {
+      max-width: 100%;
+    }
+  }
+  &__name {
+    font-weight: 700;
+    @include adaptiveValue("font-size", 24, 20);
+    line-height: math.div(29, 24);
+    color: #151515;
+  }
+}
+
+.user-nav-account {
+  display: grid;
+  align-content: flex-start;
+  @include adaptiveValue("row-gap", 18, 15);
+  @media (max-width: $tablet) {
+    grid-template-columns: repeat(auto-fit, minmax(rem(165), 1fr));
+  }
+
+  &__link {
+    white-space: nowrap;
+    @include adaptiveValue("font-size", 20, 14);
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    color: $mainBlue;
+    line-height: math.div(24, 20);
+    column-gap: em(10, 20);
+    padding: em(5, 20) em(35, 20);
+    background-color: transparent;
+    border-radius: em(23, 20);
+    transition: background-color 0.3s ease;
+    &::before {
+      font-size: em(18, 20);
+    }
+    @media (any-hover: hover) {
+      &:hover {
+        background-color: #eaf1f8;
+      }
+    }
+    &._active {
+      background-color: #eaf1f8;
+    }
+  }
+}
+
+.account-purchases {
+  @include adaptiveValue("font-size", 20, 16);
+  &__title {
+    font-weight: 600;
+    font-size: inherit;
+    line-height: math.div(24, 20);
+    padding-left: em(24, 20);
+    color: #191919;
+    &:not(:last-child) {
+      margin-bottom: rem(15);
+    }
+    @media (max-width: $mobileSmall) {
+      text-align: center;
+      padding-left: 0;
+    }
+  }
+
+  &__list {
+    display: grid;
+    align-items: flex-start;
+    row-gap: em(15, 20);
+  }
+}
+
+.item-purchase {
+  background: #ffffff;
+  border: 1px solid #d1d5db;
+  border-radius: rem(4);
+  @include adaptiveValue("padding", 24, 13);
+
+  &__header {
+    display: grid;
+    grid-template-columns: percent(495, 1425) 1fr percent(50, 1425);
+    column-gap: rem(20);
+    cursor: pointer;
+    &._spoller-active {
+      & .item-purchase__arrow {
+        transform: rotate(0);
+      }
+    }
+  }
+
+  &__column {
+    display: flex;
+    flex-direction: column;
+    row-gap: rem(17);
+  }
+
+  &__delivery-status {
+    font-weight: 600;
+    font-size: inherit;
+    color: #1f2937;
+  }
+
+  &__quantity,
+  &__date,
+  &__price {
+    @include adaptiveValue("font-size", 16, 13);
+    line-height: 1;
+    color: #7c7c7c;
+  }
+
+  &__arrow {
+    color: #606060;
+    transform: rotate(-90deg);
+    @include adaptiveValue("font-size", 16, 10);
+    transition: transform 0.3s ease;
+  }
+
+  &__body {
+    padding-top: 1em;
+    font-size: 1em;
+  }
+}
+
+.acc-settings {
+  display: grid;
+  align-items: flex-start;
+  @include adaptiveValue("row-gap", 22, 18);
+
+  &__title {
+    font-weight: 700;
+    @include adaptiveValue("font-size", 24, 18);
+    line-height: math.div(29, 24);
+    color: #151515;
+    padding-bottom: em(10, 24);
+    border-bottom: 2px solid #eaf1f8;
+    &:not(:last-child) {
+      margin-bottom: rem(16);
+    }
+  }
+
+  &__body {
+    display: grid;
+    grid-template-columns: percent(387, 1425) 1fr;
+    gap: rem(30);
+    @include adaptiveValue("gap", 30, 15);
+    @media (max-width: em(1200)) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__text {
+    @include adaptiveValue("font-size", 16, 13);
+    line-height: math.div(20, 16);
+    color: #4d4d4d;
+  }
+
+  &__item {
+    &:last-child {
+      & .form-acc-settings__items {
+        grid-template-columns: repeat(3, 1fr);
+        & .form-acc-settings__item {
+          &:first-child {
+            grid-column: 3 span;
+          }
+        }
+      }
+    }
+  }
+}
+
+.form-acc-settings {
+  @media (min-width: $tablet) {
+    transform: translateY(rem(-5));
+  }
+  width: 100%;
+  display: grid;
+  align-items: flex-start;
+  @include adaptiveValue("font-size", 16, 13);
+  &__items {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 1em;
+    row-gap: em(14, 16);
+    &:not(:last-child) {
+      @include adaptiveValue("margin-bottom", 24, 15);
+    }
+  }
+
+  &__line {
+    display: flex;
+  }
+
+  &__btns {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: rem(16);
+    @include adaptiveValue("gap", 16, 12);
+    @media (max-width: em(578)) {
+      justify-content: center;
+      flex-wrap: wrap;
+			width: 100%;
+    }
+  }
+
+  &__button {
+    justify-self: flex-end;
+    @include adaptiveValue("font-size", 20, 15);
+    min-height: em(35, 20);
+    min-width: em(285, 20);
+    @media (max-width: em(578)) {
+      justify-self: center;
+			min-width: 100%;
+    }
+    &:first-child {
+      background-color: transparent;
+      border: 1px solid $mainBlue;
+      color: $mainBlue;
+      @media (any-hover: hover) {
+        &:hover {
+          color: #fff;
+          background-color: #255a8c;
+        }
+      }
+    }
+  }
+
+  &__row {
+    position: relative;
+    z-index: 0;
+  }
+}

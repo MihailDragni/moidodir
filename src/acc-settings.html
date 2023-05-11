@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include('html/_head.htm',{ "title": "Account settings" })
+
+<body>
+	<div class="wrapper">
+		@@include('html/_header.htm',{})
+		<main class="page page_acc-settings">
+			<div class="page__header">
+				<div class="page__container">
+					<nav class="page__breadcrumbs breadcrumbs">
+						<ul class="breadcrumbs__list">
+							<li class="breadcrumbs__item">
+								<a class="breadcrumbs__link" href="home.html">
+									Main
+								</a>
+							</li>
+							<li class="breadcrumbs__item">
+								<a class="breadcrumbs__link" href="account.html">
+									Account
+								</a>
+							</li>
+							<li class="breadcrumbs__item">
+								<a class="breadcrumbs__link breadcrumbs__link_current">
+									Settings
+								</a>
+							</li>
+						</ul>
+					</nav>
+				</div>
+			</div>
+			<div class="page__acc-settings account">
+				<div class="account__container">
+					<div class="account__navigation navigation-account">
+						<div class="navigation-account__user user-account">
+							<div class="user-account__image-ibg">
+								<img src="@img/account/avatar.png" alt="Avatar">
+							</div>
+							<div class="user-account__name">
+								Alina Bocearova
+							</div>
+						</div>
+						<ul class="navigation-account__user-nav user-nav-account">
+							<li class="user-nav-account__item">
+								<a class="user-nav-account__link _icon-orders" href="account.html">
+									Orders
+								</a>
+							</li>
+							<li class="user-nav-account__item">
+								<a class="user-nav-account__link _icon-licences" href="#">
+									My licences
+								</a>
+							</li>
+							<li class="user-nav-account__item">
+								<a class="user-nav-account__link _icon-subscription" href="#">
+									Subscriptions
+								</a>
+							</li>
+							<li class="user-nav-account__item">
+								<a class="user-nav-account__link _icon-contactus" href="#">
+									Contact us
+								</a>
+							</li>
+							<li class="user-nav-account__item">
+								<a class="user-nav-account__link _active _icon-settings" href="acc-settings.html">
+									Settings
+								</a>
+							</li>
+							<li class="user-nav-account__item">
+								<a class="user-nav-account__link _icon-signout" href="#">
+									Sign out
+								</a>
+							</li>
+						</ul>
+					</div>
+					<div class="account__body acc-settings">
+						<div class="acc-settings__item">
+							<h2 class="acc-settings__title">
+								Personal information
+							</h2>
+							<div class="acc-settings__body">
+								<div class="acc-settings__text">
+									<p>Lorem ipsum dolor sit amet consectetur. Malesuada elementum vel a est arcu. Hendrerit amet
+										vulputate ac nisl gravida. </p>
+								</div>
+								<form class="acc-settings__form form-acc-settings" action="#">
+									<div class="form-acc-settings__items">
+										<div class="form-acc-settings__item input-style">
+											<label class="form-acc-settings__label input-style__label" for="acc-set-name">
+												First name
+											</label>
+											<input class="form-acc-settings__input input-style__input input" autocomplete="off" type="text"
+												name="form[acc-set-name]" placeholder="Ivan" id="acc-set-name">
+										</div>
+										<div class="form-acc-settings__item input-style">
+											<label class="form-acc-settings__label input-style__label" for="acc-set-lastname">
+												Last name
+											</label>
+											<input autocomplete="off" type="text" name="form[acc-set-lastname]" placeholder="Ivanov"
+												class="form-acc-settings__input input-style__input input" id="acc-set-lastname">
+										</div>
+										<div class="form-acc-settings__item input-style">
+											<label class="form-acc-settings__label input-style__label" for="acc-set-date">
+												Data of birth
+											</label>
+											<input autocomplete="off" type="date" name="form[acc-set-date]" value="2001-08-08"
+												class="form-acc-settings__input input-style__input input" id="acc-set-date">
+										</div>
+										<div class="form-acc-settings__item input-style">
+											<label class="form-acc-settings__label input-style__label" for="acc-set-number">
+												Phone number
+											</label>
+											<div class="form-acc-settings__line select-style select-style_form">
+												<select
+													class="form-acc-settings__select form-acc-settings__select_tel   input-style__input input"
+													name="form[acc-set-number]" data-class-modif="form">
+													<option value="+373" selected>MD</option>
+													<option value="+374">UK</option>
+													<option value="+375">KZ</option>
+													<option value="+376">RU</option>
+												</select>
+												<input autocomplete="off" type="tel" name="form[acc-set-number]" placeholder=""
+													class="form-acc-settings__input input-style__input input" id="acc-set-number">
+											</div>
+
+										</div>
+									</div>
+									<button class="form-acc-settings__button btn" type="submit">
+										Save
+									</button>
+								</form>
+							</div>
+						</div>
+						<div class="acc-settings__item">
+							<h2 class="acc-settings__title">
+								Email address
+							</h2>
+							<div class="acc-settings__body">
+								<div class="acc-settings__text">
+									<p>Lorem ipsum dolor sit amet consectetur. Malesuada elementum vel a est arcu. </p>
+								</div>
+								<form class="acc-settings__form form-acc-settings" action="#">
+									<div class="form-acc-settings__items">
+										<div class="form-acc-settings__item input-style">
+											<label class="form-acc-settings__label input-style__label" for="acc-set-email">
+												Email
+											</label>
+											<input autocomplete="off" type="email" name="form[acc-set-email]"
+												placeholder="alinabocharova@gmail.com" class="form-acc-settings__input input-style__input input"
+												id="acc-set-email">
+										</div>
+										<div class="form-acc-settings__item input-style">
+											<label class="form-acc-settings__label input-style__label" for="acc-set-e-email">
+												Emergency email
+											</label>
+											<input autocomplete="off" type="email" name="form[acc-set-e-email]"
+												placeholder="alinaboc0505@gmail.com" class="form-acc-settings__input input-style__input input"
+												id="acc-set-e-email">
+										</div>
+									</div>
+
+									<button class="form-acc-settings__button btn" type="submit">
+										Save
+									</button>
+								</form>
+							</div>
+						</div>
+						<div class="acc-settings__item">
+							<h2 class="acc-settings__title">
+								Password
+							</h2>
+							<div class="acc-settings__body">
+								<div class="acc-settings__text">
+									<p>Lorem ipsum dolor sit amet consectetur. Malesuada elementum vel a est arcu.</p>
+								</div>
+								<form class="acc-settings__form form-acc-settings" action="#">
+									<div class="form-acc-settings__items">
+										<div class="form-acc-settings__item input-style">
+											<label class="form-acc-settings__label input-style__label" for="acc-set-pass">
+												Current password
+											</label>
+											<div class="form-acc-settings__row">
+												<input autocomplete="off" type="password" name="form[acc-set-pass]" value="Ispiyhrim2839"
+													class="form-acc-settings__input input-style__input input" id="acc-set-pass">
+												<button class="viewpass form__viewpass _icon-eye" type="button"></button>
+											</div>
+										</div>
+										<div class="form-acc-settings__item input-style">
+											<label class="form-acc-settings__label input-style__label" for="acc-set-newpass">
+												New password
+											</label>
+											<div class="form-acc-settings__row">
+												<input autocomplete="off" type="password" name="form[acc-set-newpass]" value="Ispiyhrim2839"
+													class="form-acc-settings__input input-style__input input" id="acc-set-newpass">
+												<button class="viewpass form__viewpass _icon-eye" type="button"></button>
+											</div>
+										</div>
+									</div>
+									<button class="form-acc-settings__button btn" type="submit">
+										Save
+									</button>
+								</form>
+							</div>
+						</div>
+						<div class="acc-settings__item">
+							<h2 class="acc-settings__title">
+								My addresses
+							</h2>
+							<div class="acc-settings__body">
+								<div class="acc-settings__text">
+									<p>Lorem ipsum dolor sit amet consectetur. Malesuada elementum vel </p>
+								</div>
+								<form class="acc-settings__form form-acc-settings" action="#">
+									<div class="form-acc-settings__items">
+										<div class="form-acc-settings__item input-style">
+											<label class="form-acc-settings__label input-style__label" for="acc-set-street">
+												Street address
+											</label>
+											<input autocomplete="off" type="text" name="form[acc-set-street]"
+												placeholder="County Road 5150 307" class="form-acc-settings__input input-style__input input"
+												id="acc-set-street">
+										</div>
+										<div class="form-acc-settings__item input-style">
+											<label class="form-acc-settings__label input-style__label" for="acc-set-zip">
+												ZIP code
+											</label>
+											<input autocomplete="off" type="text" name="form[acc-set-zip]" placeholder="78121"
+												class="form-acc-settings__input input-style__input input" id="acc-set-zip">
+										</div>
+										<div class="form-acc-settings__item input-style">
+											<label class="form-acc-settings__label input-style__label" for="acc-set-city">
+												City
+											</label>
+											<input data-datepicker autocomplete="off" type="text" name="form[acc-set-city]"
+												placeholder="Comrat" class="form-acc-settings__input input-style__input input"
+												id="acc-set-city">
+										</div>
+										<div class="form-acc-settings__item input-style">
+											<label class="form-acc-settings__label input-style__label" for="acc-set-country">
+												Country
+											</label>
+											<div class="form-acc-settings__line select-style select-style_form">
+												<select class="form-acc-settings__select form-acc-settings__select_adress"
+													name="form[acc-set-country]" data-class-modif="form">
+													<option value="Moldova" selected>Moldova</option>
+													<option value="Russia">Russia</option>
+													<option value="Kazakstan">Kazakstan</option>
+													<option value="Romania">Romania</option>
+												</select>
+											</div>
+
+										</div>
+									</div>
+									<div class="form-acc-settings__btns">
+										<button class="form-acc-settings__button btn" type="button">
+											Add another +
+										</button>
+										<button class="form-acc-settings__button btn" type="submit">
+											Save
+										</button>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</main>
+		@@include('html/_footer.htm',{})
+	</div>
+	@@include('html/_js.htm',{})
+</body>
+
+</html>

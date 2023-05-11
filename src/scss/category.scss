@@ -1,0 +1,286 @@
+.catalog {
+  position: fixed;
+  top: 0;
+  left: -150%;
+  height: 100vh;
+  display: flex;
+  justify-content: start;
+  background-color: #fff;
+  transition: left 0.3s ease;
+  z-index: 999;
+  @media (max-width: $tablet) {
+    position: absolute;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    display: block;
+  }
+  &--active {
+    left: 0;
+  }
+  &__close-btn {
+    position: absolute;
+    top: 3%;
+    right: rem(-70);
+    width: 1em;
+    height: 1em;
+    @media (min-width: $tablet) {
+      @include adaptiveValue("font-size", 50, 40, 0, $containerWidth, 991);
+    }
+    background-color: transparent;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @media (max-width: $tablet) {
+      display: none;
+    }
+  }
+  @media (max-width: $tablet) {
+    &__second-column {
+      z-index: 2;
+    }
+    &__third-column {
+      z-index: 4;
+    }
+  }
+}
+
+.column-style {
+  overflow-y: auto;
+  display: grid;
+  align-content: flex-start;
+  height: 100%;
+  border-right: 1px solid #bdbdbd;
+  scrollbar-color: #acacac transparent;
+  scrollbar-width: thin;
+  &::-webkit-scrollbar {
+    width: rem(10);
+    background-color: transparent;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: #acacac;
+    border-radius: rem(27);
+  }
+  width: 100%;
+  padding: rem(5) rem(10);
+  @media (min-width: $tablet) {
+    @include adaptiveValue("padding-top", 46, 26, 0, $containerWidth, 991);
+    @include adaptiveValue("padding-right", 107, 26, 0, $containerWidth, 991);
+    @include adaptiveValue("padding-bottom", 41, 26, 0, $containerWidth, 991);
+    @include adaptiveValue("padding-left", 40, 26, 0, $containerWidth, 991);
+    width: 100%;
+    @include adaptiveValue("width", 497, 300, 0, $containerWidth, 991);
+  }
+}
+
+.main-column-catalog {
+  height: 100%;
+  &__list {
+    row-gap: rem(13);
+  }
+  &__link {
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    column-gap: rem(27);
+    font-weight: 500;
+    line-height: math.div(24, 20);
+    padding: rem(8) rem(25);
+    border-radius: rem(26);
+    transition: background-color 0.1s ease, color 0.1s ease;
+    &[data-main-category] {
+      &::after {
+        content: "\e902";
+        @extend %ic;
+        font-size: em(10, 20);
+        transform: rotate(-90deg);
+        color: transparent;
+        margin-left: auto;
+        transition: color 0.3s ease;
+      }
+    }
+    &::before {
+      font-size: em(40, 20);
+      width: 1em;
+      height: 1em;
+      @media (max-width: $tablet) {
+        font-size: em(35, 20);
+      }
+    }
+    @media (any-hover: hover) {
+      &:hover {
+        background-color: $mainBlue;
+        color: #fff;
+      }
+    }
+    @media (min-width: $tablet) {
+      &._active {
+        background-color: $mainBlue;
+        color: #fff;
+      }
+    }
+
+    @media (max-width: $tablet) {
+      padding: rem(5) rem(15);
+      @include adaptiveValue("font-size", 20, 16, 0, 992, 320);
+      &[data-main-category] {
+        &::after {
+          color: $mainColor;
+        }
+      }
+    }
+  }
+}
+
+.column-catalog {
+  display: none;
+  height: 100%;
+  background-color: #fff;
+  @media (max-width: $tablet) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 0;
+  }
+  &._active {
+    display: block;
+  }
+  &__item {
+    height: 100%;
+    display: none;
+    @media (min-width: $tablet) {
+      @include adaptiveValue("padding-top", 46, 36, 0, $containerWidth, 991);
+      @include adaptiveValue("padding-right", 77, 26, 0, $containerWidth, 991);
+      @include adaptiveValue("padding-bottom", 41, 26, 0, $containerWidth, 991);
+    }
+    @media (max-width: $tablet) {
+      padding: rem(5) rem(10);
+      width: 100%;
+    }
+    &--active {
+      display: block;
+    }
+  }
+  &__title {
+    font-weight: 700;
+    @media (min-width: $tablet) {
+      @include adaptiveValue("font-size", 32, 22, 0, $containerWidth, 991);
+    }
+    line-height: math.div(39, 32);
+    margin-bottom: 1em;
+    padding-left: rem(20);
+    & span {
+			cursor: pointer;
+      display: none;
+      justify-content: start;
+      align-items: center;
+      column-gap: rem(5);
+      &::before {
+        font-size: 0.7em;
+      }
+    }
+    @media (max-width: $tablet) {
+      padding-left: rem(15);
+      margin-bottom: rem(15);
+      display: flex;
+      align-items: center;
+      flex-direction: row-reverse;
+      justify-content: space-between;
+      column-gap: rem(10);
+      @include adaptiveValue("font-size", 22, 18, 0, 992, 320);
+      & span {
+        display: flex;
+      }
+    }
+  }
+}
+
+.drop-menu-list {
+  height: 100%;
+  display: grid;
+  @media (min-width: $tablet) {
+    @include adaptiveValue("row-gap", 15, 10, 0, $containerWidth, 991);
+  }
+  align-content: flex-start;
+  &__link {
+    font-weight: 500;
+    line-height: math.div(24, 20);
+    color: #575757;
+    display: flex;
+    @media (min-width: $tablet) {
+      @include adaptiveValue("padding-top", 16, 10, 0, $containerWidth, 991.98);
+      @include adaptiveValue(
+        "padding-bottom",
+        16,
+        10,
+        0,
+        $containerWidth,
+        991.98
+      );
+      @include adaptiveValue(
+        "padding-right",
+        27,
+        20,
+        0,
+        $containerWidth,
+        991.98
+      );
+      @include adaptiveValue(
+        "padding-left",
+        27,
+        20,
+        0,
+        $containerWidth,
+        991.98
+      );
+    }
+    border-radius: em(26, 20);
+    background-color: transparent;
+    transition: background-color 0.1s ease, color 0.1s ease;
+    &[data-second-category] {
+      flex-direction: row-reverse;
+      justify-content: space-between;
+      align-items: center;
+      &::before {
+        content: "\e902";
+        @extend %ic;
+        display: block;
+        font-size: em(10, 20);
+        transform: rotate(-90deg);
+        color: transparent;
+        transition: color 0.3s ease;
+      }
+    }
+    @media (any-hover: hover) {
+      &:hover {
+        background-color: #ececec;
+        color: $mainColor;
+        &::before {
+          color: $mainColor;
+        }
+      }
+    }
+    @media (min-width: $tablet) {
+      &._active {
+        background-color: #ececec;
+        color: $mainColor;
+        &::before {
+          color: $mainColor;
+        }
+      }
+    }
+
+    @media (max-width: $tablet) {
+      padding: rem(5) rem(15);
+      @include adaptiveValue("font-size", 20, 16, 0, 992, 320);
+      &[data-second-category] {
+        &::before {
+          color: $mainColor;
+        }
+      }
+    }
+  }
+}

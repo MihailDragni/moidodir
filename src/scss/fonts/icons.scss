@@ -1,0 +1,149 @@
+%ic {
+  font-family: 'icons';
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+[class*='_icon-'] {
+  &:before {
+    @extend %ic;
+    display: block;
+  }
+}
+
+._icon-adduser:before {
+  content: "\e900";
+}
+._icon-animals:before {
+  content: "\e901";
+}
+._icon-arrowdown:before {
+  content: "\e902";
+}
+._icon-arrowslider:before {
+  content: "\e903";
+}
+._icon-attention:before {
+  content: "\e904";
+}
+._icon-books:before {
+  content: "\e905";
+}
+._icon-burger:before {
+  content: "\e906";
+}
+._icon-calendar:before {
+  content: "\e907";
+}
+._icon-cars:before {
+  content: "\e908";
+}
+._icon-cart:before {
+  content: "\e909";
+}
+._icon-catalog-search:before {
+  content: "\e90a";
+}
+._icon-close:before {
+  content: "\e90b";
+}
+._icon-complete:before {
+  content: "\e90c";
+}
+._icon-completesmall:before {
+  content: "\e90d";
+}
+._icon-contactus:before {
+  content: "\e90e";
+}
+._icon-cosmetics:before {
+  content: "\e90f";
+}
+._icon-delivery:before {
+  content: "\e910";
+}
+._icon-electronics:before {
+  content: "\e911";
+}
+._icon-eye:before {
+  content: "\e912";
+}
+._icon-favorite:before {
+  content: "\e913";
+}
+._icon-furniture:before {
+  content: "\e914";
+}
+._icon-games:before {
+  content: "\e915";
+}
+._icon-home:before {
+  content: "\e916";
+}
+._icon-house:before {
+  content: "\e917";
+}
+._icon-instagram:before {
+  content: "\e918";
+}
+._icon-kids:before {
+  content: "\e919";
+}
+._icon-licences:before {
+  content: "\e91a";
+}
+._icon-men:before {
+  content: "\e91b";
+}
+._icon-orders:before {
+  content: "\e91c";
+}
+._icon-points:before {
+  content: "\e91e";
+}
+._icon-present:before {
+  content: "\e91f";
+}
+._icon-search:before {
+  content: "\e920";
+}
+._icon-signout:before {
+  content: "\e921";
+}
+._icon-sport:before {
+  content: "\e922";
+}
+._icon-star:before {
+  content: "\e923";
+}
+._icon-stationery:before {
+  content: "\e924";
+}
+._icon-subscription:before {
+  content: "\e925";
+}
+._icon-user:before {
+  content: "\e926";
+}
+._icon-whitecart:before {
+  content: "\e927";
+}
+._icon-women:before {
+  content: "\e928";
+}
+._icon-settings:before {
+  content: "\e929";
+}
+._icon-phone:before {
+  content: "\e91d";
+}
+._icon-radio:before {
+  content: "\e92a";
+}
+._icon-favorite-full:before {
+  content: "\e92b";
+}

@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include('html/_head.htm',{ "title": "Checkout" })
+
+<body>
+	<div class="wrapper">
+		@@include('html/_header.htm',{})
+		<main class="page page_checkout">
+			<div class="page__header">
+				<div class="page__container">
+					<nav class="page__breadcrumbs breadcrumbs">
+						<ul class="breadcrumbs__list">
+							<li class="breadcrumbs__item">
+								<a class="breadcrumbs__link" href="home.html">
+									Main
+								</a>
+							</li>
+							<li class="breadcrumbs__item">
+								<a class="breadcrumbs__link breadcrumbs__link_current">
+									Shopping bag
+								</a>
+							</li>
+						</ul>
+					</nav>
+				</div>
+			</div>
+			<div class="page__checkout checkout">
+				<div class="checkout__container">
+					<div class="checkout__title _title">
+						Bag
+					</div>
+					<form class="checkout__form form-checkout" action="#">
+						<div class="form-checkout__items">
+							<div class="form-checkout__item item-checkout">
+								<div class="item-checkout__number">
+									01
+								</div>
+								<h2 class="item-checkout__title">
+									Personal Details
+								</h2>
+								<div class="item-checkout__fields checkout-fields">
+									<div class="checkout-fields__item input-style">
+										<label class="checkout-fields__label input-style__label" for="checkout-name">
+											First name
+										</label>
+										<input class="checkout-fields__input input-style__input input" autocomplete="off" type="text"
+											name="form[checkout-name]" placeholder="Ivan" id="checkout-name">
+									</div>
+									<div class="checkout-fields__item input-style">
+										<label class="checkout-fields__label input-style__label" for="checkout-lastname">
+											Last name
+										</label>
+										<input autocomplete="off" type="text" name="form[checkout-lastname]" placeholder="Ivanov"
+											class="checkout-fields__input input-style__input input" id="checkout-lastname">
+									</div>
+									<div class="checkout-fields__item input-style">
+										<label class="checkout-fields__label input-style__label" for="checkout-email">
+											Email
+										</label>
+										<input autocomplete="off" type="email" name="form[checkout-email]"
+											placeholder="alinabocharova@gmail.com" class="checkout-fields__input input-style__input input"
+											id="checkout-email">
+									</div>
+									<div class="checkout-fields__item input-style">
+										<label class="checkout-fields__label input-style__label" for="checkout-number">
+											Phone number
+										</label>
+										<div class="checkout-fields__line select-style select-style_form">
+											<select class="checkout-fields__select checkout-fields__select_tel   input-style__input input"
+												name="form[checkout-number]" data-class-modif="form">
+												<option value="+373" selected>MD</option>
+												<option value="+374">UK</option>
+												<option value="+375">KZ</option>
+												<option value="+376">RU</option>
+											</select>
+											<input autocomplete="off" type="tel" name="form[checkout-number]" placeholder="68585679"
+												class="checkout-fields__input input-style__input input" id="checkout-number">
+										</div>
+
+									</div>
+								</div>
+							</div>
+
+							<div class="form-checkout__item item-checkout">
+								<div class="item-checkout__number">
+									02
+								</div>
+								<h2 class="item-checkout__title">
+									Shipping address
+								</h2>
+								<div class="item-checkout__fields checkout-fields">
+									<div class="checkout-fields__item input-style">
+										<label class="checkout-fields__label input-style__label" for="checkout-street">
+											Street address
+										</label>
+										<input autocomplete="off" type="text" name="form[checkout-street]"
+											placeholder="County Road 5150 307" class="checkout-fields__input input-style__input input"
+											id="checkout-street">
+									</div>
+									<div class="checkout-fields__item input-style">
+										<label class="checkout-fields__label input-style__label" for="checkout-zip">
+											ZIP code
+										</label>
+										<input autocomplete="off" type="text" name="form[checkout-zip]" placeholder="78121"
+											class="checkout-fields__input input-style__input input" id="checkout-zip">
+									</div>
+									<div class="checkout-fields__item input-style">
+										<label class="checkout-fields__label input-style__label" for="checkout-city">
+											City
+										</label>
+										<input data-datepicker autocomplete="off" type="text" name="form[checkout-city]"
+											placeholder="Comrat" class="checkout-fields__input input-style__input input" id="checkout-city">
+									</div>
+									<div class="checkout-fields__item input-style">
+										<label class="checkout-fields__label input-style__label" for="checkout-country">
+											Country
+										</label>
+										<div class="checkout-fields__line select-style select-style_form">
+											<select class="checkout-fields__select checkout-fields__select_adress"
+												name="form[checkout-country]" data-class-modif="form">
+												<option value="Moldova" selected>Moldova</option>
+												<option value="Russia">Russia</option>
+												<option value="Kazakstan">Kazakstan</option>
+												<option value="Romania">Romania</option>
+											</select>
+										</div>
+
+									</div>
+								</div>
+								<button class="item-checkout__add" type="button">
+									+ Add another billing address
+								</button>
+								<div class="item-checkout__delivery delivery-method">
+									<h3 class="delivery-method__title">
+										Shipping method
+									</h3>
+									<div class="delivery-method__options options-delivery">
+										<div class="options-delivery__item">
+											<input id="delivery_1" class="options-delivery__input" checked type="radio" value="Express"
+												name="delivery">
+											<label for="delivery_1" class="options-delivery__label _icon-radio">
+												<span class="options-delivery__title">
+													Express Delivery
+												</span>
+												<span class="options-delivery__text">Fast delivery in 12 hours will be under your gate</span>
+											</label>
+										</div>
+										<div class="options-delivery__item">
+											<input id="delivery_2" class="options-delivery__input" checked type="radio" value="Standard"
+												name="delivery">
+											<label for="delivery_2" class="options-delivery__label _icon-radio">
+												<span class="options-delivery__title">
+													Standard Delivery
+												</span>
+												<span class="options-delivery__text">Will deliver in 3-5 business days</span>
+											</label>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="form-checkout__item item-checkout">
+								<div class="item-checkout__number">
+									03
+								</div>
+								<h2 class="item-checkout__title">
+									Payment Details
+								</h2>
+								<div class="item-checkout__payment payment-method">
+									<div class="payment-method__options options-payment">
+										<div class="options-payment__item">
+											<input id="payment_1" class="options-payment__input" checked type="radio" value="Express"
+												name="payment">
+											<label for="payment_1" class="options-payment__label _icon-radio">
+												<span class="options-payment__title">
+													Express Delivery
+												</span>
+											</label>
+										</div>
+										<div class="options-payment__item">
+											<input id="payment_2" class="options-payment__input" checked type="radio" value="Standard"
+												name="payment">
+											<label for="payment_2" class="options-payment__label _icon-radio">
+												<span class="options-payment__title">
+													Standard Delivery
+												</span>
+											</label>
+										</div>
+									</div>
+								</div>
+								<div class="item-checkout__fields checkout-fields">
+									<div class="checkout-fields__item input-style">
+										<label class="checkout-fields__label input-style__label" for="checkout-card">
+											Card number
+										</label>
+										<input type="number" name="form[checkout-card]" placeholder="9045 8968 7996 7968"
+											class="checkout-fields__input input-style__input input" id="checkout-card">
+									</div>
+									<div class="checkout-fields__item input-style">
+										<label class="checkout-fields__label input-style__label" for="checkout-exp-date">
+											Expire Date
+										</label>
+										<input autocomplete="off" type="month" name="form[checkout-exp-date]" value="2024-08" min="2023-12"
+											max="2040-12" class="checkout-fields__input input-style__input input" id="checkout-exp-date">
+									</div>
+									<div class="checkout-fields__item input-style">
+										<label class="checkout-fields__label input-style__label" for="checkout-cvc">
+											CVC
+										</label>
+										<input data-datepicker autocomplete="off" type="number" name="form[checkout-cvc]" placeholder="178"
+											min="001" max="999" class="checkout-fields__input input-style__input input" id="checkout-cvc">
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="form-checkout__order-summary order-summary">
+							<h3 class="order-summary__title">
+								Order summary
+							</h3>
+							<ul class="order-summary__list">
+								<li class="order-summary__item order-item">
+									<div class="order-item__code">
+										RF293
+									</div>
+									<div class="order-item__name">
+										Cream La Roshe
+									</div>
+									<div class="order-item__row">
+										<div class="order-item__btns">
+											<button class="order-item__btn order-item__btn_facorite" type="button">
+												Add to favorites
+											</button>
+											<button class="order-item__btn order-item__btn_remove" type="button">
+												Remove
+											</button>
+										</div>
+										<div class="order-item__price">$25,00</div>
+									</div>
+								</li>
+								<li class="order-summary__item order-item">
+									<div class="order-item__code">
+										RF293
+									</div>
+									<div class="order-item__name">
+										Cream La Roshe
+									</div>
+									<div class="order-item__row">
+										<div class="order-item__btns">
+											<button class="order-item__btn order-item__btn_facorite" type="button">
+												Add to favorites
+											</button>
+											<button class="order-item__btn order-item__btn_remove" type="button">
+												Remove
+											</button>
+										</div>
+										<div class="order-item__price">$25,00</div>
+									</div>
+								</li>
+							</ul>
+							<div class="order-summary__info-list order-info-list">
+								<div class="order-info-list__item">
+									<span class="order-info-list__name">Subtotal</span>
+									<span class="order-info-list__value">
+										$50
+									</span>
+								</div>
+								<div class="order-info-list__item">
+									<span class="order-info-list__name">Shipping cost</span>
+									<span class="order-info-list__value">
+										$10
+									</span>
+								</div>
+							</div>
+							<div class="order-summary__total order-total">
+								<span class="order-total__name">Total</span>
+								<span class="order-total__value">$60</span>
+							</div>
+							<button class="order-summary__button btn btn_fw" type="submit">
+								Checkout
+							</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</main>
+		@@include('html/_footer.htm',{})
+	</div>
+	@@include('html/_js.htm',{})
+</body>
+
+</html>

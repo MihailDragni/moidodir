@@ -1,0 +1,310 @@
+.bonus {
+  @media (max-width: $mobile) {
+    display: none;
+  }
+  &__body {
+    padding-bottom: rem(15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    // text-align: center;
+    row-gap: rem(5);
+    @include adaptiveValue('column-gap', 96, 15);
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    column-gap: rem(5);
+    // flex: 1 0 auto;
+  }
+
+  &__icon {
+    flex: 0 0 rem(40);
+    width: rem(40);
+    height: rem(40);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $mainBlue;
+    font-size: rem(24);
+  }
+
+  &__text {
+    flex: 1 0 auto;
+    // white-space: nowrap;
+  }
+}
+
+.mainslider {
+  &__slider {
+    width: 100%;
+    min-width: 0;
+    position: relative;
+    @include adaptiveValue('border-radius', 25, 11);
+  }
+
+  &__arrow-prev,
+  &__arrow-next {
+    position: absolute;
+    top: 50%;
+    left: 2%;
+    transform: translateY(-50%);
+    @media (max-width: $tablet) {
+      left: 0;
+    }
+    @media (max-width: $mobile) {
+      display: none;
+    }
+  }
+  &__arrow-next {
+    left: auto;
+    right: 2%;
+    @media (max-width: $tablet) {
+      right: 0;
+    }
+  }
+
+  &__pagination {
+    @include adaptiveValue('padding-top', 20, 10);
+    @include adaptiveValue('padding-bottom', 40, 30);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.slide-mainslider {
+  &__img-ibg {
+    @include adaptiveValue('min-height', 377, 168);
+    width: 100%;
+  }
+}
+
+.catalog-cards {
+  @include adaptiveValue('padding-bottom', 40, 30);
+  &__container {
+    display: grid;
+    align-items: flex-start;
+    @include adaptiveValue('row-gap', 65, 15);
+  }
+  // &__container {
+  //   display: grid;
+  //   grid-template-columns: repeat(auto-fit, minmax(rem(299), 1fr));
+  //   @include adaptiveValue("row-gap", 77, 15);
+  //   @include adaptiveValue("column-gap", 80, 15);
+  //   justify-content: center;
+  //   @media (max-width: $pc) {
+  //     grid-template-columns: repeat(
+  //       auto-fit,
+  //       minmax(
+  //         calc(135px + (299 - 135) * ((100vw - 320px) / (1920 - 320))),
+  //         1fr
+  //       )
+  //     );
+  //   }
+  // }
+  &__slider {
+    @include adaptiveValue('padding-top', 20, 10);
+    position: relative;
+  }
+
+  &__arrow-prev,
+  &__arrow-next {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    @media (max-width: em(590)) {
+      display: none;
+    }
+  }
+  &__arrow-next {
+    left: auto;
+    right: 0;
+  }
+}
+
+.item-catalog-cards {
+  display: grid;
+  align-items: flex-start;
+  justify-content: center;
+  @include adaptiveValue('row-gap', 20, 5);
+  &__title {
+    text-align: center;
+  }
+
+  &__title-link {
+    font-weight: 500;
+    @include adaptiveValue('font-size', 27, 14);
+    color: #4d4d4d;
+  }
+
+  &__image {
+    position: relative;
+    border-radius: 50%;
+    @include adaptiveValue('width', 299, 135);
+    @include adaptiveValue('height', 299, 135);
+    & img {
+      position: absolute;
+      width: 90%;
+      height: 90%;
+      top: -5%;
+      left: 50%;
+      transform: translateX(-50%);
+      object-fit: contain;
+    }
+    &_darkblue {
+      background-color: #3b7c99;
+    }
+    &_lightblue {
+      background-color: #7da4bd;
+    }
+    &_yellow {
+      background-color: #e1c31e;
+    }
+    &_green {
+      background-color: #c5ddb4;
+    }
+    &_purple {
+      background-color: #b7bfe0;
+    }
+  }
+}
+
+.working-brands {
+  @include adaptiveValue('padding-bottom', 60, 30);
+
+  &__title {
+    &:not(:last-child) {
+      margin-bottom: rem(15);
+    }
+  }
+
+  &__slider {
+    position: relative;
+    &:not(:last-child) {
+      @include adaptiveValue('margin-bottom', 50, 15);
+    }
+  }
+
+  &__arrow-prev,
+  &__arrow-next {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    @media (max-width: $mobile) {
+      display: none;
+    }
+  }
+  &__arrow-next {
+    left: auto;
+    right: 0;
+  }
+
+  &__more-brands {
+    @include adaptiveValue('font-size', 14, 10);
+    line-height: math.div(17, 14);
+    text-decoration-line: underline;
+    color: #606060;
+  }
+}
+
+.item-brand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  &__image {
+    width: 100%;
+    background: #f5f5f5;
+    border-radius: rem(23);
+    padding: rem(15);
+    &:not(:last-child) {
+      margin-bottom: rem(12);
+    }
+
+    & span {
+      display: block;
+      padding-bottom: percent(215, 280);
+    }
+  }
+
+  &__title {
+    flex: 1 1 auto;
+    font-weight: 700;
+    @include adaptiveValue('font-size', 32, 14);
+    line-height: math.div(39, 32);
+    color: $mainBlue;
+  }
+}
+
+.about-us {
+  @include adaptiveValue('padding-bottom', 50, 30);
+  &__title {
+    font-weight: 700;
+    @include adaptiveValue('font-size', 32, 16);
+    line-height: math.div(39, 32);
+    color: $mainBlue;
+    &:not(:last-child) {
+      @include adaptiveValue('margin-bottom', 20, 10);
+    }
+  }
+}
+
+.item-about-us {
+  border-bottom: 2px solid #c7c7c7;
+  @include adaptiveValue('padding-top', 20, 15);
+  @include adaptiveValue('padding-bottom', 20, 15);
+  @media (max-width: $mobile) {
+    border-bottom: 1px solid #c7c7c7;
+  }
+  &__title {
+    font-weight: 600;
+    @include adaptiveValue('font-size', 27, 14);
+    line-height: math.div(33, 27);
+    color: $mainBlue;
+    cursor: pointer;
+    transition: margin-bottom 0.3s ease;
+    ._spoller-init & {
+      display: flex;
+      column-gap: rem(20);
+      width: 100%;
+      flex-direction: row-reverse;
+      justify-content: space-between;
+      align-items: center;
+      &::before {
+        content: '\e902';
+        @extend %ic;
+        font-size: em(14, 27);
+        transition: transform 0.3s ease;
+      }
+    }
+    &._spoller-active {
+      &:not(:last-child) {
+        margin-bottom: em(20, 27);
+      }
+      &::before {
+        transform: rotate(-180deg);
+      }
+    }
+  }
+
+  &__text {
+    font-weight: 500;
+    max-width: rem(1355);
+    color: #616161;
+    @include adaptiveValue('font-size', 20, 12);
+    line-height: math.div(24, 20);
+    & a {
+      text-decoration: underline;
+    }
+    & p {
+      &:last-child {
+        padding-top: 1em;
+      }
+    }
+  }
+}

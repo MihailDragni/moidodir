@@ -1,0 +1,131 @@
+.log-in {
+  padding: 3% 0 5%;
+  &__container {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+  }
+}
+.form-log-in {
+  max-width: rem(603);
+  width: 100%;
+  display: grid;
+  align-items: flex-start;
+  border: 2px solid #99b5cf;
+  border-radius: rem(16);
+  @include adaptiveValue("font-size", 20, 14);
+  padding: em(90, 20) em(30, 20) em(25, 20);
+  &__logo-ibg {
+    padding-bottom: percent(40, 603);
+    &:not(:last-child) {
+      margin-bottom: em(82, 20);
+    }
+  }
+
+  &__item {
+    &:not(:last-child) {
+      margin-bottom: rem(8);
+    }
+  }
+
+  &__label {
+    color: #282828;
+    display: inline-block;
+    &:not(:last-child) {
+      margin-bottom: em(8, 20);
+    }
+  }
+
+  &__input {
+    font-size: inherit;
+    padding: em(20, 20) em(15, 20);
+    width: 100%;
+    border: 1px solid #c9c9c9;
+    border-radius: rem(6);
+    &::placeholder {
+      color: #b7b7b7;
+    }
+  }
+
+  &__line {
+    position: relative;
+  }
+
+  &__forgot {
+    color: #646464;
+    @include adaptiveValue("font-size", 16, 12);
+    justify-self: flex-end;
+    text-decoration: underline;
+    &:not(:last-child) {
+      margin-bottom: em(12, 16);
+    }
+  }
+
+  &__checkbox {
+    font-size: inherit;
+    &:not(:last-child) {
+      margin-bottom: em(31, 20);
+    }
+  }
+
+  &__submit-btn {
+    font-size: inherit;
+    &:not(:last-child) {
+      margin-bottom: em(16, 20);
+    }
+  }
+
+  &__text {
+    width: 100%;
+    display: flex;
+    @include adaptiveValue("font-size", 16, 12);
+    text-align: center;
+    white-space: nowrap;
+    align-items: center;
+    column-gap: em(10, 16);
+    &:not(:last-child) {
+      margin-bottom: em(16, 16);
+    }
+    &::after,
+    &::before {
+      content: "";
+      width: 100%;
+      height: rem(1);
+      background-color: #dfdfdf;
+    }
+  }
+
+  &__gotoregister {
+    background-color: transparent;
+    border: 1px solid $mainBlue;
+    font-size: inherit;
+    color: $mainBlue;
+    &:not(:last-child) {
+      margin-bottom: em(16, 20);
+    }
+    @media (any-hover: hover) {
+      &:hover {
+        color: #fff;
+      }
+    }
+  }
+
+  &__privacy {
+    text-align: center;
+    color: #989898;
+    @include adaptiveValue("font-size", 14, 12);
+    & a {
+      text-decoration: underline;
+    }
+  }
+}
+.log-in-checkbox {
+  &__text {
+    color: #646464;
+    @include adaptiveValue("font-size", 16, 12);
+    line-height: math.div(20, 16);
+    & a {
+      text-decoration: underline;
+    }
+  }
+}

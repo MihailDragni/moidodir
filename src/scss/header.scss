@@ -1,0 +1,190 @@
+.header {
+  @media (min-width: $tablet) {
+    position: sticky;
+  }
+  position: relative;
+  width: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 150;
+  min-height: rem(40);
+  @include adaptiveValue('padding-top', 20, 10);
+  @include adaptiveValue('padding-bottom', 20, 10);
+  background-color: #fff;
+  @media (max-width: $tablet) {
+    background-color: $mainLightBlue;
+  }
+
+  &__container {
+    display: flex;
+    align-items: center;
+    @include adaptiveValue('column-gap', 66, 15);
+    @media (max-width: $tablet) {
+      justify-content: space-between;
+    }
+  }
+
+  &__row {
+    display: flex;
+    align-items: center;
+    @media (min-width: $tablet) {
+      @include adaptiveValue('column-gap', 33, 15, 0, $containerWidth, 991);
+    }
+  }
+
+  &__catalog-btn {
+    flex: 0 0 em(29, 36);
+    height: em(38, 36);
+    font-size: rem(36);
+    @media (min-width: $tablet) {
+      @include adaptiveValue('font-size', 36, 26, 0, $containerWidth, 991);
+    }
+    color: $mainBlue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @media (max-width: $tablet) {
+      display: none;
+    }
+  }
+
+  &__logo-ibg {
+    display: block;
+    @include adaptiveValue('width', 165, 106);
+    @include adaptiveValue('height', 40, 26);
+  }
+
+  &__search {
+    flex: 1 1 auto;
+  }
+}
+
+.search-header {
+  background-color: #eaf1f8;
+  border: 1px solid rgba(65, 116, 164, 0.48);
+  border-radius: rem(50);
+  position: relative;
+  overflow: clip;
+  width: 100%;
+
+  &__submit,
+  &__btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: rem(10);
+    background-color: transparent;
+    width: em(50, 23);
+    height: em(50, 23);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    @include adaptiveValue('font-size', 23, 18);
+    color: $mainBlue;
+  }
+  // .search-header__btn
+
+  &__btn {
+    right: rem(10);
+    left: auto;
+    @include adaptiveValue('font-size', 25, 18);
+    @media (max-width: $tablet) {
+      display: none;
+    }
+  }
+
+  // .search-header__input
+
+  &__input {
+    width: 100%;
+    border-radius: rem(50);
+    @include adaptiveValue('min-height', 55, 35);
+    background-color: transparent;
+    padding: rem(0) rem(62);
+    color: $mainBlue;
+    &::placeholder {
+      color: $mainBlue;
+    }
+    @media (max-width: $tablet) {
+      padding-left: rem(52);
+      padding-right: rem(30);
+      @include adaptiveValue('min-height', 53, 43, 0, 992, 320);
+    }
+  }
+}
+
+.actions-header {
+  display: flex;
+  align-items: center;
+  @include adaptiveValue('column-gap', 70, 20);
+  &__link {
+    color: $mainBlue;
+    @include adaptiveValue('font-size', 34, 20);
+    position: relative;
+    z-index: 3;
+    &::after {
+      content: '';
+      position: absolute;
+      border-radius: 50%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: em(60, 34);
+      height: em(60, 34);
+      background-color: transparent;
+      transition: background-color 0.3s ease;
+      z-index: -1;
+    }
+    @media (any-hover: hover) {
+      &:hover {
+        &::after {
+          background-color: $mainLightBlue;
+        }
+      }
+    }
+    @media (min-width: $tablet) {
+      &._active {
+        &::after {
+          background-color: $mainLightBlue;
+        }
+      }
+    }
+    &_cart {
+      position: relative;
+      & span {
+        display: block;
+        position: absolute;
+        border-radius: 50%;
+        width: em(22, 13);
+        height: em(22, 13);
+        top: -25%;
+        right: -20%;
+        color: #fff;
+        font-weight: 500;
+        @include adaptiveValue('font-size', 13, 9);
+        background-color: $mainRed;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      &::after {
+        transform: translate(-50%, -55%);
+      }
+    }
+    &_favorite,
+    &_user {
+      @media (max-width: $tablet) {
+        display: none;
+      }
+    }
+    &_phone {
+      display: none;
+      @media (max-width: $tablet) {
+        display: block;
+      }
+    }
+  }
+}

@@ -1,0 +1,27 @@
+.page_index {
+  min-height: 100vh;
+  background-color: #1f1f38;
+  background-image: url(../img/bg-texture.png);
+}
+.pages {
+  padding: 10% 5%;
+  &__title {
+    font-size: 24px;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 1.5em;
+  }
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  &__link {
+    color: #fff;
+    transition: color 0.3s ease;
+    &:hover {
+      color: #2c2c6c;
+    }
+  }
+}

@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include('html/_head.htm',{ "title":"Catalog" })
+
+<body>
+	<div class="wrapper">
+		@@include('html/_header.htm',{})
+		<main class="page page_main-catalog">
+			<div class="main-catalog">
+				<h1 class="main-catalog__title _title">
+					<div class="main-catalog__container">Shampoo</div>
+				</h1>
+				<div class="main-catalog__recommendations recommendations">
+					<div class="recommendations__container">
+						<div class="recommendations__items">
+							<div class="recommendations__item">
+								Shampoo
+							</div>
+							<div class="recommendations__item">
+								Conditioner
+							</div>
+							<div class="recommendations__item">
+								Shampoo with aloe vera
+							</div>
+							<div class="recommendations__item">
+								Cream for hands
+							</div>
+						</div>
+
+					</div>
+
+				</div>
+				<div class="main-catalog__filters filters-catalog select-style">
+					<div class="filters-catalog__container">
+						<form class="filters-catalog__form" action="#">
+							<select class="filters-catalog__select filters-catalog__select_categories" name="Categories">
+								<option value="AL">Categories</option>
+								<option value="WY">Wyoming</option>
+								<option value="A">A
+								</option>
+								<option value="A">b</option>
+								<option value="A">C</option>
+							</select>
+							<select class="filters-catalog__select filters-catalog__select_popular" name="Popular filters">
+								<option value="AL">Popular filters</option>
+								<option value="WY">Wyoming</option>
+							</select>
+							<select class="filters-catalog__select filters-catalog__select_brands" name="Brands">
+								<option value="AL">Brands</option>
+								<option value="WY">Wyoming</option>
+							</select>
+							<select class="filters-catalog__select filters-catalog__select_price" name="Price">
+								<option value="AL">Price</option>
+								<option value="WY">Wyoming</option>
+							</select>
+							<select class="filters-catalog__select filters-catalog__select_old" name="Old">
+								<option value="AL">Old</option>
+								<option value="WY">Wyoming</option>
+							</select>
+							<select class="filters-catalog__select filters-catalog__select_proporties" name="Product proporties">
+								<option value="AL">Product proporties</option>
+								<option value="WY">Wyoming</option>
+							</select>
+						</form>
+					</div>
+
+				</div>
+				<div class="main-catalog__product-quantity product-quantity">
+					<div class="product-quantity__container">
+						<span>267</span>products
+					</div>
+				</div>
+				<div class="main-catalog__products products-main-catalog">
+					<div class="products-main-catalog__container">
+						<article class="product-card">
+							<div class="product-card__header">
+								<a href="" class="product-card__image-ibg product-card__image-ibg_contain">
+									<img src="@img/product-card/product1.png" alt="Product image">
+								</a>
+								<a href="#" class="product-card__btn _icon-whitecart"></a>
+								<a href="#" class="product-card__favorite _icon-favorite _active"></a>
+								<div class="product-card__discount">-20%</div>
+							</div>
+							<div class="product-card__body">
+								<div class="product-card__price">
+									600 lei
+									<span>899 lei</span>
+								</div>
+								<h4 class="product-card__title">
+									<a class="product-card__title-link" href="#">
+										La Roshe
+									</a>
+								</h4>
+								<div class="product-card__description">
+									Gel for washing/Avrora Fe...
+								</div>
+								<div class="product-card__stock _icon-complete">
+									in stock
+								</div>
+							</div>
+						</article>
+						<article class="product-card">
+							<div class="product-card__header">
+								<a href="" class="product-card__image-ibg product-card__image-ibg_contain">
+									<img src="@img/product-card/product2.png" alt="Product image">
+								</a>
+								<button class="product-card__btn _icon-whitecart"></button>
+								<button class="product-card__favorite _icon-favorite"></button>
+								<div class="product-card__discount">-20%</div>
+							</div>
+							<div class="product-card__body">
+								<div class="product-card__price">
+									1200 lei
+									<span>1600 lei</span>
+								</div>
+								<h4 class="product-card__title">
+									<a class="product-card__title-link" href="#">
+										Vans
+									</a>
+								</h4>
+								<div class="product-card__description">
+									Sneakers Vans of the scho..
+								</div>
+								<div class="product-card__stock _icon-complete">
+									in stock
+								</div>
+							</div>
+						</article>
+						<article class="product-card">
+							<div class="product-card__header">
+								<a href="" class="product-card__image-ibg product-card__image-ibg_contain">
+									<img src="@img/product-card/product1.png" alt="Product image">
+								</a>
+								<button class="product-card__btn _icon-whitecart"></button>
+								<button class="product-card__favorite _icon-favorite"></button>
+								<div class="product-card__discount">-20%</div>
+							</div>
+							<div class="product-card__body">
+								<div class="product-card__price">
+									600 lei
+									<span>899 lei</span>
+								</div>
+								<h4 class="product-card__title">
+									<a class="product-card__title-link" href="#">
+										La Roshe
+									</a>
+								</h4>
+								<div class="product-card__description">
+									Gel for washing/Avrora Fe...
+								</div>
+								<div class="product-card__stock _icon-complete">
+									in stock
+								</div>
+							</div>
+						</article>
+						<article class="product-card">
+							<div class="product-card__header">
+								<a href="" class="product-card__image-ibg product-card__image-ibg_contain">
+									<img src="@img/product-card/product2.png" alt="Product image">
+								</a>
+								<button class="product-card__btn _icon-whitecart"></button>
+								<button class="product-card__favorite _icon-favorite"></button>
+								<div class="product-card__discount">-20%</div>
+							</div>
+							<div class="product-card__body">
+								<div class="product-card__price">
+									1200 lei
+									<span>1600 lei</span>
+								</div>
+								<h4 class="product-card__title">
+									<a class="product-card__title-link" href="#">
+										Vans
+									</a>
+								</h4>
+								<div class="product-card__description">
+									Sneakers Vans of the scho..
+								</div>
+								<div class="product-card__stock _icon-complete">
+									in stock
+								</div>
+							</div>
+						</article>
+						<article class="product-card">
+							<div class="product-card__header">
+								<a href="" class="product-card__image-ibg product-card__image-ibg_contain">
+									<img src="@img/product-card/product1.png" alt="Product image">
+								</a>
+								<button class="product-card__btn _icon-whitecart"></button>
+								<button class="product-card__favorite _icon-favorite"></button>
+								<div class="product-card__discount">-20%</div>
+							</div>
+							<div class="product-card__body">
+								<div class="product-card__price">
+									600 lei
+									<span>899 lei</span>
+								</div>
+								<h4 class="product-card__title">
+									<a class="product-card__title-link" href="#">
+										La Roshe
+									</a>
+								</h4>
+								<div class="product-card__description">
+									Gel for washing/Avrora Fe...
+								</div>
+								<div class="product-card__stock _icon-complete">
+									in stock
+								</div>
+							</div>
+						</article>
+						<article class="product-card">
+							<div class="product-card__header">
+								<a href="" class="product-card__image-ibg product-card__image-ibg_contain">
+									<img src="@img/product-card/product2.png" alt="Product image">
+								</a>
+								<button class="product-card__btn _icon-whitecart"></button>
+								<button class="product-card__favorite _icon-favorite"></button>
+								<div class="product-card__discount">-20%</div>
+							</div>
+							<div class="product-card__body">
+								<div class="product-card__price">
+									1200 lei
+									<span>1600 lei</span>
+								</div>
+								<h4 class="product-card__title">
+									<a class="product-card__title-link" href="#">
+										Vans
+									</a>
+								</h4>
+								<div class="product-card__description">
+									Sneakers Vans of the scho..
+								</div>
+								<div class="product-card__stock _icon-complete">
+									in stock
+								</div>
+							</div>
+						</article>
+						<article class="product-card">
+							<div class="product-card__header">
+								<a href="" class="product-card__image-ibg product-card__image-ibg_contain">
+									<img src="@img/product-card/product1.png" alt="Product image">
+								</a>
+								<button class="product-card__btn _icon-whitecart"></button>
+								<button class="product-card__favorite _icon-favorite"></button>
+								<div class="product-card__discount">-20%</div>
+							</div>
+							<div class="product-card__body">
+								<div class="product-card__price">
+									600 lei
+									<span>899 lei</span>
+								</div>
+								<h4 class="product-card__title">
+									<a class="product-card__title-link" href="#">
+										La Roshe
+									</a>
+								</h4>
+								<div class="product-card__description">
+									Gel for washing/Avrora Fe...
+								</div>
+								<div class="product-card__stock _icon-complete">
+									in stock
+								</div>
+							</div>
+						</article>
+						<article class="product-card">
+							<div class="product-card__header">
+								<a href="" class="product-card__image-ibg product-card__image-ibg_contain">
+									<img src="@img/product-card/product2.png" alt="Product image">
+								</a>
+								<button class="product-card__btn _icon-whitecart"></button>
+								<button class="product-card__favorite _icon-favorite"></button>
+								<div class="product-card__discount">-20%</div>
+							</div>
+							<div class="product-card__body">
+								<div class="product-card__price">
+									1200 lei
+									<span>1600 lei</span>
+								</div>
+								<h4 class="product-card__title">
+									<a class="product-card__title-link" href="#">
+										Vans
+									</a>
+								</h4>
+								<div class="product-card__description">
+									Sneakers Vans of the scho..
+								</div>
+								<div class="product-card__stock _icon-complete">
+									in stock
+								</div>
+							</div>
+						</article>
+						<article class="product-card">
+							<div class="product-card__header">
+								<a href="" class="product-card__image-ibg product-card__image-ibg_contain">
+									<img src="@img/product-card/product1.png" alt="Product image">
+								</a>
+								<button class="product-card__btn _icon-whitecart"></button>
+								<button class="product-card__favorite _icon-favorite"></button>
+								<div class="product-card__discount">-20%</div>
+							</div>
+							<div class="product-card__body">
+								<div class="product-card__price">
+									600 lei
+									<span>899 lei</span>
+								</div>
+								<h4 class="product-card__title">
+									<a class="product-card__title-link" href="#">
+										La Roshe
+									</a>
+								</h4>
+								<div class="product-card__description">
+									Gel for washing/Avrora Fe...
+								</div>
+								<div class="product-card__stock _icon-complete">
+									in stock
+								</div>
+							</div>
+						</article>
+						<article class="product-card">
+							<div class="product-card__header">
+								<a href="" class="product-card__image-ibg product-card__image-ibg_contain">
+									<img src="@img/product-card/product2.png" alt="Product image">
+								</a>
+								<button class="product-card__btn _icon-whitecart"></button>
+								<button class="product-card__favorite _icon-favorite"></button>
+								<div class="product-card__discount">-20%</div>
+							</div>
+							<div class="product-card__body">
+								<div class="product-card__price">
+									1200 lei
+									<span>1600 lei</span>
+								</div>
+								<h4 class="product-card__title">
+									<a class="product-card__title-link" href="#">
+										Vans
+									</a>
+								</h4>
+								<div class="product-card__description">
+									Sneakers Vans of the scho..
+								</div>
+								<div class="product-card__stock _icon-complete">
+									in stock
+								</div>
+							</div>
+						</article>
+						<article class="product-card">
+							<div class="product-card__header">
+								<a href="" class="product-card__image-ibg product-card__image-ibg_contain">
+									<img src="@img/product-card/product1.png" alt="Product image">
+								</a>
+								<button class="product-card__btn _icon-whitecart"></button>
+								<button class="product-card__favorite _icon-favorite"></button>
+								<div class="product-card__discount">-20%</div>
+							</div>
+							<div class="product-card__body">
+								<div class="product-card__price">
+									600 lei
+									<span>899 lei</span>
+								</div>
+								<h4 class="product-card__title">
+									<a class="product-card__title-link" href="#">
+										La Roshe
+									</a>
+								</h4>
+								<div class="product-card__description">
+									Gel for washing/Avrora Fe...
+								</div>
+								<div class="product-card__stock _icon-complete">
+									in stock
+								</div>
+							</div>
+						</article>
+						<article class="product-card">
+							<div class="product-card__header">
+								<a href="" class="product-card__image-ibg product-card__image-ibg_contain">
+									<img src="@img/product-card/product2.png" alt="Product image">
+								</a>
+								<button class="product-card__btn _icon-whitecart"></button>
+								<button class="product-card__favorite _icon-favorite"></button>
+								<div class="product-card__discount">-20%</div>
+							</div>
+							<div class="product-card__body">
+								<div class="product-card__price">
+									1200 lei
+									<span>1600 lei</span>
+								</div>
+								<h4 class="product-card__title">
+									<a class="product-card__title-link" href="#">
+										Vans
+									</a>
+								</h4>
+								<div class="product-card__description">
+									Sneakers Vans of the scho..
+								</div>
+								<div class="product-card__stock _icon-complete">
+									in stock
+								</div>
+							</div>
+						</article>
+						<article class="product-card">
+							<div class="product-card__header">
+								<a href="" class="product-card__image-ibg product-card__image-ibg_contain">
+									<img src="@img/product-card/product1.png" alt="Product image">
+								</a>
+								<button class="product-card__btn _icon-whitecart"></button>
+								<button class="product-card__favorite _icon-favorite"></button>
+								<div class="product-card__discount">-20%</div>
+							</div>
+							<div class="product-card__body">
+								<div class="product-card__price">
+									600 lei
+									<span>899 lei</span>
+								</div>
+								<h4 class="product-card__title">
+									<a class="product-card__title-link" href="#">
+										La Roshe
+									</a>
+								</h4>
+								<div class="product-card__description">
+									Gel for washing/Avrora Fe...
+								</div>
+								<div class="product-card__stock _icon-complete">
+									in stock
+								</div>
+							</div>
+						</article>
+						<article class="product-card">
+							<div class="product-card__header">
+								<a href="" class="product-card__image-ibg product-card__image-ibg_contain">
+									<img src="@img/product-card/product2.png" alt="Product image">
+								</a>
+								<button class="product-card__btn _icon-whitecart"></button>
+								<button class="product-card__favorite _icon-favorite"></button>
+								<div class="product-card__discount">-20%</div>
+							</div>
+							<div class="product-card__body">
+								<div class="product-card__price">
+									1200 lei
+									<span>1600 lei</span>
+								</div>
+								<h4 class="product-card__title">
+									<a class="product-card__title-link" href="#">
+										Vans
+									</a>
+								</h4>
+								<div class="product-card__description">
+									Sneakers Vans of the scho..
+								</div>
+								<div class="product-card__stock _icon-complete">
+									in stock
+								</div>
+							</div>
+						</article>
+						<article class="product-card">
+							<div class="product-card__header">
+								<a href="" class="product-card__image-ibg product-card__image-ibg_contain">
+									<img src="@img/product-card/product1.png" alt="Product image">
+								</a>
+								<button class="product-card__btn _icon-whitecart"></button>
+								<button class="product-card__favorite _icon-favorite"></button>
+								<div class="product-card__discount">-20%</div>
+							</div>
+							<div class="product-card__body">
+								<div class="product-card__price">
+									600 lei
+									<span>899 lei</span>
+								</div>
+								<h4 class="product-card__title">
+									<a class="product-card__title-link" href="#">
+										La Roshe
+									</a>
+								</h4>
+								<div class="product-card__description">
+									Gel for washing/Avrora Fe...
+								</div>
+								<div class="product-card__stock _icon-complete">
+									in stock
+								</div>
+							</div>
+						</article>
+						<article class="product-card">
+							<div class="product-card__header">
+								<a href="" class="product-card__image-ibg product-card__image-ibg_contain">
+									<img src="@img/product-card/product2.png" alt="Product image">
+								</a>
+								<button class="product-card__btn _icon-whitecart"></button>
+								<button class="product-card__favorite _icon-favorite"></button>
+								<div class="product-card__discount">-20%</div>
+							</div>
+							<div class="product-card__body">
+								<div class="product-card__price">
+									1200 lei
+									<span>1600 lei</span>
+								</div>
+								<h4 class="product-card__title">
+									<a class="product-card__title-link" href="#">
+										Vans
+									</a>
+								</h4>
+								<div class="product-card__description">
+									Sneakers Vans of the scho..
+								</div>
+								<div class="product-card__stock _icon-complete">
+									in stock
+								</div>
+							</div>
+						</article>
+						<article class="product-card">
+							<div class="product-card__header">
+								<a href="" class="product-card__image-ibg product-card__image-ibg_contain">
+									<img src="@img/product-card/product1.png" alt="Product image">
+								</a>
+								<button class="product-card__btn _icon-whitecart"></button>
+								<button class="product-card__favorite _icon-favorite"></button>
+								<div class="product-card__discount">-20%</div>
+							</div>
+							<div class="product-card__body">
+								<div class="product-card__price">
+									600 lei
+									<span>899 lei</span>
+								</div>
+								<h4 class="product-card__title">
+									<a class="product-card__title-link" href="#">
+										La Roshe
+									</a>
+								</h4>
+								<div class="product-card__description">
+									Gel for washing/Avrora Fe...
+								</div>
+								<div class="product-card__stock _icon-complete">
+									in stock
+								</div>
+							</div>
+						</article>
+						<article class="product-card">
+							<div class="product-card__header">
+								<a href="" class="product-card__image-ibg product-card__image-ibg_contain">
+									<img src="@img/product-card/product2.png" alt="Product image">
+								</a>
+								<button class="product-card__btn _icon-whitecart"></button>
+								<button class="product-card__favorite _icon-favorite"></button>
+								<div class="product-card__discount">-20%</div>
+							</div>
+							<div class="product-card__body">
+								<div class="product-card__price">
+									1200 lei
+									<span>1600 lei</span>
+								</div>
+								<h4 class="product-card__title">
+									<a class="product-card__title-link" href="#">
+										Vans
+									</a>
+								</h4>
+								<div class="product-card__description">
+									Sneakers Vans of the scho..
+								</div>
+								<div class="product-card__stock _icon-complete">
+									in stock
+								</div>
+							</div>
+						</article>
+					</div>
+
+				</div>
+				<div class="main-catalog__pagging pagging">
+					<div class="pagging__container">
+						<div class="pagging__inner">
+							<button class="pagging__arrow pagging__arrow_prev _icon-arrowdown" type="button" disabled>Prev</button>
+							<ul class="pagging__list">
+								<li class="pagging__item">
+									<a class="pagging__link" href="#">1</a>
+								</li>
+								<li class="pagging__item">
+									<a class="pagging__link _active" href="#">2</a>
+								</li>
+								<li class="pagging__item">
+									<a class="pagging__link" href="#">3</a>
+								</li>
+								<li class="pagging__item">
+									<a class="pagging__link" href="#">4</a>
+								</li>
+								<li class="pagging__item">
+									<span class="pagging__link">...</span>
+								</li>
+								<li class="pagging__item">
+									<a class="pagging__link" href="#">22</a>
+								</li>
+								<li class="pagging__item">
+									<a class="pagging__link" href="#">23</a>
+								</li>
+								<li class="pagging__item">
+									<a class="pagging__link" href="#">24</a>
+								</li>
+							</ul>
+							<button class="pagging__arrow pagging__arrow_next _icon-arrowdown" type="button">Next</button>
+						</div>
+					</div>
+				</div>
+			</div>
+	</div>
+
+	</main>
+	@@include('html/_footer.htm',{})
+	</div>
+	@@include('html/_js.htm',{})
+</body>
+
+</html>

@@ -1,0 +1,123 @@
+.register {
+  padding: 3% 0 4%;
+  &__container {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.form-register {
+  max-width: rem(955);
+  width: 100%;
+  border: 1px solid #d7d7d7;
+  border-radius: rem(11);
+  @include adaptiveValue("font-size", 16, 13);
+  @include adaptiveValue("padding-top", 44, 25);
+  @include adaptiveValue("padding-bottom", 150, 35);
+  @include adaptiveValue("padding-left", 64, 10);
+  @include adaptiveValue("padding-right", 64, 10);
+  display: grid;
+  align-items: flex-start;
+
+  &__title {
+    color: #003b71;
+    justify-self: center;
+    &:not(:last-child) {
+      margin-bottom: 1em;
+    }
+  }
+
+  &__label {
+    display: inline-block;
+    font-weight: 500;
+    @include adaptiveValue("font-size", 20, 15);
+    line-height: math.div(24, 20);
+    color: #282828;
+    &:not(:last-child) {
+      margin-bottom: rem(8);
+    }
+  }
+
+  &__radio {
+    font-size: inherit;
+    &:not(:last-child) {
+      margin-bottom: em(20, 16);
+    }
+  }
+
+  &__inputs {
+    font-size: inherit;
+    display: flex;
+    align-items: center;
+    @include adaptiveValue("column-gap", 24, 10);
+    &:not(:last-child) {
+      margin-bottom: em(20, 16);
+    }
+  }
+
+  &__input {
+    font-size: inherit;
+    width: 100%;
+    border: 1px solid #828282;
+    border-radius: rem(6);
+    padding: em(12, 16) em(14, 16);
+    &::placeholder {
+      color: #aaaaaa;
+    }
+  }
+
+  &__birth {
+    font-size: inherit;
+    justify-self: flex-start;
+    display: inline-flex;
+    flex-direction: column;
+    & input {
+      text-align: center;
+    }
+    &:not(:last-child) {
+      margin-bottom: em(25, 16);
+    }
+  }
+
+  &__row {
+    width: 100%;
+    position: relative;
+  }
+
+  &__checkbox {
+    font-size: inherit;
+    &:not(:last-child) {
+      margin-bottom: em(12, 16);
+    }
+  }
+
+  &__privacy {
+    padding-top: em(12, 14);
+    @include adaptiveValue("font-size", 14, 12);
+    line-height: math.div(17, 14);
+    & a {
+      text-decoration: underline;
+    }
+    &:not(:last-child) {
+      margin-bottom: em(34, 14);
+    }
+  }
+
+  &__button {
+    min-height: em(40, 20);
+    justify-self: flex-end;
+    max-width: rem(305);
+    width: 100%;
+    @include adaptiveValue("font-size", 20, 16);
+    @media (max-width: $mobile) {
+      justify-self: center;
+    }
+  }
+}
+
+.register-checkbox {
+  font-size: inherit;
+  line-height: math.div(20, 16);
+  color: #282828;
+}

@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include('html/_head.htm',{ "title":"Product card" })
+
+<body>
+	<div class="wrapper">
+		@@include('html/_header.htm',{})
+		<main class="page page_product">
+			<div class="page__header">
+				<div class="page__container">
+					<nav class="page__breadcrumbs breadcrumbs">
+						<ul class="breadcrumbs__list">
+							<li class="breadcrumbs__item">
+								<a class="breadcrumbs__link" href="home.html">
+									Main
+								</a>
+							</li>
+							<li class="breadcrumbs__item">
+								<a class="breadcrumbs__link" href="#">
+									Cosmetics
+								</a>
+							</li>
+							<li class="breadcrumbs__item">
+								<a class="breadcrumbs__link" href="#">
+									Creams
+								</a>
+							</li>
+							<li class="breadcrumbs__item">
+								<a class="breadcrumbs__link breadcrumbs__link_current">
+									Cream for hands La Roshe Posay
+								</a>
+							</li>
+						</ul>
+					</nav>
+				</div>
+			</div>
+			<div class="page__product product">
+				<div class="product__container">
+					<div class="product__header">
+						<h1 class="product__title _title">
+							Cream for hands La Roshe Posay
+						</h1>
+						<div class="product__row">
+							<div class="product__number">
+								SKU: 456943233
+							</div>
+							<div class="product__rating rating rating_set">
+								<div class="rating__body">
+									<div class="rating__active"></div>
+									<div class="rating__items">
+										<input type="radio" class="rating__item" value="1" name="rating">
+										<input type="radio" class="rating__item" value="2" name="rating">
+										<input type="radio" class="rating__item" value="3" name="rating">
+										<input type="radio" class="rating__item" value="4" name="rating">
+										<input type="radio" class="rating__item" value="5" name="rating">
+									</div>
+								</div>
+								<div class="rating__value">4.5</div>
+							</div>
+							<a class="product__see-all" href="">
+								See all 18 reviews
+							</a>
+						</div>
+					</div>
+					<div class="product__main main-product">
+						<div class="main-product__images images-product">
+							<div class="images-product__slider swiper">
+								<div class="images-product__wrapper swiper-wrapper">
+									<div class="images-product__slide-ibg swiper-slide">
+										<img src="@img/mainpage/mainslider/mainslider-bg1.jpg" alt="Image">
+									</div>
+									<div class="images-product__slide-ibg swiper-slide">
+										<img src="@img/mainpage/mainslider/mainslider-bg1.jpg" alt="Image">
+									</div>
+									<div class="images-product__slide-ibg swiper-slide">
+										<img src="@img/mainpage/mainslider/mainslider-bg1.jpg" alt="Image">
+									</div>
+									<div class="images-product__slide-ibg swiper-slide">
+										<img src="@img/mainpage/mainslider/mainslider-bg1.jpg" alt="Image">
+									</div>
+									<div class="images-product__slide-ibg swiper-slide">
+										<img src="@img/mainpage/mainslider/mainslider-bg1.jpg" alt="Image">
+									</div>
+								</div>
+
+							</div>
+							<div class="images-product__thumbs thumbs-images swiper">
+								<div class="thumbs-images__wrapper swiper-wrapper">
+									<div class="thumbs-images__slide-ibg swiper-slide">
+										<img src="@img/mainpage/mainslider/mainslider-bg1.jpg" alt="Image">
+									</div>
+									<div class="thumbs-images__slide-ibg swiper-slide">
+										<img src="@img/mainpage/mainslider/mainslider-bg1.jpg" alt="Image">
+									</div>
+									<div class="thumbs-images__slide-ibg swiper-slide">
+										<img src="@img/mainpage/mainslider/mainslider-bg1.jpg" alt="Image">
+									</div>
+									<div class="thumbs-images__slide-ibg swiper-slide">
+										<img src="@img/mainpage/mainslider/mainslider-bg1.jpg" alt="Image">
+									</div>
+									<div class="thumbs-images__slide-ibg swiper-slide">
+										<img src="@img/mainpage/mainslider/mainslider-bg1.jpg" alt="Image">
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="main-product__body body-product">
+							<div class="body-product__price">
+								1100 ML <span>1200 ML</span>
+							</div>
+							<div class="body-product__model">
+								RMX-900
+							</div>
+							<div class="body-product__details details-product">
+								<p class="details-product__text">Детали товара:</p>
+								<ul class="details-product__list">
+									<li class="details-product__item">
+										<span class="details-product__name">Форма упаковки</span>
+										<span class="details-product__value">под давлением</span>
+									</li>
+
+									<li class="details-product__item">
+										<span class="details-product__name">Действие</span>
+										<span class="details-product__value">для лица; качество кожи</span>
+									</li>
+
+									<li class="details-product__item">
+										<span class="details-product__name">Длина упаковки</span>
+										<span class="details-product__value">22 см</span>
+									</li>
+
+									<li class="details-product__item">
+										<span class="details-product__name">Прямые правки от производителя </span>
+										<span class="details-product__value">да</span>
+									</li>
+
+									<li class="details-product__item">
+										<span class="details-product__name">Кол-во уп. в коробке</span>
+										<span class="details-product__value">24 шт.</span>
+									</li>
+								</ul>
+							</div>
+							<div class="body-product__recommendations-slider recommendations-slider">
+								<h3 class="recommendations-slider__title">Так же с этим товаром приобретают:</h3>
+								<div class="recommendations-slider__inner">
+									<div class="recommendations-slider__slider swiper">
+										<div class="recommendations-slider__wrapper swiper-wrapper">
+											<div class="recommendations-slider__slide swiper-slide">
+												<div class="recommended-product">
+													<a href="#" class="recommended-product__img-ibg">
+														<img src="@img/product/image2.png" alt="Image">
+													</a>
+													<div class="recommended-product__body">
+														<h4 class="recommended-product__title">
+															<a href="#">Крем для рук La Roshe 300мл с концентратом алое
+															</a>
+														</h4>
+														<div class="recommended-product__btns">
+															<button class="recommended-product__favorite _icon-favorite"></button>
+															<button class="recommended-product__add-to-cart _icon-cart">В корзину</button>
+														</div>
+													</div>
+												</div>
+
+											</div>
+											<div class="recommendations-slider__slide swiper-slide">
+												<div class="recommended-product">
+													<a href="#" class="recommended-product__img-ibg">
+														<img src="@img/product/image2.png" alt="Image">
+													</a>
+													<div class="recommended-product__body">
+														<h4 class="recommended-product__title">
+															<a href="#">Крем для рук La Roshe 300мл с концентратом алое
+															</a>
+														</h4>
+														<div class="recommended-product__btns">
+															<button class="recommended-product__favorite _icon-favorite"></button>
+															<button class="recommended-product__add-to-cart _icon-cart">В корзину</button>
+														</div>
+													</div>
+												</div>
+
+											</div>
+											<div class="recommendations-slider__slide swiper-slide">
+												<div class="recommended-product">
+													<a href="#" class="recommended-product__img-ibg">
+														<img src="@img/product/image2.png" alt="Image">
+													</a>
+													<div class="recommended-product__body">
+														<h4 class="recommended-product__title">
+															<a href="#">Крем для рук La Roshe 300мл с концентратом алое
+															</a>
+														</h4>
+														<div class="recommended-product__btns">
+															<button class="recommended-product__favorite _icon-favorite"></button>
+															<button class="recommended-product__add-to-cart _icon-cart">В корзину</button>
+														</div>
+													</div>
+												</div>
+
+											</div>
+											<div class="recommendations-slider__slide swiper-slide">
+												<div class="recommended-product">
+													<a href="#" class="recommended-product__img-ibg">
+														<img src="@img/product/image2.png" alt="Image">
+													</a>
+													<div class="recommended-product__body">
+														<h4 class="recommended-product__title">
+															<a href="#">Крем для рук La Roshe 300мл с концентратом алое
+															</a>
+														</h4>
+														<div class="recommended-product__btns">
+															<button class="recommended-product__favorite _icon-favorite"></button>
+															<button class="recommended-product__add-to-cart _icon-cart">В корзину</button>
+														</div>
+													</div>
+												</div>
+
+											</div>
+										</div>
+									</div>
+									<button class="recommendations-slider__arrow-prev  swiper-button-prev _icon-arrowdown"
+										type="button"></button>
+									<button class="recommendations-slider__arrow-next swiper-button-next _icon-arrowdown"
+										type="button"></button>
+								</div>
+
+							</div>
+							<div class="body-product__row">
+								<div class="body-product__info info-product">
+									<div class="info-product__title _icon-complete">
+										MOIDODIR
+									</div>
+									<div class="info-product__text">
+										<p>
+											Delivery will arrive around February 26-28..
+										</p>
+									</div>
+									<a class="info-product__more" href="#">View more</a>
+								</div>
+								<div class="body-product__btns ">
+									<button class="body-product__add-to-bag" type="button">Add to Bag</button>
+									<button class="body-product__add-to-wishlist" type="button">Add to Wishlist</button>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div data-tabs class="product__info  product-info">
+						<nav data-tabs-titles class="product-info__navigation">
+							<button type="button" class="product-info__title _tab-active">Описание</button>
+							<button type="button" class="product-info__title">Доставка и Оплата</button>
+							<button type="button" class="product-info__title">Отзывы</button>
+						</nav>
+						<div data-tabs-body class="product-info__content">
+							<div class="product-info__body">
+								<p>
+									Design hand-outs, create crafts, and work on other projects with this Astrobrights 8.5 x 11-inch
+									24-pound 500-sheet Re-Entry Red color paper.
+									Get important memos, reports, and other forms noticed with this Re-Entry Red color paper. Each sheet
+									is
+									made with sturdy 24-pound material, making this Astrobrights 500-sheet color paper great for
+									dual-sided
+									printing tasks.
+								</p>
+
+								<p>
+									Reliable multipurpose paper is perfect for everyday use
+									Paper dimensions: 8.5"W x 11"L
+									Paper weight: 24 lbs.
+									Re-Entry Red paper
+									500 sheets per pack
+									Meets or exceeds FSC standard
+									Paper is acid-free to prevent from crumbling or yellowing
+									Works Great with Color Cardstock
+									Pair ASTROBRIGHTS® Re-Entry Red Color Paper with Astrobrights Re-Entry Red Cardstock.
+									for a unified and consistent look to your project; or, pair it with other Astrobrights Colors or
+									Neenah
+									Bright White for bold, brilliant impact.
+								</p>
+
+								<p>
+									Benefits of Color
+									According to a study conducted by the American Paper Institute comparing response rates between
+									identical mailings of both white and color paper, the colored paper version showed an unprecedented 20
+									percent increase in response. With Astrobrights, you get the benefits of color without the expense of
+									color printing.
+								</p>
+
+								<p>
+									A Brighter Shade of Green
+									Neenah is committed to conserving our natural resources through responsible business and manufacturing
+									policies and practices. Neenah manufactures a wide selection of green papers including FSC® certified,
+									Green Seal™ certified, Green-e® certified and Carbon Neutral Plus papers.
+									</>
+							</div>
+							<div class="product-info__body">
+								<p>Content 2</p>
+							</div>
+							<div class="product-info__body">
+								<p>Content 3</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			@@include('html/_products-slider.htm',{
+			"title":"Popular products"
+			})
+		</main>
+		@@include('html/_footer.htm',{})
+	</div>
+	@@include('html/_js.htm',{})
+</body>
+
+</html>
